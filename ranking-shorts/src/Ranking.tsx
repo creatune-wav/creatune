@@ -1,110 +1,162 @@
 import React from "react";
 import { AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, spring,
-  staticFile, useCurrentFrame, useVideoConfig, continueRender, delayRender } from "remotion";
+  staticFile, useCurrentFrame, useVideoConfig, continueRender, delayRender, Easing } from "remotion";
 
-export const CLIP = 165; // 5.5 sn @30fps
-export type Item = { rank: number; label: string; clip: string; credit: string };
-export type RankingData = { slug: string; title: string[]; items: Item[] };
+export type Item = { rank: number; label: string; clip: string; credit: string; frames: number; impact: number; focus: number };
+export type RankingData = {
+  slug: string; title: string[];
+  hook: { clip: string; frames: number };
+  cta: { frames: number; sub: string };
+  items: Item[];
+};
+
+export const totalFrames = (d: RankingData) => d.hook.frames + d.items.reduce((s, x) => s + x.frames, 0);
 
 const font = new FontFace("Anton", `url(${staticFile("fonts/Anton.woff2")})`);
 const h = delayRender("font");
 font.load().then(() => { document.fonts.add(font); continueRender(h); });
 
-const RANK_COLOR: Record<number, string> = { 1: "#FFD400", 2: "#E6E6E6", 3: "#F0913A", 4: "#FFFFFF", 5: "#FFFFFF" };
-const stroke = (w: number): React.CSSProperties => ({
-  WebkitTextStroke: `${w}px #000`, paintOrder: "stroke fill",
-  textShadow: "0 6px 18px rgba(0,0,0,.55)", fontFamily: "Anton", textTransform: "uppercase",
+const BAND_TOP = 380, BAND_H = 1180; // video bandı; alt 360 px YouTube arayüzüne kalır
+const RANK_COLOR: Record<number, string> = { 1: "#FFD400", 2: "#DADADA", 3: "#E8904A", 4: "#FFFFFF", 5: "#FFFFFF" };
+const txt = (w: number): React.CSSProperties => ({
+  WebkitTextStroke: `${w}px #000`, paintOrder: "stroke fill", fontFamily: "Anton",
+  textShadow: "0 4px 14px rgba(0,0,0,.5)", textTransform: "uppercase", letterSpacing: 0.5,
 });
 
-const ClipLayer: React.FC<{ src: string }> = ({ src }) => {
+const ClipLayer: React.FC<{ src: string; focus: number; impact: number }> = ({ src, focus, impact }) => {
   const f = useCurrentFrame();
-  const punch = interpolate(f, [0, 8], [1.08, 1], { extrapolateRight: "clamp" });
+  const punch = interpolate(f, [0, 9], [1.07, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+  // çarpma anında kısa sarsıntı
+  const k = impact > 0 ? f - impact : -1;
+  const shake = k >= 0 && k < 6 ? (6 - k) * 2.2 * (k % 2 ? 1 : -1) : 0;
   return (
-    <AbsoluteFill style={{ backgroundColor: "#000" }}>
-      {/* bulanık arka plan: yatay klipleri de dolu gösterir */}
+    <AbsoluteFill>
       <OffthreadVideo src={staticFile(src)} muted
-        style={{ width: "100%", height: "100%", objectFit: "cover", filter: "blur(40px) brightness(.55)", transform: "scale(1.2)" }} />
-      <AbsoluteFill style={{ transform: `scale(${punch})` }}>
-        <OffthreadVideo src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
-      </AbsoluteFill>
+        style={{ width: "100%", height: "100%", objectFit: "cover", filter: "blur(38px) brightness(.45) saturate(1.2)", transform: "scale(1.25)" }} />
+      <div style={{ position: "absolute", top: BAND_TOP, height: BAND_H, width: "100%", overflow: "hidden",
+        transform: `translate(${shake}px, ${shake * 0.6}px) scale(${punch})` }}>
+        <OffthreadVideo src={staticFile(src)}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: `${focus}% 50%` }} />
+      </div>
+      {/* bant kenarlarını yumuşat */}
+      <div style={{ position: "absolute", top: BAND_TOP - 2, height: 90, width: "100%", background: "linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,0))" }} />
+      <div style={{ position: "absolute", top: BAND_TOP + BAND_H - 120, height: 122, width: "100%", background: "linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,0))" }} />
     </AbsoluteFill>
   );
 };
 
-export const Ranking: React.FC<RankingData> = ({ title, items }) => {
+export const Ranking: React.FC<RankingData> = ({ title, hook, cta, items }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const seg = Math.min(items.length - 1, Math.floor(f / CLIP));
-  const n = items.length;
+  const H = hook.frames;
+  const total = totalFrames({ hook, items } as RankingData);
 
-  // başlık: ilk 1 sn büyük, sonra yerine oturur
-  const tIn = spring({ frame: f, fps, config: { damping: 12 } });
-  const tScale = interpolate(f, [0, 22, 32], [1.35, 1.35, 1], { extrapolateRight: "clamp" }) * (0.7 + 0.3 * tIn);
+  const starts: number[] = [];
+  items.reduce((acc, it) => { starts.push(acc); return acc + it.frames; }, H);
+  let seg = -1;
+  starts.forEach((s, i) => { if (f >= s) seg = i; });
+  const segStart = seg >= 0 ? starts[seg] : 0;
 
-  // CTA: son klip (#1) başlamadan 50 kare önce → #1 başladıktan 8 kare sonra
-  const ctaStart = (n - 1) * CLIP - 50, ctaEnd = (n - 1) * CLIP + 8;
-  const ctaOn = f >= ctaStart && f < ctaEnd;
-  const cta = spring({ frame: f - ctaStart, fps, config: { damping: 9 } });
+  // başlık: hook sırasında ortada büyük, sonra yukarı oturur
+  const tIn = spring({ frame: f, fps, config: { damping: 14, stiffness: 160 } });
+  const settle = interpolate(f, [H - 8, H + 4], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.inOut(Easing.cubic) });
+  const tTop = interpolate(settle, [0, 1], [780, 130]);
+  const tScale = interpolate(settle, [0, 1], [1.3, 1]) * (0.6 + 0.4 * tIn);
+  const hookZoom = interpolate(f, [0, H], [1, 1.12]);
 
-  const flash = interpolate(f % CLIP, [0, 3], [0.85, 0], { extrapolateRight: "clamp" });
+  const ctaStart = total - cta.frames;
+  const c = spring({ frame: f - ctaStart, fps, config: { damping: 11, stiffness: 170 } });
+  const tap = f - ctaStart - 26;
+  const tapScale = tap >= 0 && tap < 8 ? interpolate(tap, [0, 3, 8], [1, 0.9, 1]) : 1;
+  const subscribed = tap >= 3;
+
+  const cutFlash = seg >= 0 ? interpolate(f - segStart, [0, 3], [0.55, 0], { extrapolateRight: "clamp" }) : 0;
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
+      {/* HOOK */}
+      <Sequence durationInFrames={H}>
+        <AbsoluteFill style={{ transform: `scale(${hookZoom})` }}>
+          <ClipLayer src={hook.clip} focus={50} impact={0} />
+        </AbsoluteFill>
+        <Audio src={staticFile("sfx/riser.wav")} volume={0.55} />
+      </Sequence>
+
       {items.map((it, i) => (
-        <Sequence key={it.rank} from={i * CLIP} durationInFrames={CLIP}>
-          <ClipLayer src={it.clip} />
-          <Sequence from={0}><Audio src={staticFile("sfx/whoosh.wav")} volume={0.7} /></Sequence>
-          <Sequence from={6}><Audio src={staticFile("sfx/hit.wav")} volume={0.6} /></Sequence>
-          {it.rank === 1 && <Sequence from={4}><Audio src={staticFile("sfx/boom.wav")} volume={0.9} /></Sequence>}
+        <Sequence key={it.rank} from={starts[i]} durationInFrames={it.frames}>
+          <ClipLayer src={it.clip} focus={it.focus} impact={it.impact} />
+          <Audio src={staticFile("sfx/whoosh.wav")} volume={0.6} />
+          <Sequence from={5}><Audio src={staticFile("sfx/hit.wav")} volume={0.4} /></Sequence>
+          {it.rank === 1 && it.impact > 0 && (
+            <Sequence from={it.impact - 1}><Audio src={staticFile("sfx/boom.wav")} volume={1} /></Sequence>
+          )}
         </Sequence>
       ))}
 
-      {/* üst karartma: metin okunurluğu */}
-      <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 32%)" }} />
+      {/* liste okunurluğu için sol gölge */}
+      <AbsoluteFill style={{ opacity: settle * (f >= ctaStart ? 1 - c : 1),
+        background: "linear-gradient(90deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,0) 58%)" }} />
 
       {/* başlık */}
-      <div style={{ position: "absolute", top: 150, width: "100%", textAlign: "center", transform: `scale(${tScale})`, lineHeight: 1.02 }}>
-        <div style={{ ...stroke(10), fontSize: 64, color: "#FFD400" }}>{title[0]}</div>
-        <div style={{ ...stroke(12), fontSize: 104, color: "#fff" }}>{title[1]}</div>
+      <div style={{ position: "absolute", top: tTop, width: "100%", textAlign: "center", lineHeight: 1.0,
+        transform: `scale(${tScale})`, transformOrigin: "center top" }}>
+        <div style={{ ...txt(8), fontSize: 52, color: "#FFD400" }}>{title[0]}</div>
+        <div style={{ ...txt(10), fontSize: 100, color: "#fff" }}>{title[1]}</div>
       </div>
 
-      {/* sıralama listesi: 1 üstte → 5 altta */}
-      {[1, 2, 3, 4, 5].slice(0, n).map((rank, row) => {
+      {/* sıralama listesi */}
+      {f >= H && [1, 2, 3, 4, 5].slice(0, items.length).map((rank, row) => {
         const idx = items.findIndex((x) => x.rank === rank);
-        const shownAt = idx * CLIP + 6;
+        const shownAt = starts[idx] + 5;
         const revealed = f >= shownAt;
         const active = idx === seg;
-        const pop = spring({ frame: f - shownAt, fps, config: { damping: 10, stiffness: 180 } });
-        const pulse = active ? 1 + 0.06 * Math.sin((f / fps) * Math.PI * 4) : 1;
+        const pop = spring({ frame: f - shownAt, fps, config: { damping: 11, stiffness: 190 } });
+        const rowIn = spring({ frame: f - H - row * 2, fps, config: { damping: 16 } });
+        const fade = f >= ctaStart ? 1 - c : 1;
         return (
-          <div key={rank} style={{ position: "absolute", left: 40, top: 470 + row * 150, display: "flex", alignItems: "center", gap: 22 }}>
-            <div style={{ ...stroke(10), fontSize: 110, color: RANK_COLOR[rank], width: 110, transform: `scale(${pulse})` }}>{rank}.</div>
-            <div style={{ ...stroke(9), fontSize: 62, color: "#fff", maxWidth: 760, whiteSpace: "nowrap",
-              transform: `scale(${revealed ? pop : 1})`, transformOrigin: "left center", opacity: revealed ? 1 : 0.9 }}>
+          <div key={rank} style={{ position: "absolute", left: 34, top: 440 + row * 112, display: "flex", alignItems: "center", gap: 16,
+            opacity: rowIn * fade * (active || !revealed ? 1 : 0.8), transform: `translateX(${(1 - rowIn) * -60}px)` }}>
+            <div style={{ ...txt(8), fontSize: 84, color: RANK_COLOR[rank], width: 82,
+              transform: `scale(${active ? 1.1 : 1})`, transformOrigin: "left center" }}>{rank}.</div>
+            <div style={{ ...txt(7), fontSize: 50, color: "#fff", whiteSpace: "nowrap",
+              transform: `scale(${revealed ? pop : 1})`, transformOrigin: "left center" }}>
               {revealed ? items[idx].label : rank === 1 ? "???" : ""}
             </div>
           </div>
         );
       })}
 
-      {/* kaynak etiketi */}
-      <div style={{ position: "absolute", left: 40, top: 1440, ...stroke(5), fontSize: 34, color: "rgba(255,255,255,.85)", textTransform: "none" }}>
-        via @{items[seg].credit}
-      </div>
-
-      {/* SUBSCRIBE CTA */}
-      {ctaOn && (
-        <div style={{ position: "absolute", top: 1180, width: "100%", display: "flex", flexDirection: "column", alignItems: "center",
-          transform: `scale(${0.5 + 0.5 * cta}) rotate(-3deg)` }}>
-          <div style={{ background: "#FF0033", borderRadius: 26, padding: "14px 44px", border: "6px solid #000" }}>
-            <span style={{ ...stroke(0), textShadow: "none", fontSize: 82, color: "#fff" }}>SUBSCRIBE</span>
-          </div>
-          <div style={{ ...stroke(9), fontSize: 58, color: "#FFD400", marginTop: 14 }}>#1 IS INSANE</div>
+      {/* kaynak */}
+      {seg >= 0 && f < ctaStart && (
+        <div style={{ position: "absolute", left: 36, top: BAND_TOP + BAND_H - 58, fontFamily: "Anton", fontSize: 26,
+          color: "rgba(255,255,255,.7)", letterSpacing: 0.5 }}>
+          via {items[seg].credit}
         </div>
       )}
 
+      {/* SUBSCRIBE (sonda) */}
+      {f >= ctaStart && (
+        <>
+          <AbsoluteFill style={{ backgroundColor: `rgba(0,0,0,${0.35 * c})` }} />
+          <Sequence from={ctaStart}><Audio src={staticFile("sfx/ding.wav")} volume={0.7} /></Sequence>
+          <div style={{ position: "absolute", top: 820, width: "100%", display: "flex", flexDirection: "column", alignItems: "center",
+            transform: `scale(${c * tapScale})` }}>
+            <div style={{ background: subscribed ? "#2B2B2B" : "#FF0033", borderRadius: 999, padding: "20px 64px",
+              boxShadow: "0 12px 40px rgba(0,0,0,.5)" }}>
+              <span style={{ fontFamily: "Anton", fontSize: 88, color: "#fff", letterSpacing: 1 }}>
+                {subscribed ? "SUBSCRIBED" : "SUBSCRIBE"}
+              </span>
+            </div>
+            <div style={{ ...txt(7), fontSize: 48, color: "#FFD400", marginTop: 26,
+              opacity: interpolate(f - ctaStart, [8, 16], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+              {cta.sub}
+            </div>
+          </div>
+        </>
+      )}
+
       {/* kesme flaşı */}
-      <AbsoluteFill style={{ backgroundColor: "#fff", opacity: f < 3 ? 0 : flash, pointerEvents: "none" }} />
+      <AbsoluteFill style={{ backgroundColor: "#fff", opacity: cutFlash, pointerEvents: "none" }} />
     </AbsoluteFill>
   );
 };
