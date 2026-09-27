@@ -1,0 +1,74 @@
+{
+  "slug": "miracle-moments",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "MIRACLES"
+  ],
+  "hook": {
+    "src": "raw/m2.mp4",
+    "start": 12.5,
+    "dur": 3.0,
+    "crop": "840:1010:840:70"
+  },
+  "cta": {
+    "frames": 66,
+    "sub": "FOR MORE MIRACLES"
+  },
+  "items": [
+    {
+      "rank": 4,
+      "src": "raw/m4.mp4",
+      "start": 21.0,
+      "dur": 5.0,
+      "crop": "200:180:120:20",
+      "replay": [
+        23.6,
+        1.4,
+        0.5
+      ],
+      "label": "SUPERMARKET CATCH",
+      "credit": "Tom",
+      "impact": 3.2
+    },
+    {
+      "rank": 3,
+      "src": "raw/m3.mp4",
+      "start": 9.5,
+      "dur": 7.0,
+      "crop": "1000:940:880:40",
+      "replay": [
+        18.0,
+        3.5,
+        1.0
+      ],
+      "label": "HERO CAT",
+      "credit": "BBC News",
+      "impact": 4.5
+    },
+    {
+      "rank": 2,
+      "src": "raw/m2.mp4",
+      "start": 18.0,
+      "dur": 6.0,
+      "replay": [
+        21.0,
+        2.0,
+        0.5
+      ],
+      "label": "FALLING TODDLER",
+      "credit": "South China Morning Post",
+      "impact": 4.0,
+      "focus": 35
+    },
+    {
+      "rank": 1,
+      "src": "raw/m1.mp4",
+      "start": 22.0,
+      "dur": 12.5,
+      "label": "TRAIN RESCUE",
+      "credit": "South China Morning Post",
+      "impact": 10.5,
+      "focus": 45
+    }
+  ]
+}
