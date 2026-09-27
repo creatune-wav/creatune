@@ -45,6 +45,7 @@ RESOURCES = [
     "offersV2.listings.isBuyBoxWinner",
     "offersV2.listings.condition",
     "offersV2.listings.type",
+    "offersV2.listings.dealDetails",
 ]
 TR_TZ = timezone(timedelta(hours=3))
 ASIN_RE = re.compile(r"(?:/dp/|/gp/product/|/product/|^)([A-Z0-9]{10})(?:[/?#]|$)")
@@ -133,9 +134,20 @@ def normalize_item(item, checked_at, amazon_merchant_id=None):
         # Creators API gönderici/kargo (FBA) bilgisi vermez; satıcıyla karıştırılmaz.
         "shipper": None,
         "is_buybox": None,
-        "price": None,
+        # Normal fiyat = teklifin API'deki fiyatı. Kupon bu fiyata dahil değildir.
+        "regular_price": None,
         "currency": None,
-        "price_display": None,
+        "regular_price_display": None,
+        # Referans (üstü çizili) fiyat ve türü: LIST_PRICE / WAS_PRICE / LOWEST_PRICE...
+        "reference_price": None,
+        "reference_price_type": None,
+        "savings_percent": None,
+        "deal_badge": None,
+        "offer_type": None,
+        # Creators API kupon bilgisi döndürmez. Kuponlu fiyat yalnızca elle,
+        # kaynağıyla birlikte girilir (manual_check.py); burada hiçbir zaman hesaplanmaz.
+        "coupon_price": None,
+        "coupon_status": "API_KUPON_VERMIYOR",
         "availability_type": None,
         "availability_message": None,
         "listing_count": len(listings),
@@ -146,15 +158,23 @@ def normalize_item(item, checked_at, amazon_merchant_id=None):
         rec["notes"].append("Teklif (offer) dönmedi: fiyat/stok/satıcı doğrulanamadı.")
         return rec
     merchant = listing.get("merchantInfo") or {}
-    money = (listing.get("price") or {}).get("money") or {}
+    price = listing.get("price") or {}
+    money = price.get("money") or {}
+    basis = price.get("savingBasis") or {}
+    deal = listing.get("dealDetails") or {}
     avail = listing.get("availability") or {}
     rec.update({
         "seller_name": merchant.get("name"),
         "seller_id": merchant.get("id"),
         "is_buybox": listing.get("isBuyBoxWinner"),
-        "price": money.get("amount"),
+        "regular_price": money.get("amount"),
         "currency": money.get("currency"),
-        "price_display": money.get("displayAmount"),
+        "regular_price_display": money.get("displayAmount"),
+        "reference_price": (basis.get("money") or {}).get("amount"),
+        "reference_price_type": basis.get("savingBasisType"),
+        "savings_percent": (price.get("savings") or {}).get("percentage"),
+        "deal_badge": deal.get("badge"),
+        "offer_type": listing.get("type"),
         "availability_type": avail.get("type"),
         "availability_message": avail.get("message"),
     })
@@ -214,7 +234,7 @@ def main(argv):
     with open("amazon_probe_result.json", "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
     for r in records:
-        print(f"{r['checked_at']}  {r['asin']}  {r['price_display'] or '-'}  "
+        print(f"{r['checked_at']}  {r['asin']}  {r['regular_price_display'] or '-'}  "
               f"{r['availability_type'] or '-'}  satıcı={r['seller_name'] or '-'}  {r['title'] or '-'}")
     for e in errors:
         print(f"HATA: {json.dumps(e, ensure_ascii=False)}", file=sys.stderr)

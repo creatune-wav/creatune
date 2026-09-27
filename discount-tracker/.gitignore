@@ -1,3 +1,4 @@
 __pycache__/
 amazon_probe_result.json
 products.txt
+.env
