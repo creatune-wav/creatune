@@ -141,6 +141,7 @@ def normalize_item(item, checked_at, amazon_merchant_id=None):
         # Referans (üstü çizili) fiyat ve türü: LIST_PRICE / WAS_PRICE / LOWEST_PRICE...
         "reference_price": None,
         "reference_price_type": None,
+        "reference_price_label": None,
         "savings_percent": None,
         "deal_badge": None,
         "offer_type": None,
@@ -172,6 +173,7 @@ def normalize_item(item, checked_at, amazon_merchant_id=None):
         "regular_price_display": money.get("displayAmount"),
         "reference_price": (basis.get("money") or {}).get("amount"),
         "reference_price_type": basis.get("savingBasisType"),
+        "reference_price_label": basis.get("savingBasisTypeLabel"),
         "savings_percent": (price.get("savings") or {}).get("percentage"),
         "deal_badge": deal.get("badge"),
         "offer_type": listing.get("type"),
