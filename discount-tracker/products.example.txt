@@ -1,0 +1,2 @@
+# Her satıra bir amazon.com.tr ürün linki veya ASIN
+# https://www.amazon.com.tr/dp/B0XXXXXXXX
