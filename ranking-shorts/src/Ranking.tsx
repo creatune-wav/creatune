@@ -23,7 +23,7 @@ const txt = (w: number): React.CSSProperties => ({
   textShadow: "0 4px 14px rgba(0,0,0,.5)", textTransform: "uppercase", letterSpacing: 0.5,
 });
 
-const ClipLayer: React.FC<{ src: string; focus: number; impact: number }> = ({ src, focus, impact }) => {
+const ClipLayer: React.FC<{ src: string; focus: number; impact: number; volume?: number }> = ({ src, focus, impact, volume = 1 }) => {
   const f = useCurrentFrame();
   const punch = interpolate(f, [0, 9], [1.07, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
   // çarpma anında kısa sarsıntı
@@ -35,7 +35,7 @@ const ClipLayer: React.FC<{ src: string; focus: number; impact: number }> = ({ s
         style={{ width: "100%", height: "100%", objectFit: "cover", filter: "blur(38px) brightness(.45) saturate(1.2)", transform: "scale(1.25)" }} />
       <div style={{ position: "absolute", top: BAND_TOP, height: BAND_H, width: "100%", overflow: "hidden",
         transform: `translate(${shake}px, ${shake * 0.6}px) scale(${punch})` }}>
-        <OffthreadVideo src={staticFile(src)}
+        <OffthreadVideo src={staticFile(src)} volume={volume}
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: `${focus}% 50%` }} />
       </div>
       {/* bant kenarlarını yumuşat */}
@@ -45,7 +45,7 @@ const ClipLayer: React.FC<{ src: string; focus: number; impact: number }> = ({ s
   );
 };
 
-export const Ranking: React.FC<RankingData> = ({ title, hook, cta, items }) => {
+export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const H = hook.frames;
@@ -77,9 +77,10 @@ export const Ranking: React.FC<RankingData> = ({ title, hook, cta, items }) => {
       {/* HOOK */}
       <Sequence durationInFrames={H}>
         <AbsoluteFill style={{ transform: `scale(${hookZoom})` }}>
-          <ClipLayer src={hook.clip} focus={50} impact={0} />
+          <ClipLayer src={hook.clip} focus={50} impact={0} volume={0.35} />
         </AbsoluteFill>
-        <Audio src={staticFile("sfx/riser.wav")} volume={0.55} />
+        <Audio src={staticFile("sfx/riser.wav")} volume={0.3} />
+        <Sequence from={2}><Audio src={staticFile(`vo/${slug}.wav`)} volume={1} /></Sequence>
       </Sequence>
 
       {items.map((it, i) => (

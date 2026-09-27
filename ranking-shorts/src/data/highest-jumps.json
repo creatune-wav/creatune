@@ -6,7 +6,7 @@
   ],
   "hook": {
     "clip": "clips/highest-jumps/hook.mp4",
-    "frames": 39
+    "frames": 60
   },
   "cta": {
     "frames": 66,
@@ -18,8 +18,8 @@
       "label": "RICK'S CAFE",
       "clip": "clips/highest-jumps/5.mp4",
       "credit": "Garth Vader",
-      "frames": 144,
-      "impact": 114,
+      "frames": 255,
+      "impact": 210,
       "focus": 50
     },
     {
@@ -27,8 +27,8 @@
       "label": "100 FT CLIFF",
       "clip": "clips/highest-jumps/4.mp4",
       "credit": "Dr. David Tatum",
-      "frames": 156,
-      "impact": 105,
+      "frames": 255,
+      "impact": 165,
       "focus": 50
     },
     {
@@ -36,8 +36,8 @@
       "label": "105 FT BRIDGE",
       "clip": "clips/highest-jumps/3.mp4",
       "credit": "Caters Clips",
-      "frames": 132,
-      "impact": 90,
+      "frames": 240,
+      "impact": 210,
       "focus": 50
     },
     {
@@ -45,7 +45,7 @@
       "label": "174 FT DIVE",
       "clip": "clips/highest-jumps/2.mp4",
       "credit": "streetsailor",
-      "frames": 189,
+      "frames": 297,
       "impact": 0,
       "focus": 45
     },
@@ -54,8 +54,8 @@
       "label": "193 FT RECORD",
       "clip": "clips/highest-jumps/1.mp4",
       "credit": "Laso Schaller",
-      "frames": 270,
-      "impact": 189,
+      "frames": 330,
+      "impact": 255,
       "focus": 50
     }
   ]
