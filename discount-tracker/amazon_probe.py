@@ -16,6 +16,7 @@ Gerekli ortam değişkenleri (Associates Central > Tools > Creators API):
 Kullanım:
   python3 amazon_probe.py products.txt            # her satırda ASIN veya link
   python3 amazon_probe.py B0XXXXXXXX B0YYYYYYYY
+  python3 amazon_probe.py --feeds                 # erişilebilir resmî feed'leri listeler
 """
 import json
 import os
@@ -114,6 +115,13 @@ def get_items(token, version, partner_tag, asins):
     }, {"Authorization": auth, "x-marketplace": MARKETPLACE})
 
 
+def list_feeds(token, version):
+    """Hesabın erişebildiği resmî feed'leri listeler (PRODUCT_FEEDS / DEALS_FEEDS)."""
+    auth = f"Bearer {token}" if version.startswith("3.") else f"Bearer {token}, Version {version}"
+    return _post_json(f"{API_HOST}/catalog/v1/listFeeds", {},
+                      {"Authorization": auth, "x-marketplace": MARKETPLACE})
+
+
 def normalize_item(item, checked_at, amazon_merchant_id=None):
     """API yanıtındaki bir ürünü düz kayda çevirir. Olmayan alan None kalır."""
     listings = (item.get("offersV2") or {}).get("listings") or []
@@ -190,7 +198,9 @@ def normalize_item(item, checked_at, amazon_merchant_id=None):
 
 
 def main(argv):
-    if not argv:
+    list_feeds_only = "--feeds" in argv
+    argv = [a for a in argv if a != "--feeds"]
+    if not argv and not list_feeds_only:
         print(__doc__)
         return 2
     inputs = []
@@ -219,6 +229,10 @@ def main(argv):
         return 2
 
     token = get_token(os.environ["CREATORS_CLIENT_ID"], os.environ["CREATORS_CLIENT_SECRET"], version)
+    if list_feeds_only:
+        status, data = list_feeds(token, version)
+        print(f"HTTP {status}\n{json.dumps(data, ensure_ascii=False, indent=2)}")
+        return 0 if status == 200 else 1
     records, errors = [], []
     for i in range(0, len(asins), 10):  # getItems en fazla 10 ASIN alır
         batch = asins[i:i + 10]
