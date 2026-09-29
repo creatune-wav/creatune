@@ -18,15 +18,20 @@ Ortam değişkenleri: amazon_probe.py'dekiler +
 Kullanım:
   python3 tracker.py products.txt            # gönderir
   python3 tracker.py products.txt --dry-run  # Telegram yerine ekrana yazar
+  python3 tracker.py --discover [kelime1,kelime2] [--dry-run]
+      # liste gerekmeden Amazon'da satıcısı Amazon olan, en az DISCOVER_MIN_SAVING (%30)
+      # indirimli ürünleri bulur
 """
 import json
 import os
 import sqlite3
 import sys
+import time
 import urllib.request
 from datetime import datetime, timedelta
 
-from amazon_probe import TR_TZ, extract_asin, get_items, get_token, normalize_item
+from amazon_probe import (API_HOST, MARKETPLACE, RESOURCES, TR_TZ, _post_json, extract_asin,
+                          get_items, get_token, normalize_item)
 
 DB_PATH = os.environ.get("TRACKER_DB", "tracker.db")
 AMAZON_SELLER_NAMES = {"amazon.com.tr", "amazon"}
@@ -150,8 +155,76 @@ def run(asins, dry_run=False):
     return sent
 
 
+DEFAULT_KEYWORDS = ["süpürge", "kulaklık", "akıllı saat", "kahve makinesi", "airfryer", "parfüm",
+                    "şampuan", "oyuncak", "mont", "ayakkabı", "tablet", "monitör", "powerbank", "blender"]
+
+
+def search(token, version, keywords, min_saving, page=1):
+    auth = f"Bearer {token}" if version.startswith("3.") else f"Bearer {token}, Version {version}"
+    return _post_json(f"{API_HOST}/catalog/v1/searchItems", {
+        "partnerTag": os.environ["CREATORS_PARTNER_TAG"], "keywords": keywords,
+        "minSavingPercent": int(min_saving), "itemCount": 10, "itemPage": page,
+        "languagesOfPreference": ["tr_TR"], "resources": RESOURCES,
+    }, {"Authorization": auth, "x-marketplace": MARKETPLACE})
+
+
+def discover(keywords, min_saving=30, dry_run=False, limit=10):
+    """Anahtar kelimelerle Amazon'da yüksek indirimli, satıcısı Amazon olan ürünleri bulur."""
+    db = open_db()
+    merchant_id = os.environ.get("AMAZON_TR_MERCHANT_ID")
+    version = os.environ["CREATORS_CREDENTIAL_VERSION"]
+    token = get_token(os.environ["CREATORS_CLIENT_ID"], os.environ["CREATORS_CLIENT_SECRET"], version)
+    dedupe = env_float("DEDUPE_HOURS", 72)
+    found, seen = [], set()
+    for kw in keywords:
+        time.sleep(1.2)  # Creators API: ~1 istek/sn
+        now = datetime.now(TR_TZ)
+        status, data = search(token, version, kw, min_saving)
+        items = (data.get("searchResult") or {}).get("items") or []
+        print(f"[{kw}] {len(items)} sonuç", file=sys.stderr)
+        if status != 200:
+            print(f"[{kw}] API hatası HTTP {status}: {data}", file=sys.stderr)
+            continue
+        for item in (data.get("searchResult") or {}).get("items") or []:
+            rec = normalize_item(item, now.isoformat(timespec="seconds"), merchant_id)
+            if rec["asin"] in seen or rec["regular_price"] is None or not is_amazon_seller(rec, merchant_id):
+                continue
+            if (rec.get("availability_type") or "").upper() in ("OUT_OF_STOCK", "UNKNOWN"):
+                continue
+            ref = rec.get("reference_price")
+            pct = round((1 - rec["regular_price"] / ref) * 100) if ref and ref > rec["regular_price"] else 0
+            if pct < min_saving:
+                continue
+            seen.add(rec["asin"])
+            db.execute("INSERT INTO checks VALUES (?,?,?,?,?,?,?,?,?,?)", (
+                rec["asin"], rec["checked_at"], rec["regular_price"], rec["currency"],
+                rec["seller_id"], rec["seller_name"], rec["availability_type"],
+                rec["reference_price"], rec["reference_price_type"], json.dumps(item, ensure_ascii=False)))
+            if recently_sent(db, rec["asin"], rec["regular_price"], dedupe, now):
+                continue
+            found.append((pct, kw, rec))
+    db.commit()
+    found.sort(key=lambda x: -x[0])
+    for pct, kw, rec in found[:limit]:
+        caption = build_caption(rec).replace("⭐ ", f"⭐ %{pct} indirim · ", 1)
+        if dry_run:
+            print(f"--- [{kw}] %{pct} ---\n{caption}\n[görsel] {rec.get('image')}\n")
+        else:
+            send_telegram(os.environ["TELEGRAM_BOT_TOKEN"], os.environ["TELEGRAM_CHAT_ID"], caption, rec.get("image"))
+            db.execute("INSERT INTO sent VALUES (?,?,?)", (rec["asin"], rec["regular_price"], datetime.now(TR_TZ).isoformat()))
+    db.commit()
+    db.close()
+    return min(len(found), limit)
+
+
 def main(argv):
     dry_run = "--dry-run" in argv
+    if "--discover" in argv:
+        rest = [a for a in argv if a not in ("--dry-run", "--discover")]
+        keywords = rest[0].split(",") if rest else DEFAULT_KEYWORDS
+        n = discover(keywords, env_float("DISCOVER_MIN_SAVING", 30), dry_run)
+        print(f"{n} indirim {'bulundu (deneme)' if dry_run else 'gönderildi'}.")
+        return 0
     files = [a for a in argv if a != "--dry-run"]
     if not files:
         print(__doc__)
