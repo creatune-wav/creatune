@@ -4,7 +4,7 @@
 import json, os, subprocess, sys
 batch = json.load(open(sys.argv[1]))
 ck = ["--cookies", sys.argv[2]] if len(sys.argv) > 2 else []
-YT = ["yt-dlp", "--js-runtimes", "node", "--no-playlist", "-q", "--no-warnings"] + ck
+YT = ["yt-dlp", "--js-runtimes", "node:/opt/node22/bin/node", "--no-playlist", "-q", "--no-warnings"] + ck
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 for v in batch:
     for rank, vid, _ in v["items"]:

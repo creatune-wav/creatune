@@ -4,7 +4,7 @@ seen = set()
 rows = []
 for q in sys.argv[1:]:
     out = subprocess.run(
-        ["yt-dlp", "--js-runtimes", "node", "--flat-playlist",
+        ["yt-dlp", "--js-runtimes", "node:/opt/node22/bin/node", "--flat-playlist",
          "--print", "%(id)s\t%(duration)s\t%(view_count)s\t%(channel)s\t%(title)s",
          f"ytsearch25:{q}"], capture_output=True, text=True).stdout
     for line in out.splitlines():

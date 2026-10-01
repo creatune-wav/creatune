@@ -3,7 +3,7 @@ CLIP = 5.5
 plan = json.load(open(sys.argv[1], encoding="utf-8"))
 slug = plan["slug"]
 os.makedirs(f"public/clips/{slug}", exist_ok=True); os.makedirs("raw", exist_ok=True)
-YT = ["yt-dlp", "--js-runtimes", "node", "--no-playlist"]
+YT = ["yt-dlp", "--js-runtimes", "node:/opt/node22/bin/node", "--no-playlist"]
 
 def best_start(info, raw):
     dur = float(info.get("duration") or 0)
