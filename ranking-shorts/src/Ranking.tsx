@@ -6,7 +6,7 @@ export type Item = { rank: number; label: string; clip: string; credit: string; 
 export type RankingData = {
   slug: string; title: string[];
   hook: { clip: string; frames: number };
-  cta: { frames: number; sub: string };
+  cta: { frames: number; sub: string; at?: "one" | "end" };
   items: Item[];
 };
 
@@ -64,7 +64,13 @@ export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }
   const tScale = interpolate(settle, [0, 1], [1.3, 1]) * (0.6 + 0.4 * tIn);
   const hookZoom = interpolate(f, [0, H], [1, 1.12]);
 
-  const ctaStart = total - cta.frames;
+  // at "one": #1 başlar başlamaz kısa SUBSCRIBE; "end": en sonda karartmalı kapanış
+  const atOne = cta.at === "one";
+  const ctaStart = atOne ? starts[starts.length - 1] + 10 : total - cta.frames;
+  const ctaEnd = atOne ? ctaStart + cta.frames : total + 1;
+  const ctaOn = f >= ctaStart && f < ctaEnd;
+  const ctaOut = atOne ? interpolate(f, [ctaEnd - 8, ctaEnd], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1;
+  const dim = !atOne && f >= ctaStart;
   const c = spring({ frame: f - ctaStart, fps, config: { damping: 11, stiffness: 170 } });
   const tap = f - ctaStart - 26;
   const tapScale = tap >= 0 && tap < 8 ? interpolate(tap, [0, 3, 8], [1, 0.9, 1]) : 1;
@@ -95,7 +101,7 @@ export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }
       ))}
 
       {/* liste okunurluğu için sol gölge */}
-      <AbsoluteFill style={{ opacity: settle * (f >= ctaStart ? 1 - c : 1),
+      <AbsoluteFill style={{ opacity: settle * (dim ? 1 - c : 1),
         background: "linear-gradient(90deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,0) 58%)" }} />
 
       {/* başlık */}
@@ -113,7 +119,7 @@ export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }
         const active = idx === seg;
         const pop = spring({ frame: f - shownAt, fps, config: { damping: 11, stiffness: 190 } });
         const rowIn = spring({ frame: f - H - row * 2, fps, config: { damping: 16 } });
-        const fade = f >= ctaStart ? 1 - c : 1;
+        const fade = dim ? 1 - c : 1;
         return (
           <div key={rank} style={{ position: "absolute", left: 34, top: 440 + row * 112, display: "flex", alignItems: "center", gap: 16,
             opacity: rowIn * fade * (active || !revealed ? 1 : 0.8), transform: `translateX(${(1 - rowIn) * -60}px)` }}>
@@ -128,7 +134,7 @@ export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }
       })}
 
       {/* kaynak */}
-      {seg >= 0 && f < ctaStart && (
+      {seg >= 0 && !ctaOn && !dim && (
         <div style={{ position: "absolute", left: 36, top: BAND_TOP + BAND_H - 58, fontFamily: "Anton", fontSize: 26,
           color: "rgba(255,255,255,.7)", letterSpacing: 0.5 }}>
           via {items[seg].credit}
@@ -136,12 +142,12 @@ export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }
       )}
 
       {/* SUBSCRIBE (sonda) */}
-      {f >= ctaStart && (
+      {ctaOn && (
         <>
-          <AbsoluteFill style={{ backgroundColor: `rgba(0,0,0,${0.35 * c})` }} />
+          {!atOne && <AbsoluteFill style={{ backgroundColor: `rgba(0,0,0,${0.35 * c})` }} />}
           <Sequence from={ctaStart}><Audio src={staticFile("sfx/ding.wav")} volume={0.7} /></Sequence>
-          <div style={{ position: "absolute", top: 820, width: "100%", display: "flex", flexDirection: "column", alignItems: "center",
-            transform: `scale(${c * tapScale})` }}>
+          <div style={{ position: "absolute", top: atOne ? 1230 : 820, width: "100%", display: "flex", flexDirection: "column", alignItems: "center",
+            opacity: ctaOut, transform: `scale(${c * tapScale * (atOne ? 0.8 : 1)})` }}>
             <div style={{ background: subscribed ? "#2B2B2B" : "#FF0033", borderRadius: 999, padding: "20px 64px",
               boxShadow: "0 12px 40px rgba(0,0,0,.5)" }}>
               <span style={{ fontFamily: "Anton", fontSize: 88, color: "#fff", letterSpacing: 1 }}>

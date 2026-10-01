@@ -3,3 +3,5 @@ raw/
 out/
 public/clips/
 tools/voice/
+cookies*.txt
+*cookies.txt

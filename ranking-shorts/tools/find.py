@@ -13,7 +13,7 @@ for q in sys.argv[1:]:
         seen.add(p[0])
         try: dur = float(p[1]); views = int(p[2])
         except ValueError: continue
-        if dur > 90 or views < 1_000_000: continue      # tek-an kısa videolar, viral
+        if dur > 150 or views < 1_000_000: continue      # tek-an kısa videolar, viral
         rows.append((views, p[0], int(dur), p[3][:20], p[4][:70]))
 rows.sort(reverse=True)
 for v, i, d, ch, t in rows[:30]:
