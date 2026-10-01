@@ -1,0 +1,296 @@
+{
+ "slug": "zidane-kafa",
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Bir dünya yıldızı... kariyerini sadece üç saniyede yaktı.",
+   "cap": "Bir dünya yıldızı kariyerini sadece *3* *saniyede* yaktı.",
+   "gap": 0.2,
+   "img": "head",
+   "a": [
+    745,
+    330,
+    470
+   ],
+   "b": [
+    725,
+    360,
+    540
+   ],
+   "fx": [
+    "flash",
+    "shake"
+   ]
+  },
+  {
+   "id": "date",
+   "say": "Dokuz Temmuz, iki bin altı. Berlin. Dünya Kupası finali.",
+   "cap": "9 Temmuz 2006. Berlin. Dünya Kupası finali.",
+   "gap": 0.1,
+   "img": "date",
+   "a": [
+    540,
+    360,
+    540
+   ],
+   "b": [
+    900,
+    360,
+    540
+   ],
+   "fx": [
+    "sepia",
+    "typehud"
+   ]
+  },
+  {
+   "id": "min",
+   "say": "Zidan'ın son maçı. Yüz onuncu dakika.",
+   "cap": "Zidane'ın son maçı. 110. dakika.",
+   "gap": 0.15,
+   "img": "face2",
+   "a": [
+    600,
+    400,
+    460
+   ],
+   "b": [
+    590,
+    350,
+    400
+   ],
+   "fx": [
+    "clock"
+   ]
+  },
+  {
+   "id": "shirt",
+   "say": "Materatsi formasını çekiyor. Zidan: İstiyorsan, maçtan sonra veririm.",
+   "cap": "Materazzi formasını çekiyor. Zidane: \"İstiyorsan maçtan sonra veririm.\"",
+   "gap": 0.15,
+   "img": "walk",
+   "a": [
+    480,
+    300,
+    450
+   ],
+   "b": [
+    880,
+    300,
+    450
+   ],
+   "fx": [
+    "tags"
+   ]
+  },
+  {
+   "id": "insult",
+   "say": "Cevap: kız kardeşine ağır bir hakaret.",
+   "cap": "Cevap: kız kardeşine ağır bir *hakaret.*",
+   "gap": 0.2,
+   "img": "walk",
+   "a": [
+    960,
+    320,
+    400
+   ],
+   "b": [
+    960,
+    300,
+    330
+   ],
+   "fx": [
+    "redtint",
+    "stamp:HAKARET",
+    "glitch"
+   ]
+  },
+  {
+   "id": "walk",
+   "say": "Zidan yürüyor... ve duruyor.",
+   "cap": "Zidane yürüyor... ve duruyor.",
+   "gap": 0.3,
+   "img": "walk",
+   "a": [
+    450,
+    340,
+    420
+   ],
+   "b": [
+    450,
+    330,
+    360
+   ],
+   "fx": [
+    "desat"
+   ]
+  },
+  {
+   "id": "freeze",
+   "say": "Şimdi, zamanı durduralım.",
+   "cap": "Şimdi zamanı durduralım.",
+   "gap": 0.25,
+   "img": "face",
+   "a": [
+    930,
+    360,
+    540
+   ],
+   "b": [
+    930,
+    360,
+    520
+   ],
+   "fx": [
+    "freeze"
+   ]
+  },
+  {
+   "id": "brain",
+   "say": "Beynin alarm merkezi, amigdala, kontrolü ele geçiriyor. Kalp atışı fırlıyor. Mantık... devre dışı!",
+   "cap": "Beynin alarm merkezi *amigdala* kontrolü ele geçiriyor. Kalp atışı fırlıyor. Mantık... *devre* *dışı.*",
+   "gap": 0.15,
+   "img": "face",
+   "a": [
+    930,
+    360,
+    520
+   ],
+   "b": [
+    960,
+    330,
+    470
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg",
+    "logic"
+   ]
+  },
+  {
+   "id": "why",
+   "say": "Çünkü beyin, ailesine yapılan saldırıyı, kendine yapılmış gibi algılar.",
+   "cap": "Çünkü beyin ailesine yapılan saldırıyı *kendine* yapılmış gibi algılar.",
+   "gap": 0.25,
+   "img": "face2",
+   "a": [
+    600,
+    330,
+    380
+   ],
+   "b": [
+    610,
+    300,
+    330
+   ],
+   "fx": [
+    "redduo",
+    "family",
+    "ecg"
+   ]
+  },
+  {
+   "id": "turn",
+   "say": "Ve Zidan... geri dönüyor.",
+   "cap": "Ve Zidane... geri *dönüyor.*",
+   "gap": 1.3,
+   "img": "walk",
+   "a": [
+    450,
+    320,
+    360
+   ],
+   "b": [
+    450,
+    300,
+    280
+   ],
+   "fx": [
+    "dark",
+    "ecg",
+    "tremble"
+   ]
+  },
+  {
+   "id": "red",
+   "say": "Kırmızı kart!",
+   "cap": "*Kırmızı* *kart!*",
+   "gap": 0.25,
+   "img": "red",
+   "a": [
+    520,
+    260,
+    420
+   ],
+   "b": [
+    560,
+    330,
+    540
+   ],
+   "fx": [
+    "redcard"
+   ]
+  },
+  {
+   "id": "trophy",
+   "say": "Kupanın yanından geçip gidiyor. Bir daha asla, sahaya dönmemek üzere.",
+   "cap": "Kupanın yanından geçip gidiyor. Bir daha asla sahaya dönmemek üzere.",
+   "gap": 0.4,
+   "img": "trophy",
+   "a": [
+    540,
+    360,
+    540
+   ],
+   "b": [
+    1000,
+    360,
+    540
+   ],
+   "fx": [
+    "desat",
+    "letterbox"
+   ]
+  },
+  {
+   "id": "cta",
+   "say": "Sen olsan, ne yapardın?",
+   "cap": "Sen olsan ne *yapardın?*",
+   "gap": 1.0,
+   "img": "back",
+   "a": [
+    640,
+    380,
+    540
+   ],
+   "b": [
+    640,
+    350,
+    470
+   ],
+   "fx": [
+    "cta"
+   ]
+  }
+ ],
+ "speed": 1.1,
+ "series": "FUTBOLUN PSİKOLOJİSİ",
+ "title": "Zidane'ın Kafası: 3 Saniyede Kariyer Nasıl Yanar?",
+ "impact": {
+  "img": "head",
+  "a": [
+   740,
+   330,
+   470
+  ],
+  "b": [
+   730,
+   360,
+   540
+  ],
+  "fx": [
+   "impact"
+  ]
+ }
+}

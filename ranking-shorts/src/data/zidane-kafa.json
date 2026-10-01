@@ -1,0 +1,922 @@
+{
+ "slug": "zidane-kafa",
+ "series": "FUTBOLUN PSİKOLOJİSİ",
+ "fps": 30,
+ "frames": 1191,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/zidane-kafa/head.jpg",
+   "a": [
+    745,
+    330,
+    470
+   ],
+   "b": [
+    725,
+    360,
+    540
+   ],
+   "fx": [
+    "flash",
+    "shake"
+   ],
+   "to": 102,
+   "frames": 102
+  },
+  {
+   "id": "date",
+   "from": 102,
+   "img": "img/zidane-kafa/date.jpg",
+   "a": [
+    540,
+    360,
+    540
+   ],
+   "b": [
+    900,
+    360,
+    540
+   ],
+   "fx": [
+    "sepia",
+    "typehud"
+   ],
+   "to": 204,
+   "frames": 102
+  },
+  {
+   "id": "min",
+   "from": 204,
+   "img": "img/zidane-kafa/face2.jpg",
+   "a": [
+    600,
+    400,
+    460
+   ],
+   "b": [
+    590,
+    350,
+    400
+   ],
+   "fx": [
+    "clock"
+   ],
+   "to": 275,
+   "frames": 71
+  },
+  {
+   "id": "shirt",
+   "from": 275,
+   "img": "img/zidane-kafa/walk.jpg",
+   "a": [
+    480,
+    300,
+    450
+   ],
+   "b": [
+    880,
+    300,
+    450
+   ],
+   "fx": [
+    "tags"
+   ],
+   "to": 398,
+   "frames": 123
+  },
+  {
+   "id": "insult",
+   "from": 398,
+   "img": "img/zidane-kafa/walk.jpg",
+   "a": [
+    960,
+    320,
+    400
+   ],
+   "b": [
+    960,
+    300,
+    330
+   ],
+   "fx": [
+    "redtint",
+    "stamp:HAKARET",
+    "glitch"
+   ],
+   "to": 471,
+   "frames": 73
+  },
+  {
+   "id": "walk",
+   "from": 471,
+   "img": "img/zidane-kafa/walk.jpg",
+   "a": [
+    450,
+    340,
+    420
+   ],
+   "b": [
+    450,
+    330,
+    360
+   ],
+   "fx": [
+    "desat"
+   ],
+   "to": 534,
+   "frames": 63
+  },
+  {
+   "id": "freeze",
+   "from": 534,
+   "img": "img/zidane-kafa/face.jpg",
+   "a": [
+    930,
+    360,
+    540
+   ],
+   "b": [
+    930,
+    360,
+    520
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "to": 587,
+   "frames": 53
+  },
+  {
+   "id": "brain",
+   "from": 587,
+   "img": "img/zidane-kafa/face.jpg",
+   "a": [
+    930,
+    360,
+    520
+   ],
+   "b": [
+    960,
+    330,
+    470
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg",
+    "logic"
+   ],
+   "to": 761,
+   "frames": 174
+  },
+  {
+   "id": "why",
+   "from": 761,
+   "img": "img/zidane-kafa/face2.jpg",
+   "a": [
+    600,
+    330,
+    380
+   ],
+   "b": [
+    610,
+    300,
+    330
+   ],
+   "fx": [
+    "redduo",
+    "family",
+    "ecg"
+   ],
+   "to": 881,
+   "frames": 120
+  },
+  {
+   "id": "turn",
+   "from": 881,
+   "img": "img/zidane-kafa/walk.jpg",
+   "a": [
+    450,
+    320,
+    360
+   ],
+   "b": [
+    450,
+    300,
+    280
+   ],
+   "fx": [
+    "dark",
+    "ecg",
+    "tremble"
+   ],
+   "to": 944,
+   "frames": 63
+  },
+  {
+   "id": "impact",
+   "from": 944,
+   "img": "img/zidane-kafa/head.jpg",
+   "a": [
+    740,
+    330,
+    470
+   ],
+   "b": [
+    730,
+    360,
+    540
+   ],
+   "fx": [
+    "impact"
+   ],
+   "to": 968,
+   "frames": 24
+  },
+  {
+   "id": "red",
+   "from": 968,
+   "img": "img/zidane-kafa/red.jpg",
+   "a": [
+    520,
+    260,
+    420
+   ],
+   "b": [
+    560,
+    330,
+    540
+   ],
+   "fx": [
+    "redcard"
+   ],
+   "to": 1001,
+   "frames": 33
+  },
+  {
+   "id": "trophy",
+   "from": 1001,
+   "img": "img/zidane-kafa/trophy.jpg",
+   "a": [
+    540,
+    360,
+    540
+   ],
+   "b": [
+    1000,
+    360,
+    540
+   ],
+   "fx": [
+    "desat",
+    "letterbox"
+   ],
+   "to": 1120,
+   "frames": 119
+  },
+  {
+   "id": "cta",
+   "from": 1120,
+   "img": "img/zidane-kafa/back.jpg",
+   "a": [
+    640,
+    380,
+    540
+   ],
+   "b": [
+    640,
+    350,
+    470
+   ],
+   "fx": [
+    "cta"
+   ],
+   "to": 1191,
+   "frames": 71
+  }
+ ],
+ "words": [
+  {
+   "w": "BİR",
+   "s": 4,
+   "e": 8,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "DÜNYA",
+   "s": 8,
+   "e": 17,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "YILDIZI",
+   "s": 17,
+   "e": 30,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "KARİYERİNİ",
+   "s": 30,
+   "e": 52,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "SADECE",
+   "s": 52,
+   "e": 65,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "3",
+   "s": 65,
+   "e": 70,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "SANİYEDE",
+   "s": 70,
+   "e": 87,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "YAKTI.",
+   "s": 87,
+   "e": 96,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "9",
+   "s": 106,
+   "e": 111,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "TEMMUZ",
+   "s": 111,
+   "e": 123,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "2006.",
+   "s": 123,
+   "e": 145,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "BERLİN.",
+   "s": 145,
+   "e": 156,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "DÜNYA",
+   "s": 156,
+   "e": 167,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "KUPASI",
+   "s": 167,
+   "e": 184,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "FİNALİ.",
+   "s": 184,
+   "e": 200,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "ZİDANE'IN",
+   "s": 208,
+   "e": 227,
+   "hl": false,
+   "line": "min"
+  },
+  {
+   "w": "SON",
+   "s": 227,
+   "e": 232,
+   "hl": false,
+   "line": "min"
+  },
+  {
+   "w": "MAÇI.",
+   "s": 232,
+   "e": 242,
+   "hl": false,
+   "line": "min"
+  },
+  {
+   "w": "110.",
+   "s": 242,
+   "e": 256,
+   "hl": false,
+   "line": "min"
+  },
+  {
+   "w": "DAKİKA.",
+   "s": 256,
+   "e": 271,
+   "hl": false,
+   "line": "min"
+  },
+  {
+   "w": "MATERAZZİ",
+   "s": 279,
+   "e": 297,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "FORMASINI",
+   "s": 297,
+   "e": 316,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "ÇEKİYOR.",
+   "s": 316,
+   "e": 329,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "ZİDANE:",
+   "s": 329,
+   "e": 343,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "\"İSTİYORSAN",
+   "s": 343,
+   "e": 362,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "MAÇTAN",
+   "s": 362,
+   "e": 371,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "SONRA",
+   "s": 371,
+   "e": 380,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "VERİRİM.\"",
+   "s": 380,
+   "e": 394,
+   "hl": false,
+   "line": "shirt"
+  },
+  {
+   "w": "CEVAP:",
+   "s": 401,
+   "e": 416,
+   "hl": false,
+   "line": "insult"
+  },
+  {
+   "w": "KIZ",
+   "s": 420,
+   "e": 424,
+   "hl": false,
+   "line": "insult"
+  },
+  {
+   "w": "KARDEŞİNE",
+   "s": 424,
+   "e": 440,
+   "hl": false,
+   "line": "insult"
+  },
+  {
+   "w": "AĞIR",
+   "s": 440,
+   "e": 449,
+   "hl": false,
+   "line": "insult"
+  },
+  {
+   "w": "BİR",
+   "s": 449,
+   "e": 453,
+   "hl": false,
+   "line": "insult"
+  },
+  {
+   "w": "HAKARET.",
+   "s": 453,
+   "e": 465,
+   "hl": true,
+   "line": "insult"
+  },
+  {
+   "w": "ZİDANE",
+   "s": 475,
+   "e": 486,
+   "hl": false,
+   "line": "walk"
+  },
+  {
+   "w": "YÜRÜYOR",
+   "s": 486,
+   "e": 497,
+   "hl": false,
+   "line": "walk"
+  },
+  {
+   "w": "VE",
+   "s": 508,
+   "e": 512,
+   "hl": false,
+   "line": "walk"
+  },
+  {
+   "w": "DURUYOR.",
+   "s": 512,
+   "e": 526,
+   "hl": false,
+   "line": "walk"
+  },
+  {
+   "w": "ŞİMDİ",
+   "s": 537,
+   "e": 547,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "ZAMANI",
+   "s": 547,
+   "e": 561,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "DURDURALIM.",
+   "s": 561,
+   "e": 579,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "BEYNİN",
+   "s": 590,
+   "e": 599,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "ALARM",
+   "s": 599,
+   "e": 607,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "MERKEZİ",
+   "s": 607,
+   "e": 620,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "AMİGDALA",
+   "s": 620,
+   "e": 637,
+   "hl": true,
+   "line": "brain"
+  },
+  {
+   "w": "KONTROLÜ",
+   "s": 637,
+   "e": 650,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "ELE",
+   "s": 650,
+   "e": 659,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "GEÇİRİYOR.",
+   "s": 659,
+   "e": 676,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "KALP",
+   "s": 681,
+   "e": 686,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "ATIŞI",
+   "s": 686,
+   "e": 698,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "FIRLIYOR.",
+   "s": 698,
+   "e": 710,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "MANTIK",
+   "s": 715,
+   "e": 728,
+   "hl": false,
+   "line": "brain"
+  },
+  {
+   "w": "DEVRE",
+   "s": 738,
+   "e": 748,
+   "hl": true,
+   "line": "brain"
+  },
+  {
+   "w": "DIŞI.",
+   "s": 748,
+   "e": 757,
+   "hl": true,
+   "line": "brain"
+  },
+  {
+   "w": "ÇÜNKÜ",
+   "s": 765,
+   "e": 773,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "BEYİN",
+   "s": 773,
+   "e": 781,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "AİLESİNE",
+   "s": 781,
+   "e": 801,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "YAPILAN",
+   "s": 801,
+   "e": 813,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "SALDIRIYI",
+   "s": 813,
+   "e": 829,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "KENDİNE",
+   "s": 829,
+   "e": 841,
+   "hl": true,
+   "line": "why"
+  },
+  {
+   "w": "YAPILMIŞ",
+   "s": 841,
+   "e": 853,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "GİBİ",
+   "s": 853,
+   "e": 861,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "ALGILAR.",
+   "s": 861,
+   "e": 873,
+   "hl": false,
+   "line": "why"
+  },
+  {
+   "w": "VE",
+   "s": 884,
+   "e": 888,
+   "hl": false,
+   "line": "turn"
+  },
+  {
+   "w": "ZİDANE",
+   "s": 888,
+   "e": 900,
+   "hl": false,
+   "line": "turn"
+  },
+  {
+   "w": "GERİ",
+   "s": 911,
+   "e": 919,
+   "hl": false,
+   "line": "turn"
+  },
+  {
+   "w": "DÖNÜYOR.",
+   "s": 919,
+   "e": 930,
+   "hl": true,
+   "line": "turn"
+  },
+  {
+   "w": "KIRMIZI",
+   "s": 972,
+   "e": 988,
+   "hl": true,
+   "line": "red"
+  },
+  {
+   "w": "KART!",
+   "s": 988,
+   "e": 993,
+   "hl": true,
+   "line": "red"
+  },
+  {
+   "w": "KUPANIN",
+   "s": 1006,
+   "e": 1017,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "YANINDAN",
+   "s": 1017,
+   "e": 1028,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "GEÇİP",
+   "s": 1028,
+   "e": 1036,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "GİDİYOR.",
+   "s": 1036,
+   "e": 1047,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "BİR",
+   "s": 1050,
+   "e": 1054,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "DAHA",
+   "s": 1054,
+   "e": 1063,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "ASLA",
+   "s": 1063,
+   "e": 1071,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "SAHAYA",
+   "s": 1071,
+   "e": 1083,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "DÖNMEMEK",
+   "s": 1083,
+   "e": 1095,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "ÜZERE.",
+   "s": 1095,
+   "e": 1107,
+   "hl": false,
+   "line": "trophy"
+  },
+  {
+   "w": "SEN",
+   "s": 1124,
+   "e": 1129,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "OLSAN",
+   "s": 1129,
+   "e": 1138,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "NE",
+   "s": 1138,
+   "e": 1143,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YAPARDIN?",
+   "s": 1143,
+   "e": 1158,
+   "hl": true,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  543,
+  571,
+  598,
+  624,
+  648,
+  670,
+  691,
+  711,
+  730,
+  748,
+  765,
+  781,
+  796,
+  811,
+  826,
+  840,
+  853,
+  866,
+  878,
+  891,
+  902,
+  914,
+  925,
+  1131,
+  1155
+ ],
+ "impact": 944,
+ "devre": 738,
+ "hakaret": 453,
+ "amigdala": 620,
+ "typeStart": 107,
+ "typeRate": 1.3499999999999999,
+ "hud": [
+  "09.07.2006",
+  "BERLİN · OLYMPIASTADION",
+  "DÜNYA KUPASI FİNALİ"
+ ],
+ "audio": "mix/zidane-kafa.wav"
+}
