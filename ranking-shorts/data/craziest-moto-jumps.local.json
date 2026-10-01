@@ -1,0 +1,75 @@
+{
+  "slug": "craziest-moto-jumps",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "MOTO JUMPS"
+  ],
+  "hook": {
+    "start": 100,
+    "dur": 3.1,
+    "src": "raw/craziest-moto-jumps_2.mp4"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 5,
+      "src": "raw/craziest-moto-jumps_5.mp4",
+      "label": "EVEL KNIEVEL",
+      "credit": "docob5",
+      "url": "https://www.youtube.com/watch?v=ywiqmD3j8xc",
+      "start": 28,
+      "dur": 9,
+      "impact": 0
+    },
+    {
+      "rank": 4,
+      "src": "raw/craziest-moto-jumps_4.mp4",
+      "label": "DOUBLE BACKFLIP",
+      "credit": "X Games",
+      "url": "https://www.youtube.com/watch?v=sn7HTK-I7Lc",
+      "start": 15,
+      "dur": 9.5,
+      "impact": 0
+    },
+    {
+      "rank": 3,
+      "src": "raw/craziest-moto-jumps_3.mp4",
+      "label": "ARC JUMP",
+      "credit": "Red Bull",
+      "url": "https://www.youtube.com/watch?v=MLejkyXbJlc",
+      "start": 72,
+      "dur": 8,
+      "impact": 0
+    },
+    {
+      "rank": 2,
+      "src": "raw/craziest-moto-jumps_2.mp4",
+      "label": "WORLD RECORD",
+      "credit": "GoPro",
+      "url": "https://www.youtube.com/watch?v=FEzlLe1Gmgo",
+      "start": 99,
+      "dur": 8,
+      "impact": 0
+    },
+    {
+      "rank": 1,
+      "src": "raw/craziest-moto-jumps_1.mp4",
+      "label": "TRIPLE BACKFLIP",
+      "credit": "Nitro Circus",
+      "url": "https://www.youtube.com/watch?v=WFLwxGB1qFI",
+      "start": 44,
+      "dur": 11.5,
+      "impact": 8.3,
+      "replay": [
+        49.5,
+        3.5,
+        0.7
+      ]
+    }
+  ]
+}

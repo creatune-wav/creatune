@@ -4,7 +4,7 @@ import json, subprocess, sys, os
 slug, title, tags = sys.argv[1], sys.argv[2], sys.argv[3]
 p = json.load(open(f"data/{slug}.local.json"))
 raw = f"out/{slug}_hq.mp4"
-subprocess.run(["npx", "remotion", "render", "src/index.ts", slug, raw, "--crf=18", "--log=error"], check=True)
+subprocess.run(["npx", "remotion", "render", "src/index.ts", slug, raw, "--crf=18", "--log=error", f"--concurrency={os.cpu_count()}"], check=True)
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-c:v", "libx264", "-crf", "21", "-preset", "slow",
                 "-maxrate", "4.5M", "-bufsize", "9M", "-c:a", "copy", "-movflags", "+faststart", f"out/{slug}.mp4"], check=True)
 os.remove(raw)

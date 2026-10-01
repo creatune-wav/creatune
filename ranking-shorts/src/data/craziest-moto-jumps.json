@@ -1,0 +1,64 @@
+{
+  "slug": "craziest-moto-jumps",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "MOTO JUMPS"
+  ],
+  "hook": {
+    "clip": "clips/craziest-moto-jumps/hook.mp4",
+    "frames": 93
+  },
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "numbers": true,
+  "items": [
+    {
+      "rank": 5,
+      "label": "EVEL KNIEVEL",
+      "clip": "clips/craziest-moto-jumps/5.mp4",
+      "credit": "docob5",
+      "frames": 270,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 4,
+      "label": "DOUBLE BACKFLIP",
+      "clip": "clips/craziest-moto-jumps/4.mp4",
+      "credit": "X Games",
+      "frames": 285,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 3,
+      "label": "ARC JUMP",
+      "clip": "clips/craziest-moto-jumps/3.mp4",
+      "credit": "Red Bull",
+      "frames": 240,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 2,
+      "label": "WORLD RECORD",
+      "clip": "clips/craziest-moto-jumps/2.mp4",
+      "credit": "GoPro",
+      "frames": 240,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 1,
+      "label": "TRIPLE BACKFLIP",
+      "clip": "clips/craziest-moto-jumps/1.mp4",
+      "credit": "Nitro Circus",
+      "frames": 495,
+      "impact": 249,
+      "focus": 50
+    }
+  ]
+}
