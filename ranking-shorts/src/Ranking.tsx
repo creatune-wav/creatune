@@ -8,6 +8,7 @@ export type RankingData = {
   hook: { clip: string; frames: number };
   cta: { frames: number; sub: string; at?: "one" | "end" };
   items: Item[];
+  numbers?: boolean; // her klibin başında "Number five…" seslendirmesi
 };
 
 export const totalFrames = (d: RankingData) => d.hook.frames + d.items.reduce((s, x) => s + x.frames, 0);
@@ -17,13 +18,14 @@ const h = delayRender("font");
 font.load().then(() => { document.fonts.add(font); continueRender(h); });
 
 const BAND_TOP = 380, BAND_H = 1180; // video bandı; alt 360 px YouTube arayüzüne kalır
+const NUM: Record<number, string> = { 1: "one", 2: "two", 3: "three", 4: "four", 5: "five" };
 const RANK_COLOR: Record<number, string> = { 1: "#FFD400", 2: "#DADADA", 3: "#E8904A", 4: "#FFFFFF", 5: "#FFFFFF" };
 const txt = (w: number): React.CSSProperties => ({
   WebkitTextStroke: `${w}px #000`, paintOrder: "stroke fill", fontFamily: "Anton",
   textShadow: "0 4px 14px rgba(0,0,0,.5)", textTransform: "uppercase", letterSpacing: 0.5,
 });
 
-const ClipLayer: React.FC<{ src: string; focus: number; impact: number; volume?: number }> = ({ src, focus, impact, volume = 1 }) => {
+const ClipLayer: React.FC<{ src: string; focus: number; impact: number; volume?: number; duck?: boolean }> = ({ src, focus, impact, volume = 1, duck = false }) => {
   const f = useCurrentFrame();
   const punch = interpolate(f, [0, 9], [1.07, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
   // çarpma anında kısa sarsıntı
@@ -35,7 +37,7 @@ const ClipLayer: React.FC<{ src: string; focus: number; impact: number; volume?:
         style={{ width: "100%", height: "100%", objectFit: "cover", filter: "blur(38px) brightness(.45) saturate(1.2)", transform: "scale(1.25)" }} />
       <div style={{ position: "absolute", top: BAND_TOP, height: BAND_H, width: "100%", overflow: "hidden",
         transform: `translate(${shake}px, ${shake * 0.6}px) scale(${punch})` }}>
-        <OffthreadVideo src={staticFile(src)} volume={volume}
+        <OffthreadVideo src={staticFile(src)} volume={(fr) => (duck && fr < 38 ? 0.35 : 1) * volume}
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: `${focus}% 50%` }} />
       </div>
       {/* bant kenarlarını yumuşat */}
@@ -45,7 +47,7 @@ const ClipLayer: React.FC<{ src: string; focus: number; impact: number; volume?:
   );
 };
 
-export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }) => {
+export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items, numbers }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const H = hook.frames;
@@ -91,7 +93,8 @@ export const Ranking: React.FC<RankingData> = ({ slug, title, hook, cta, items }
 
       {items.map((it, i) => (
         <Sequence key={it.rank} from={starts[i]} durationInFrames={it.frames}>
-          <ClipLayer src={it.clip} focus={it.focus} impact={it.impact} />
+          <ClipLayer src={it.clip} focus={it.focus} impact={it.impact} duck={numbers} />
+          {numbers && <Sequence from={3}><Audio src={staticFile(`vo/num-${NUM[it.rank]}.wav`)} volume={1} /></Sequence>}
           <Audio src={staticFile("sfx/whoosh.wav")} volume={0.6} />
           <Sequence from={5}><Audio src={staticFile("sfx/hit.wav")} volume={0.4} /></Sequence>
           {it.rank === 1 && it.impact > 0 && (

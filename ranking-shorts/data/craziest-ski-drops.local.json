@@ -1,0 +1,76 @@
+{
+  "slug": "craziest-ski-drops",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "SKI MOMENTS"
+  ],
+  "hook": {
+    "start": 8,
+    "dur": 2.8,
+    "src": "raw/craziest-ski-drops_3.mp4",
+    "crop": "1150:1080:700:0"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 5,
+      "src": "raw/craziest-ski-drops_5.mp4",
+      "label": "161 M FLIGHT",
+      "credit": "Zhixory",
+      "url": "https://www.youtube.com/watch?v=B4eJGpvjO58",
+      "start": 70,
+      "dur": 9,
+      "impact": 6.0
+    },
+    {
+      "rank": 4,
+      "src": "raw/craziest-ski-drops_4.mp4",
+      "label": "WIND GUST",
+      "credit": "Barti",
+      "url": "https://www.youtube.com/watch?v=jlGW8COHX70",
+      "start": 29.5,
+      "dur": 9,
+      "impact": 0
+    },
+    {
+      "rank": 3,
+      "src": "raw/craziest-ski-drops_3.mp4",
+      "label": "INSANE LINE",
+      "credit": "Matchstick Productions",
+      "url": "https://www.youtube.com/watch?v=aDEaAOcDKnA",
+      "start": 49,
+      "dur": 8.5,
+      "impact": 0
+    },
+    {
+      "rank": 2,
+      "src": "raw/craziest-ski-drops_2.mp4",
+      "label": "255 FT CLIFF",
+      "credit": "Teton Gravity Research",
+      "url": "https://www.youtube.com/watch?v=-RYkapHBVs8",
+      "start": 82,
+      "dur": 10,
+      "impact": 0
+    },
+    {
+      "rank": 1,
+      "src": "raw/craziest-ski-drops_1.mp4",
+      "label": "150 FT FALL",
+      "credit": "Poor Judgement",
+      "url": "https://www.youtube.com/watch?v=KW8CGUMJHgs",
+      "start": 7,
+      "dur": 7.5,
+      "impact": 6.5,
+      "replay": [
+        11.0,
+        2.7,
+        0.6
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "craziest-bike-jumps",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "BIKE JUMPS"
+  ],
+  "hook": {
+    "start": 38.6,
+    "dur": 2.8,
+    "src": "raw/craziest-bike-jumps_2.mp4"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 5,
+      "src": "raw/craziest-bike-jumps_5.mp4",
+      "label": "BIKE TRAIN",
+      "credit": "GoPro",
+      "url": "https://www.youtube.com/watch?v=S68x5vjjSTM",
+      "start": 22,
+      "dur": 8,
+      "impact": 0
+    },
+    {
+      "rank": 4,
+      "src": "raw/craziest-bike-jumps_4.mp4",
+      "label": "GIANT BACKFLIP",
+      "credit": "Red Bull",
+      "url": "https://www.youtube.com/watch?v=KnLGB7rqOis",
+      "start": 29,
+      "dur": 9,
+      "impact": 0,
+      "crop": "1100:1000:400:40"
+    },
+    {
+      "rank": 3,
+      "src": "raw/craziest-bike-jumps_3.mp4",
+      "label": "DARKFEST GAP",
+      "credit": "Sam Reynolds",
+      "url": "https://www.youtube.com/watch?v=_6sHmSM11z0",
+      "start": 18,
+      "dur": 8,
+      "impact": 0
+    },
+    {
+      "rank": 2,
+      "src": "raw/craziest-bike-jumps_2.mp4",
+      "label": "RAMPAGE RUN",
+      "credit": "Red Bull Bike",
+      "url": "https://www.youtube.com/watch?v=a0XBHsSOEos",
+      "start": 35.5,
+      "dur": 8.5,
+      "impact": 0
+    },
+    {
+      "rank": 1,
+      "src": "raw/craziest-bike-jumps_1.mp4",
+      "label": "72 FT CANYON",
+      "credit": "GoPro",
+      "url": "https://www.youtube.com/watch?v=x76VEPXYaI0",
+      "start": 33.5,
+      "dur": 9,
+      "impact": 5.6,
+      "replay": [
+        38.4,
+        2.6,
+        0.5
+      ]
+    }
+  ]
+}

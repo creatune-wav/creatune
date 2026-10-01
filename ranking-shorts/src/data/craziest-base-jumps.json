@@ -1,0 +1,64 @@
+{
+  "slug": "craziest-base-jumps",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "BASE JUMPS"
+  ],
+  "hook": {
+    "clip": "clips/craziest-base-jumps/hook.mp4",
+    "frames": 93
+  },
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "numbers": true,
+  "items": [
+    {
+      "rank": 5,
+      "label": "CITY ROOFTOP",
+      "clip": "clips/craziest-base-jumps/5.mp4",
+      "credit": "Negative4",
+      "frames": 240,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 4,
+      "label": "WINGSUIT LINE",
+      "clip": "clips/craziest-base-jumps/4.mp4",
+      "credit": "GoPro",
+      "frames": 210,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 3,
+      "label": "PYRAMIDS FLYBY",
+      "clip": "clips/craziest-base-jumps/3.mp4",
+      "credit": "Red Bull",
+      "frames": 225,
+      "impact": 0,
+      "focus": 55
+    },
+    {
+      "rank": 2,
+      "label": "BATMAN CAVE",
+      "clip": "clips/craziest-base-jumps/2.mp4",
+      "credit": "EpicTV",
+      "frames": 240,
+      "impact": 108,
+      "focus": 50
+    },
+    {
+      "rank": 1,
+      "label": "1200 FT TOWER",
+      "clip": "clips/craziest-base-jumps/1.mp4",
+      "credit": "Sketchy Andy Lewis",
+      "frames": 390,
+      "impact": 48,
+      "focus": 50
+    }
+  ]
+}

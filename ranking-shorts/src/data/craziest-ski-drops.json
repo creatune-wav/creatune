@@ -1,0 +1,64 @@
+{
+  "slug": "craziest-ski-drops",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "SKI MOMENTS"
+  ],
+  "hook": {
+    "clip": "clips/craziest-ski-drops/hook.mp4",
+    "frames": 84
+  },
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "numbers": true,
+  "items": [
+    {
+      "rank": 5,
+      "label": "161 M FLIGHT",
+      "clip": "clips/craziest-ski-drops/5.mp4",
+      "credit": "Zhixory",
+      "frames": 270,
+      "impact": 180,
+      "focus": 50
+    },
+    {
+      "rank": 4,
+      "label": "WIND GUST",
+      "clip": "clips/craziest-ski-drops/4.mp4",
+      "credit": "Barti",
+      "frames": 270,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 3,
+      "label": "INSANE LINE",
+      "clip": "clips/craziest-ski-drops/3.mp4",
+      "credit": "Matchstick Productions",
+      "frames": 255,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 2,
+      "label": "255 FT CLIFF",
+      "clip": "clips/craziest-ski-drops/2.mp4",
+      "credit": "Teton Gravity Research",
+      "frames": 300,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 1,
+      "label": "150 FT FALL",
+      "clip": "clips/craziest-ski-drops/1.mp4",
+      "credit": "Poor Judgement",
+      "frames": 360,
+      "impact": 195,
+      "focus": 50
+    }
+  ]
+}

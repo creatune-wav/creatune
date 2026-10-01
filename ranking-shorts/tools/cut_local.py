@@ -15,7 +15,7 @@ def cut(src, st, dur, dst, crop=None, replay=None):
         fc.append(f"[0:v]trim={s0}:{s0+d0},setpts=(PTS-STARTPTS)/{sp},{vf}[v{i}]")
         fc.append(f"[0:a]atrim={s0}:{s0+d0},asetpts=PTS-STARTPTS,atempo={sp},aresample=48000[a{i}]")
     fc.append("".join(f"[v{i}][a{i}]" for i in range(len(parts))) + f"concat=n={len(parts)}:v=1:a=1[v][a0]")
-    fc.append("[a0]loudnorm=I=-16:TP=-1.5:LRA=11[a]")
+    fc.append("[a0]dynaudnorm=f=200:g=15:p=0.85,alimiter=limit=0.9[a]")  # sessizlikte loudnorm NaN verir
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-filter_complex", ";".join(fc),
         "-map", "[v]", "-map", "[a]", "-ar", "48000",
         "-c:v", "libx264", "-crf", "17", "-preset", "medium", "-pix_fmt", "yuv420p",
@@ -33,5 +33,5 @@ for it in plan["items"]:
                   "impact": round(it.get("impact", 0) * 30), "focus": it.get("focus", 50)})
     print(f"#{it['rank']} {it['start']}s +{it['dur']}s")
 json.dump({"slug": slug, "title": plan["title"], "hook": {"clip": f"clips/{slug}/hook.mp4", "frames": round(h["dur"] * 30)},
-           "cta": plan["cta"], "items": items},
+           "cta": plan["cta"], "numbers": plan.get("numbers", False), "items": items},
           open(f"src/data/{slug}.json", "w", encoding="utf-8"), indent=2, ensure_ascii=False)

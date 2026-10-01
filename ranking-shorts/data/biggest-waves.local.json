@@ -1,0 +1,74 @@
+{
+  "slug": "biggest-waves",
+  "title": [
+    "RANKING THE",
+    "BIGGEST WAVES"
+  ],
+  "hook": {
+    "start": 3.0,
+    "dur": 2.7,
+    "src": "raw/biggest-waves_1.mp4"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 5,
+      "src": "raw/biggest-waves_5.mp4",
+      "label": "TEAHUPOO",
+      "credit": "Red Bull",
+      "url": "https://www.youtube.com/watch?v=26KzUnEbTUs",
+      "start": 61,
+      "dur": 6.5,
+      "impact": 0,
+      "focus": 55
+    },
+    {
+      "rank": 4,
+      "src": "raw/biggest-waves_4.mp4",
+      "label": "64 FT JAWS",
+      "credit": "condor67",
+      "url": "https://www.youtube.com/watch?v=krsqU2HFJkw",
+      "start": 95,
+      "dur": 7,
+      "crop": "1440:1080:240:0",
+      "impact": 0
+    },
+    {
+      "rank": 3,
+      "src": "raw/biggest-waves_3.mp4",
+      "label": "NAZARE MONSTER",
+      "credit": "CoastlineTobi",
+      "url": "https://www.youtube.com/watch?v=8_I-96f7moQ",
+      "start": 35.5,
+      "dur": 6,
+      "impact": 2.0
+    },
+    {
+      "rank": 2,
+      "src": "raw/biggest-waves_2.mp4",
+      "label": "80 FT WAVE",
+      "credit": "World Surf League",
+      "url": "https://www.youtube.com/watch?v=bgXAAxvytPU",
+      "start": 2,
+      "dur": 7,
+      "crop": "960:640:80:0",
+      "impact": 5.8
+    },
+    {
+      "rank": 1,
+      "src": "raw/biggest-waves_1.mp4",
+      "label": "86 FT RECORD",
+      "credit": "SurferToday",
+      "url": "https://www.youtube.com/watch?v=yFEh_-tYTS0",
+      "start": 25,
+      "dur": 10.5,
+      "crop": "1100:1000:250:0",
+      "impact": 7.0
+    }
+  ]
+}

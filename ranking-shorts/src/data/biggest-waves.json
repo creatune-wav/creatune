@@ -1,0 +1,64 @@
+{
+  "slug": "biggest-waves",
+  "title": [
+    "RANKING THE",
+    "BIGGEST WAVES"
+  ],
+  "hook": {
+    "clip": "clips/biggest-waves/hook.mp4",
+    "frames": 81
+  },
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "numbers": true,
+  "items": [
+    {
+      "rank": 5,
+      "label": "TEAHUPOO",
+      "clip": "clips/biggest-waves/5.mp4",
+      "credit": "Red Bull",
+      "frames": 195,
+      "impact": 0,
+      "focus": 55
+    },
+    {
+      "rank": 4,
+      "label": "64 FT JAWS",
+      "clip": "clips/biggest-waves/4.mp4",
+      "credit": "condor67",
+      "frames": 210,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 3,
+      "label": "NAZARE MONSTER",
+      "clip": "clips/biggest-waves/3.mp4",
+      "credit": "CoastlineTobi",
+      "frames": 180,
+      "impact": 60,
+      "focus": 50
+    },
+    {
+      "rank": 2,
+      "label": "80 FT WAVE",
+      "clip": "clips/biggest-waves/2.mp4",
+      "credit": "World Surf League",
+      "frames": 210,
+      "impact": 174,
+      "focus": 50
+    },
+    {
+      "rank": 1,
+      "label": "86 FT RECORD",
+      "clip": "clips/biggest-waves/1.mp4",
+      "credit": "SurferToday",
+      "frames": 315,
+      "impact": 210,
+      "focus": 50
+    }
+  ]
+}

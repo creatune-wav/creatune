@@ -1,0 +1,64 @@
+{
+  "slug": "craziest-bike-jumps",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "BIKE JUMPS"
+  ],
+  "hook": {
+    "clip": "clips/craziest-bike-jumps/hook.mp4",
+    "frames": 84
+  },
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "numbers": true,
+  "items": [
+    {
+      "rank": 5,
+      "label": "BIKE TRAIN",
+      "clip": "clips/craziest-bike-jumps/5.mp4",
+      "credit": "GoPro",
+      "frames": 240,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 4,
+      "label": "GIANT BACKFLIP",
+      "clip": "clips/craziest-bike-jumps/4.mp4",
+      "credit": "Red Bull",
+      "frames": 270,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 3,
+      "label": "DARKFEST GAP",
+      "clip": "clips/craziest-bike-jumps/3.mp4",
+      "credit": "Sam Reynolds",
+      "frames": 240,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 2,
+      "label": "RAMPAGE RUN",
+      "clip": "clips/craziest-bike-jumps/2.mp4",
+      "credit": "Red Bull Bike",
+      "frames": 255,
+      "impact": 0,
+      "focus": 50
+    },
+    {
+      "rank": 1,
+      "label": "72 FT CANYON",
+      "clip": "clips/craziest-bike-jumps/1.mp4",
+      "credit": "GoPro",
+      "frames": 426,
+      "impact": 168,
+      "focus": 50
+    }
+  ]
+}

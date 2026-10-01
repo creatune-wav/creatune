@@ -1,0 +1,71 @@
+{
+  "slug": "craziest-base-jumps",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "BASE JUMPS"
+  ],
+  "hook": {
+    "start": 2.0,
+    "dur": 3.1,
+    "src": "raw/craziest-base-jumps_5.mp4"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 5,
+      "src": "raw/craziest-base-jumps_5.mp4",
+      "label": "CITY ROOFTOP",
+      "credit": "Negative4",
+      "url": "https://www.youtube.com/watch?v=jz69QeNwuDM",
+      "start": 15.5,
+      "dur": 8,
+      "impact": 0
+    },
+    {
+      "rank": 4,
+      "src": "raw/craziest-base-jumps_4.mp4",
+      "label": "WINGSUIT LINE",
+      "credit": "GoPro",
+      "url": "https://www.youtube.com/watch?v=kTzwvyzzfjk",
+      "start": 43,
+      "dur": 7,
+      "impact": 0
+    },
+    {
+      "rank": 3,
+      "src": "raw/craziest-base-jumps_3.mp4",
+      "label": "PYRAMIDS FLYBY",
+      "credit": "Red Bull",
+      "url": "https://www.youtube.com/watch?v=wj_ZEDISBnA",
+      "start": 99,
+      "dur": 7.5,
+      "impact": 0,
+      "focus": 55
+    },
+    {
+      "rank": 2,
+      "src": "raw/craziest-base-jumps_2.mp4",
+      "label": "BATMAN CAVE",
+      "credit": "EpicTV",
+      "url": "https://www.youtube.com/watch?v=8L8UCfxmtSw",
+      "start": 97,
+      "dur": 8,
+      "impact": 3.6
+    },
+    {
+      "rank": 1,
+      "src": "raw/craziest-base-jumps_1.mp4",
+      "label": "1200 FT TOWER",
+      "credit": "Sketchy Andy Lewis",
+      "url": "https://www.youtube.com/watch?v=lv7GcS_v32Y",
+      "start": 4.5,
+      "dur": 13,
+      "impact": 1.6
+    }
+  ]
+}
