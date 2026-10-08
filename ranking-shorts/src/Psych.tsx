@@ -160,13 +160,15 @@ const SceneView: React.FC<{ s: Scene; d: PsychData }> = ({ s, d }) => {
       {fx("poll") && <Poll o={s.opt!} />}
       {fx("stamp") && <Stamp text={s.opt!.stamp} at={d.marks![s.opt!.stampAt] - s.from} color={s.opt!.color} />}
       {fx("passmap") && <PassMap />}
+      {fx("hooktitle") && <HookTitle o={s.opt!} />}
+      {fx("finals") && <Finals o={s.opt!} />}
       {fx("stats") && <Stats o={s.opt!} d={d} s={s} />}
       {fx("bigstat") && <BigStat o={s.opt!} d={d} s={s} />}
 
       {/* geçiş flaşı */}
       <AbsoluteFill style={{ background: "#fff", pointerEvents: "none",
         opacity: fx("impact") ? interpolate(f, [0, 3], [.95, 0], clamp) : fx("flash") ? interpolate(f, [0, 1, 6], [0, .7, 0], clamp)
-          : fx("redcard") ? 0 : interpolate(f, [0, 3], [.35, 0], clamp) }} />
+          : fx("redcard") || s.from === 0 ? 0 : interpolate(f, [0, 3], [.35, 0], clamp) }} />
       {fx("redcard") && <AbsoluteFill style={{ background: RED, opacity: interpolate(f, [0, 8], [.55, 0], clamp) }} />}
       {(fx("brain") || fx("why") || fx("turn") || fx("ecg")) && (
         <AbsoluteFill style={{ boxShadow: `inset 0 0 ${180 + bp * 120}px rgba(255,0,0,${.25 + bp * .35})`, pointerEvents: "none" }} />
@@ -553,6 +555,41 @@ const Table: React.FC<{ o: Record<string, any>; d: PsychData; s: Scene }> = ({ o
   );
 };
 
+// kanca başlığı: ilk kareden itibaren ekranda, ilk saniyede vurucu
+const HookTitle: React.FC<{ o: Record<string, any> }> = ({ o }) => {
+  const f = useCurrentFrame();
+  const k = interpolate(f, [0, 5], [1.25, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+  const k2 = interpolate(f, [6, 11], [1.6, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+  return (
+    <div style={{ position: "absolute", top: 250, width: W, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ ...stroke(12), fontSize: 110, color: "#fff", lineHeight: 1, transform: `scale(${k})` }}>{o.l1}</div>
+      <div style={{ ...stroke(14), fontSize: 150, color: YEL, lineHeight: 1.02, transform: `scale(${k2}) rotate(-2deg)`,
+        opacity: f >= 6 ? 1 : 0, textShadow: "0 0 40px rgba(255,212,0,.35), 0 8px 26px rgba(0,0,0,.8)" }}>{o.l2}</div>
+    </div>
+  );
+};
+
+const Finals: React.FC<{ o: Record<string, any> }> = ({ o }) => {
+  const f = useCurrentFrame();
+  return (
+    <div style={{ position: "absolute", top: 300, width: W, display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
+      {o.items.map(([y, name]: [string, string], i: number) => {
+        const t = f - 3 - i * 7;
+        const p = spring({ frame: t, fps: 30, config: { damping: 12, stiffness: 200 } });
+        const x = interpolate(t, [4, 9], [2, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+        return (
+          <div key={y} style={{ display: "flex", alignItems: "center", gap: 22, background: "rgba(0,0,0,.72)", padding: "12px 26px",
+            borderRadius: 12, border: "2px solid rgba(255,255,255,.25)", transform: `translateX(${(1 - p) * -500}px)`, opacity: t >= 0 ? 1 : 0, minWidth: 720 }}>
+            <span style={{ fontFamily: "Anton", fontSize: 70, color: YEL }}>{y}</span>
+            <span style={{ ...mono, fontSize: 40, color: "#fff", flex: 1 }}>{name} FİNALİ</span>
+            <span style={{ fontFamily: "Anton", fontSize: 80, color: RED, transform: `scale(${t >= 4 ? x : 0})`, display: "inline-block" }}>✕</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 // derbi: Vinicius topu Mbappé'ye verir, Arda boşta bekler
 const PassMap: React.FC = () => {
   const f = useCurrentFrame();
@@ -668,7 +705,10 @@ const Poll: React.FC<{ o: Record<string, any> }> = ({ o }) => {
       <div style={{ ...stroke(10), fontSize: 104, color: "#fff", lineHeight: 1.05, textAlign: "center", padding: "0 50px", transform: `scale(${k})` }}>{o.q}</div>
       {opt(o.a, "#1E9E5A", 0)}
       {opt(o.b, RED, 1)}
+      {o.c && opt(o.c, "#2B5BD7", 2)}
       <div style={{ ...mono, fontSize: 40, color: YEL, marginTop: 34, transform: `translateY(${Math.sin(f / 4) * 8}px)` }}>YORUMLARA YAZ ↓</div>
+      {o.next && <div style={{ ...mono, fontSize: 34, color: "#fff", marginTop: 26, background: "rgba(0,0,0,.65)", padding: "10px 24px",
+        border: `2px solid ${RED}`, opacity: interpolate(f, [24, 32], [0, 1], clamp) }}>▶ {o.next}</div>}
     </div>
   );
 };

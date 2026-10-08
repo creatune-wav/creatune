@@ -1,0 +1,431 @@
+{
+ "slug": "messi-2016",
+ "series": "PSİKOFUTBOL",
+ "edge_rate": "+22%",
+ "edge_pitch": "-4Hz",
+ "pause": 0.16,
+ "tail": 0.07,
+ "title": "Messi Milli Takımı 2 Kez Bıraktı: İlkinde Sebep Bir Penaltıydı",
+ "roles": {
+  "type": {
+   "line": "date",
+   "hud": [
+    "26.06.2016",
+    "NEW JERSEY · COPA AMÉRICA",
+    "ARJANTİN – ŞİLİ"
+   ]
+  },
+  "kicks": [
+   "date",
+   "freeze"
+  ],
+  "ticks": [
+   "pen",
+   "freeze"
+  ],
+  "freeze": "freeze",
+  "resume": "psych",
+  "beats": {
+   "from": "freeze",
+   "to": "psych",
+   "bpm": [
+    70,
+    118
+   ]
+  },
+  "triumph": "turn",
+  "whoosh": [
+   "date",
+   "pen",
+   "three",
+   "quote",
+   "turn",
+   "y21",
+   "y22",
+   "growth",
+   "cta"
+  ]
+ },
+ "marks": {
+  "miss": {
+   "line": "pen",
+   "word": "DİREĞİN",
+   "sfx": [
+    "bigglitch"
+   ]
+  },
+  "kader": {
+   "line": "psych",
+   "word": "ÇARESİZLİK",
+   "sfx": [
+    "alarm"
+   ]
+  },
+  "iki": {
+   "line": "y22",
+   "word": "DÜNYA",
+   "sfx": [
+    "stamp"
+   ]
+  }
+ },
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Messi, milli takımı iki kez bıraktı. İlkinin sebebi... tek bir penaltı.",
+   "cap": "Messi milli takımı *iki* *kez* bıraktı. İlkinin sebebi... tek bir *penaltı.*",
+   "gap": 0.05,
+   "img": "tear",
+   "a": [
+    600,
+    300,
+    400
+   ],
+   "b": [
+    600,
+    330,
+    460
+   ],
+   "fx": [
+    "shake",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "MİLLİ TAKIMI",
+    "l2": "2 KEZ BIRAKTI"
+   },
+   "cuts": [
+    {
+     "word": "TEK",
+     "img": "kneel",
+     "a": [
+      830,
+      330,
+      420
+     ],
+     "b": [
+      820,
+      380,
+      500
+     ],
+     "fx": [
+      "desat"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "date",
+   "say": "Haziran, iki bin on altı. Kopa Amerika finali.",
+   "cap": "Haziran 2016. Copa América finali.",
+   "gap": 0.05,
+   "img": "penwide",
+   "a": [
+    760,
+    380,
+    540
+   ],
+   "b": [
+    820,
+    320,
+    420
+   ],
+   "fx": [
+    "typehud"
+   ]
+  },
+  {
+   "id": "pen",
+   "say": "Penaltılar. İlk atıcı Messi... ve top, direğin üstünden uçuyor.",
+   "cap": "Penaltılar. İlk atıcı Messi... ve top *direğin* *üstünden* uçuyor.",
+   "gap": 0.05,
+   "img": "penwide",
+   "a": [
+    860,
+    300,
+    380
+   ],
+   "b": [
+    870,
+    270,
+    300
+   ],
+   "fx": [
+    "desat"
+   ],
+   "cuts": [
+    {
+     "word": "DİREĞİN",
+     "img": "fallen",
+     "a": [
+      500,
+      380,
+      500
+     ],
+     "b": [
+      490,
+      420,
+      420
+     ],
+     "fx": [
+      "shake",
+      "desat"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "three",
+   "say": "Üst üste üçüncü final. Üçüncü yenilgi.",
+   "cap": "Üst üste *3.* final. *3.* yenilgi.",
+   "gap": 0.05,
+   "img": "back15",
+   "a": [
+    480,
+    320,
+    420
+   ],
+   "b": [
+    480,
+    290,
+    360
+   ],
+   "fx": [
+    "finals",
+    "desat"
+   ],
+   "opt": {
+    "items": [
+     [
+      "2014",
+      "DÜNYA KUPASI"
+     ],
+     [
+      "2015",
+      "COPA AMÉRICA"
+     ],
+     [
+      "2016",
+      "COPA AMÉRICA"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "quote",
+   "say": "Maçtan sonra: Milli takım, benim için bitti.",
+   "cap": "Maçtan sonra: \"Milli takım benim için bitti.\"",
+   "gap": 0.08,
+   "img": "tear",
+   "a": [
+    600,
+    330,
+    460
+   ],
+   "b": [
+    610,
+    300,
+    380
+   ],
+   "fx": [
+    "quote",
+    "desat"
+   ],
+   "opt": {
+    "text": "“Milli takım benim için bitti.”",
+    "by": "LIONEL MESSI · 26.06.2016"
+   }
+  },
+  {
+   "id": "freeze",
+   "say": "Şimdi... zamanı durduralım.",
+   "cap": "Şimdi... zamanı durduralım.",
+   "gap": 0.1,
+   "img": "console",
+   "a": [
+    560,
+    340,
+    460
+   ],
+   "b": [
+    560,
+    330,
+    430
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "26.06.2016"
+   }
+  },
+  {
+   "id": "psych",
+   "say": "Buna öğrenilmiş çaresizlik denir: Beyin, kaybetmeyi kader sanır.",
+   "cap": "Buna *öğrenilmiş* *çaresizlik* denir: Beyin kaybetmeyi *kader* sanır.",
+   "gap": 0.08,
+   "img": "console",
+   "a": [
+    560,
+    320,
+    420
+   ],
+   "b": [
+    560,
+    300,
+    360
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "kader",
+    "alarm": "ÇARESİZLİK",
+    "cortex": "PREFRONTAL · UMUT",
+    "amyg": "KAYIP KORKUSU"
+   }
+  },
+  {
+   "id": "turn",
+   "say": "Ama Messi... geri döndü.",
+   "cap": "Ama Messi... *geri* *döndü.*",
+   "gap": 0.05,
+   "img": "walk",
+   "a": [
+    600,
+    400,
+    460
+   ],
+   "b": [
+    590,
+    350,
+    380
+   ],
+   "fx": [
+    "colorup"
+   ]
+  },
+  {
+   "id": "y21",
+   "say": "İki bin yirmi bir: Brezilya'yı yenip, ilk büyük kupasını kaldırdı.",
+   "cap": "2021: Brezilya'yı yenip *ilk* *büyük* *kupasını* kaldırdı.",
+   "gap": 0.05,
+   "img": "neymar",
+   "a": [
+    640,
+    360,
+    520
+   ],
+   "b": [
+    650,
+    330,
+    420
+   ],
+   "fx": []
+  },
+  {
+   "id": "y22",
+   "say": "İki bin yirmi iki: Finalde iki gol... ve dünya şampiyonluğu.",
+   "cap": "2022: Finalde *2* *gol...* ve *dünya* *şampiyonluğu.*",
+   "gap": 0.05,
+   "img": "pen22",
+   "a": [
+    700,
+    380,
+    520
+   ],
+   "b": [
+    760,
+    360,
+    440
+   ],
+   "fx": [],
+   "cuts": [
+    {
+     "word": "DÜNYA",
+     "img": "kiss",
+     "a": [
+      580,
+      300,
+      460
+     ],
+     "b": [
+      580,
+      360,
+      540
+     ],
+     "fx": [
+      "flash",
+      "shake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "growth",
+   "say": "Buna travma sonrası büyüme denir. Seni kıran yer, en güçlü yerin olur.",
+   "cap": "Buna *travma* *sonrası* *büyüme* denir. Seni kıran yer, en güçlü yerin olur.",
+   "gap": 0.05,
+   "img": "bisht",
+   "a": [
+    700,
+    380,
+    540
+   ],
+   "b": [
+    700,
+    340,
+    440
+   ],
+   "fx": [],
+   "cuts": [
+    {
+     "word": "SENİ",
+     "img": "run22",
+     "a": [
+      780,
+      380,
+      520
+     ],
+     "b": [
+      800,
+      360,
+      440
+     ],
+     "fx": []
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "say": "Sence tarihin en büyüğü kim? Yorumlara yaz.",
+   "cap": "Sence tarihin en büyüğü kim? Yorumlara yaz.",
+   "gap": 1.0,
+   "img": "mic",
+   "a": [
+    640,
+    330,
+    460
+   ],
+   "b": [
+    640,
+    300,
+    400
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "TARİHİN EN BÜYÜĞÜ KİM?",
+    "a": "1 · MESSİ",
+    "b": "2 · RONALDO",
+    "c": "3 · MARADONA",
+    "next": "SIRADAKİ BÖLÜM: TANRI'NIN ELİ"
+   }
+  }
+ ]
+}

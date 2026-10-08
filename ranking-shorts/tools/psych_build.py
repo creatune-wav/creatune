@@ -106,6 +106,13 @@ for ln in lines:
     if ln.get("img") is None: continue   # önceki sahne devam eder
     scenes.append({"id": ln["id"], "from": f(ln["start"] - (0.12 if ln is not lines[0] else LEAD)), "img": ln["img"],
                    "a": ln["a"], "b": ln["b"], "fx": ln["fx"], "opt": ln.get("opt", {})})
+# hızlı kurgu: satır içinde bir kelimede (ya da t saniyede) başka görüntüye kes
+for ln in lines:
+    for c in ln.get("cuts", []):
+        at = next((w["s"] for w in words if w["line"] == ln["id"] and w["w"].startswith(c["word"])), None) if "word" in c else None
+        at = (at - 0.05) if at is not None else ln["start"] + c.get("t", ln["dur"] / 2)
+        scenes.append({"id": f"{ln['id']}~{c.get('word', c.get('t'))}", "from": f(at), "img": c["img"], "a": c["a"], "b": c["b"],
+                       "fx": c.get("fx", []), "opt": c.get("opt", {})})
 if IMPACT is not None:
     imp = R["impact"]["scene"]
     scenes.append({"id": "impact", "from": f(IMPACT), "img": imp["img"], "a": imp["a"], "b": imp["b"], "fx": imp["fx"], "opt": {}})
@@ -278,7 +285,7 @@ put(sfx, tinnitus(1.4), 0.15, 0.6)
 
 # sahne geçiş whoosh'ları
 for s in scenes:
-    if s["id"] in R.get("whoosh", []):
+    if s["id"] in R.get("whoosh", []) or "~" in s["id"]:
         put(sfx, whoosh(0.45, True), max(0, s["from"] / FPS - 0.22), 0.32, pan=rng.uniform(-.4, .4))
 
 # HUD daktilo

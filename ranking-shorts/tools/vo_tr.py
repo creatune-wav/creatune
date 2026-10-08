@@ -78,7 +78,9 @@ for ln in sc["lines"]:
     text = ln.get("say_neural", ln["say"]) if engine in ("edge", "gtrans") else ln["say"]
     # "..." = dramatik duraklama: parçaları ayrı üret, araya sessizlik koy
     parts, sr = [], 48000
-    for chunk in (x.strip() for x in text.split("...")):
+    # nöral motorlar cümleyi bütün okursa tonlama doğal kalır; "..." onların kendi duraklamasına bırakılır
+    chunks = [text.replace("...", ",")] if engine in ("edge", "gtrans") and sc.get("whole", True) else text.split("...")
+    for chunk in (x.strip() for x in chunks):
         if not chunk: continue
         if engine == "edge":
             y, sr = edge_chunk(chunk, sc.get("edge_rate", "+4%"))
@@ -87,8 +89,8 @@ for ln in sc["lines"]:
         else:
             y, sr = piper_chunk(chunk, ln.get("speed", sc.get("speed", 1.0)))
         nz = np.nonzero(np.abs(y) > 0.01)[0]
-        y = y[max(0, nz[0] - int(sr * 0.01)): nz[-1] + int(sr * 0.16)] if len(nz) else y
-        if parts: parts.append(np.zeros(int(sr * ln.get("pause", 0.32))))
+        y = y[max(0, nz[0] - int(sr * 0.04)): nz[-1] + int(sr * sc.get("tail", 0.16))] if len(nz) else y
+        if parts: parts.append(np.zeros(int(sr * ln.get("pause", sc.get("pause", 0.32)))))
         parts.append(y)
     raw = f"{out}/{ln['id']}.raw.wav"
     sf.write(raw, np.concatenate(parts), sr)

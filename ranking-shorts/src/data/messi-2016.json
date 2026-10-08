@@ -1,0 +1,1009 @@
+{
+ "slug": "messi-2016",
+ "series": "PSİKOFUTBOL",
+ "fps": 30,
+ "frames": 1181,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/messi-2016/tear.jpg",
+   "a": [
+    600,
+    300,
+    400
+   ],
+   "b": [
+    600,
+    330,
+    460
+   ],
+   "fx": [
+    "shake",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "MİLLİ TAKIMI",
+    "l2": "2 KEZ BIRAKTI"
+   },
+   "to": 116,
+   "frames": 116
+  },
+  {
+   "id": "hook~TEK",
+   "from": 116,
+   "img": "img/messi-2016/kneel.jpg",
+   "a": [
+    830,
+    330,
+    420
+   ],
+   "b": [
+    820,
+    380,
+    500
+   ],
+   "fx": [
+    "desat"
+   ],
+   "opt": {},
+   "to": 148,
+   "frames": 32
+  },
+  {
+   "id": "date",
+   "from": 148,
+   "img": "img/messi-2016/penwide.jpg",
+   "a": [
+    760,
+    380,
+    540
+   ],
+   "b": [
+    820,
+    320,
+    420
+   ],
+   "fx": [
+    "typehud"
+   ],
+   "opt": {},
+   "to": 249,
+   "frames": 101
+  },
+  {
+   "id": "pen",
+   "from": 249,
+   "img": "img/messi-2016/penwide.jpg",
+   "a": [
+    860,
+    300,
+    380
+   ],
+   "b": [
+    870,
+    270,
+    300
+   ],
+   "fx": [
+    "desat"
+   ],
+   "opt": {},
+   "to": 323,
+   "frames": 74
+  },
+  {
+   "id": "pen~DİREĞİN",
+   "from": 323,
+   "img": "img/messi-2016/fallen.jpg",
+   "a": [
+    500,
+    380,
+    500
+   ],
+   "b": [
+    490,
+    420,
+    420
+   ],
+   "fx": [
+    "shake",
+    "desat"
+   ],
+   "opt": {},
+   "to": 379,
+   "frames": 56
+  },
+  {
+   "id": "three",
+   "from": 379,
+   "img": "img/messi-2016/back15.jpg",
+   "a": [
+    480,
+    320,
+    420
+   ],
+   "b": [
+    480,
+    290,
+    360
+   ],
+   "fx": [
+    "finals",
+    "desat"
+   ],
+   "opt": {
+    "items": [
+     [
+      "2014",
+      "DÜNYA KUPASI"
+     ],
+     [
+      "2015",
+      "COPA AMÉRICA"
+     ],
+     [
+      "2016",
+      "COPA AMÉRICA"
+     ]
+    ]
+   },
+   "to": 470,
+   "frames": 91
+  },
+  {
+   "id": "quote",
+   "from": 470,
+   "img": "img/messi-2016/tear.jpg",
+   "a": [
+    600,
+    330,
+    460
+   ],
+   "b": [
+    610,
+    300,
+    380
+   ],
+   "fx": [
+    "quote",
+    "desat"
+   ],
+   "opt": {
+    "text": "“Milli takım benim için bitti.”",
+    "by": "LIONEL MESSI · 26.06.2016"
+   },
+   "to": 550,
+   "frames": 80
+  },
+  {
+   "id": "freeze",
+   "from": 550,
+   "img": "img/messi-2016/console.jpg",
+   "a": [
+    560,
+    340,
+    460
+   ],
+   "b": [
+    560,
+    330,
+    430
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "26.06.2016"
+   },
+   "to": 596,
+   "frames": 46
+  },
+  {
+   "id": "psych",
+   "from": 596,
+   "img": "img/messi-2016/console.jpg",
+   "a": [
+    560,
+    320,
+    420
+   ],
+   "b": [
+    560,
+    300,
+    360
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "kader",
+    "alarm": "ÇARESİZLİK",
+    "cortex": "PREFRONTAL · UMUT",
+    "amyg": "KAYIP KORKUSU"
+   },
+   "to": 694,
+   "frames": 98
+  },
+  {
+   "id": "turn",
+   "from": 694,
+   "img": "img/messi-2016/walk.jpg",
+   "a": [
+    600,
+    400,
+    460
+   ],
+   "b": [
+    590,
+    350,
+    380
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "opt": {},
+   "to": 737,
+   "frames": 43
+  },
+  {
+   "id": "y21",
+   "from": 737,
+   "img": "img/messi-2016/neymar.jpg",
+   "a": [
+    640,
+    360,
+    520
+   ],
+   "b": [
+    650,
+    330,
+    420
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 832,
+   "frames": 95
+  },
+  {
+   "id": "y22",
+   "from": 832,
+   "img": "img/messi-2016/pen22.jpg",
+   "a": [
+    700,
+    380,
+    520
+   ],
+   "b": [
+    760,
+    360,
+    440
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 884,
+   "frames": 52
+  },
+  {
+   "id": "y22~DÜNYA",
+   "from": 884,
+   "img": "img/messi-2016/kiss.jpg",
+   "a": [
+    580,
+    300,
+    460
+   ],
+   "b": [
+    580,
+    360,
+    540
+   ],
+   "fx": [
+    "flash",
+    "shake"
+   ],
+   "opt": {},
+   "to": 918,
+   "frames": 34
+  },
+  {
+   "id": "growth",
+   "from": 918,
+   "img": "img/messi-2016/bisht.jpg",
+   "a": [
+    700,
+    380,
+    540
+   ],
+   "b": [
+    700,
+    340,
+    440
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 995,
+   "frames": 77
+  },
+  {
+   "id": "growth~SENİ",
+   "from": 995,
+   "img": "img/messi-2016/run22.jpg",
+   "a": [
+    780,
+    380,
+    520
+   ],
+   "b": [
+    800,
+    360,
+    440
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 1051,
+   "frames": 56
+  },
+  {
+   "id": "cta",
+   "from": 1051,
+   "img": "img/messi-2016/mic.jpg",
+   "a": [
+    640,
+    330,
+    460
+   ],
+   "b": [
+    640,
+    300,
+    400
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "TARİHİN EN BÜYÜĞÜ KİM?",
+    "a": "1 · MESSİ",
+    "b": "2 · RONALDO",
+    "c": "3 · MARADONA",
+    "next": "SIRADAKİ BÖLÜM: TANRI'NIN ELİ"
+   },
+   "to": 1181,
+   "frames": 130
+  }
+ ],
+ "words": [
+  {
+   "w": "MESSİ",
+   "s": 4,
+   "e": 16,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "MİLLİ",
+   "s": 16,
+   "e": 28,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "TAKIMI",
+   "s": 28,
+   "e": 45,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "İKİ",
+   "s": 45,
+   "e": 57,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "KEZ",
+   "s": 57,
+   "e": 63,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "BIRAKTI.",
+   "s": 63,
+   "e": 81,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "İLKİNİN",
+   "s": 81,
+   "e": 99,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "SEBEBİ",
+   "s": 99,
+   "e": 117,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "TEK",
+   "s": 117,
+   "e": 123,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "BİR",
+   "s": 123,
+   "e": 129,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "PENALTI.",
+   "s": 129,
+   "e": 147,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "HAZİRAN",
+   "s": 151,
+   "e": 168,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "2016.",
+   "s": 168,
+   "e": 190,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "COPA",
+   "s": 220,
+   "e": 227,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "AMÉRİCA",
+   "s": 227,
+   "e": 238,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "FİNALİ.",
+   "s": 238,
+   "e": 249,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "PENALTILAR.",
+   "s": 253,
+   "e": 277,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "İLK",
+   "s": 277,
+   "e": 283,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "ATICI",
+   "s": 283,
+   "e": 301,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "MESSİ",
+   "s": 301,
+   "e": 313,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "VE",
+   "s": 313,
+   "e": 319,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "TOP",
+   "s": 319,
+   "e": 325,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "DİREĞİN",
+   "s": 325,
+   "e": 342,
+   "hl": true,
+   "line": "pen"
+  },
+  {
+   "w": "ÜSTÜNDEN",
+   "s": 342,
+   "e": 360,
+   "hl": true,
+   "line": "pen"
+  },
+  {
+   "w": "UÇUYOR.",
+   "s": 360,
+   "e": 378,
+   "hl": false,
+   "line": "pen"
+  },
+  {
+   "w": "ÜST",
+   "s": 383,
+   "e": 388,
+   "hl": false,
+   "line": "three"
+  },
+  {
+   "w": "ÜSTE",
+   "s": 388,
+   "e": 398,
+   "hl": false,
+   "line": "three"
+  },
+  {
+   "w": "3.",
+   "s": 398,
+   "e": 404,
+   "hl": true,
+   "line": "three"
+  },
+  {
+   "w": "FİNAL.",
+   "s": 404,
+   "e": 414,
+   "hl": false,
+   "line": "three"
+  },
+  {
+   "w": "3.",
+   "s": 447,
+   "e": 453,
+   "hl": true,
+   "line": "three"
+  },
+  {
+   "w": "YENİLGİ.",
+   "s": 453,
+   "e": 470,
+   "hl": false,
+   "line": "three"
+  },
+  {
+   "w": "MAÇTAN",
+   "s": 473,
+   "e": 484,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "SONRA:",
+   "s": 484,
+   "e": 495,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "\"MİLLİ",
+   "s": 495,
+   "e": 506,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "TAKIM",
+   "s": 506,
+   "e": 516,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "BENİM",
+   "s": 516,
+   "e": 527,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "İÇİN",
+   "s": 527,
+   "e": 538,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "BİTTİ.\"",
+   "s": 538,
+   "e": 549,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "ŞİMDİ",
+   "s": 554,
+   "e": 563,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "ZAMANI",
+   "s": 563,
+   "e": 576,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "DURDURALIM.",
+   "s": 576,
+   "e": 594,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "BUNA",
+   "s": 599,
+   "e": 607,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "ÖĞRENİLMİŞ",
+   "s": 607,
+   "e": 622,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "ÇARESİZLİK",
+   "s": 622,
+   "e": 637,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DENİR:",
+   "s": 637,
+   "e": 644,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BEYİN",
+   "s": 649,
+   "e": 658,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KAYBETMEYİ",
+   "s": 658,
+   "e": 676,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KADER",
+   "s": 676,
+   "e": 684,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "SANIR.",
+   "s": 684,
+   "e": 693,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "AMA",
+   "s": 698,
+   "e": 708,
+   "hl": false,
+   "line": "turn"
+  },
+  {
+   "w": "MESSİ",
+   "s": 708,
+   "e": 717,
+   "hl": false,
+   "line": "turn"
+  },
+  {
+   "w": "GERİ",
+   "s": 721,
+   "e": 729,
+   "hl": true,
+   "line": "turn"
+  },
+  {
+   "w": "DÖNDÜ.",
+   "s": 729,
+   "e": 737,
+   "hl": true,
+   "line": "turn"
+  },
+  {
+   "w": "2021:",
+   "s": 742,
+   "e": 760,
+   "hl": false,
+   "line": "y21"
+  },
+  {
+   "w": "BREZİLYA'YI",
+   "s": 760,
+   "e": 778,
+   "hl": false,
+   "line": "y21"
+  },
+  {
+   "w": "YENİP",
+   "s": 778,
+   "e": 787,
+   "hl": false,
+   "line": "y21"
+  },
+  {
+   "w": "İLK",
+   "s": 787,
+   "e": 791,
+   "hl": true,
+   "line": "y21"
+  },
+  {
+   "w": "BÜYÜK",
+   "s": 791,
+   "e": 800,
+   "hl": true,
+   "line": "y21"
+  },
+  {
+   "w": "KUPASINI",
+   "s": 800,
+   "e": 818,
+   "hl": true,
+   "line": "y21"
+  },
+  {
+   "w": "KALDIRDI.",
+   "s": 818,
+   "e": 832,
+   "hl": false,
+   "line": "y21"
+  },
+  {
+   "w": "2022:",
+   "s": 836,
+   "e": 854,
+   "hl": false,
+   "line": "y22"
+  },
+  {
+   "w": "FİNALDE",
+   "s": 854,
+   "e": 867,
+   "hl": false,
+   "line": "y22"
+  },
+  {
+   "w": "2",
+   "s": 867,
+   "e": 872,
+   "hl": true,
+   "line": "y22"
+  },
+  {
+   "w": "GOL",
+   "s": 872,
+   "e": 877,
+   "hl": true,
+   "line": "y22"
+  },
+  {
+   "w": "VE",
+   "s": 881,
+   "e": 886,
+   "hl": false,
+   "line": "y22"
+  },
+  {
+   "w": "DÜNYA",
+   "s": 886,
+   "e": 895,
+   "hl": true,
+   "line": "y22"
+  },
+  {
+   "w": "ŞAMPİYONLUĞU.",
+   "s": 895,
+   "e": 918,
+   "hl": true,
+   "line": "y22"
+  },
+  {
+   "w": "BUNA",
+   "s": 921,
+   "e": 929,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "TRAVMA",
+   "s": 929,
+   "e": 937,
+   "hl": true,
+   "line": "growth"
+  },
+  {
+   "w": "SONRASI",
+   "s": 937,
+   "e": 948,
+   "hl": true,
+   "line": "growth"
+  },
+  {
+   "w": "BÜYÜME",
+   "s": 948,
+   "e": 960,
+   "hl": true,
+   "line": "growth"
+  },
+  {
+   "w": "DENİR.",
+   "s": 960,
+   "e": 967,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "SENİ",
+   "s": 997,
+   "e": 1006,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "KIRAN",
+   "s": 1006,
+   "e": 1016,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "YER,",
+   "s": 1016,
+   "e": 1020,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "EN",
+   "s": 1024,
+   "e": 1028,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "GÜÇLÜ",
+   "s": 1028,
+   "e": 1036,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "YERİN",
+   "s": 1036,
+   "e": 1043,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "OLUR.",
+   "s": 1043,
+   "e": 1051,
+   "hl": false,
+   "line": "growth"
+  },
+  {
+   "w": "SENCE",
+   "s": 1055,
+   "e": 1063,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "TARİHİN",
+   "s": 1063,
+   "e": 1075,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "EN",
+   "s": 1075,
+   "e": 1080,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "BÜYÜĞÜ",
+   "s": 1080,
+   "e": 1092,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "KİM?",
+   "s": 1092,
+   "e": 1096,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YORUMLARA",
+   "s": 1128,
+   "e": 1145,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YAZ.",
+   "s": 1145,
+   "e": 1149,
+   "hl": false,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  560,
+  585,
+  609,
+  631,
+  652,
+  670,
+  687
+ ],
+ "impact": -1,
+ "marks": {
+  "miss": 325,
+  "kader": 622,
+  "iki": 886
+ },
+ "miss": 325,
+ "kader": 622,
+ "iki": 886,
+ "typeStart": 153,
+ "typeRate": 1.3499999999999999,
+ "hud": [
+  "26.06.2016",
+  "NEW JERSEY · COPA AMÉRICA",
+  "ARJANTİN – ŞİLİ"
+ ],
+ "audio": "mix/messi-2016.wav"
+}
