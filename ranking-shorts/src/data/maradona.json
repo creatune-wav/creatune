@@ -1,0 +1,695 @@
+{
+ "slug": "maradona",
+ "series": "PSİKOFUTBOL",
+ "fps": 30,
+ "frames": 861,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/maradona/hand.jpg",
+   "a": [
+    575,
+    230,
+    260
+   ],
+   "b": [
+    575,
+    250,
+    270
+   ],
+   "fx": [
+    "shake",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "4 DAKİKA:",
+    "l2": "HİLE + DEHA"
+   },
+   "to": 122,
+   "frames": 122
+  },
+  {
+   "id": "events",
+   "from": 122,
+   "img": "img/maradona/hand.jpg",
+   "a": [
+    570,
+    250,
+    270
+   ],
+   "b": [
+    565,
+    230,
+    230
+   ],
+   "fx": [
+    "desat",
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "EL!",
+    "stampAt": "el"
+   },
+   "to": 197,
+   "frames": 75
+  },
+  {
+   "id": "events~SONRA",
+   "from": 197,
+   "img": "img/maradona/weave.jpg",
+   "a": [
+    560,
+    380,
+    540
+   ],
+   "b": [
+    560,
+    360,
+    460
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 244,
+   "frames": 47
+  },
+  {
+   "id": "events~ASRIN",
+   "from": 244,
+   "img": "img/maradona/shilton.jpg",
+   "a": [
+    760,
+    400,
+    540
+   ],
+   "b": [
+    900,
+    420,
+    440
+   ],
+   "fx": [
+    "flash"
+   ],
+   "opt": {},
+   "to": 266,
+   "frames": 22
+  },
+  {
+   "id": "quote",
+   "from": 266,
+   "img": "img/maradona/room.jpg",
+   "a": [
+    560,
+    360,
+    500
+   ],
+   "b": [
+    570,
+    330,
+    420
+   ],
+   "fx": [
+    "quote",
+    "desat"
+   ],
+   "opt": {
+    "text": "“Biraz Maradona'nın kafası, biraz da Tanrı'nın eli.”",
+    "by": "DIEGO MARADONA · 22.06.1986"
+   },
+   "to": 376,
+   "frames": 110
+  },
+  {
+   "id": "psych",
+   "from": 376,
+   "img": "img/maradona/hand.jpg",
+   "a": [
+    570,
+    240,
+    270
+   ],
+   "b": [
+    570,
+    230,
+    230
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "cozulme",
+    "alarm": "VİCDAN SUSTU",
+    "cortex": "PREFRONTAL · AHLAK",
+    "amyg": "SUÇ DEVRİ"
+   },
+   "to": 517,
+   "frames": 141
+  },
+  {
+   "id": "punch",
+   "from": 517,
+   "img": "img/maradona/weave.jpg",
+   "a": [
+    560,
+    360,
+    460
+   ],
+   "b": [
+    560,
+    380,
+    540
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "opt": {},
+   "to": 638,
+   "frames": 121
+  },
+  {
+   "id": "punch~DÜNYA",
+   "from": 638,
+   "img": "img/maradona/trophy.jpg",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    630,
+    300,
+    420
+   ],
+   "fx": [
+    "flash"
+   ],
+   "opt": {},
+   "to": 688,
+   "frames": 50
+  },
+  {
+   "id": "cta",
+   "from": 688,
+   "img": "img/maradona/old.jpg",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    440
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "HİLE Mİ, DEHA MI?",
+    "a": "👍 DEHA → BEĞEN",
+    "b": "💬 HİLE → YORUM"
+   },
+   "to": 861,
+   "frames": 173
+  }
+ ],
+ "words": [
+  {
+   "w": "AYNI",
+   "s": 4,
+   "e": 13,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ADAM",
+   "s": 13,
+   "e": 22,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "4",
+   "s": 22,
+   "e": 26,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "DAKİKADA",
+   "s": 26,
+   "e": 45,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "HEM",
+   "s": 45,
+   "e": 49,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "HİLE",
+   "s": 49,
+   "e": 58,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "YAPTI",
+   "s": 58,
+   "e": 67,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "HEM",
+   "s": 67,
+   "e": 72,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "TARİHİN",
+   "s": 72,
+   "e": 86,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "EN",
+   "s": 86,
+   "e": 90,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "GÜZEL",
+   "s": 90,
+   "e": 99,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "GOLÜNÜ",
+   "s": 99,
+   "e": 113,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "ATTI.",
+   "s": 113,
+   "e": 122,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "1986,",
+   "s": 126,
+   "e": 147,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "İNGİLTERE:",
+   "s": 147,
+   "e": 167,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "ÖNCE",
+   "s": 167,
+   "e": 178,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "ELLE",
+   "s": 178,
+   "e": 188,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "GOL",
+   "s": 188,
+   "e": 193,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "SONRA",
+   "s": 199,
+   "e": 209,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "YARIM",
+   "s": 209,
+   "e": 219,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "TAKIMI",
+   "s": 219,
+   "e": 235,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "GEÇİP",
+   "s": 235,
+   "e": 245,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "ASRIN",
+   "s": 245,
+   "e": 256,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "GOLÜ.",
+   "s": 256,
+   "e": 266,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "MAÇTAN",
+   "s": 270,
+   "e": 283,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "SONRA:",
+   "s": 283,
+   "e": 296,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "\"BİRAZ",
+   "s": 300,
+   "e": 308,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "MARADONA'NIN",
+   "s": 308,
+   "e": 329,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "KAFASI,",
+   "s": 329,
+   "e": 342,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "BİRAZ",
+   "s": 346,
+   "e": 354,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "DA",
+   "s": 354,
+   "e": 357,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "TANRI'NIN",
+   "s": 357,
+   "e": 369,
+   "hl": true,
+   "line": "quote"
+  },
+  {
+   "w": "ELİ.\"",
+   "s": 369,
+   "e": 376,
+   "hl": true,
+   "line": "quote"
+  },
+  {
+   "w": "PSİKOLOJİDE",
+   "s": 380,
+   "e": 399,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BUNA",
+   "s": 399,
+   "e": 407,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "AHLAKİ",
+   "s": 407,
+   "e": 419,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "ÇÖZÜLME",
+   "s": 419,
+   "e": 431,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DENİR:",
+   "s": 431,
+   "e": 438,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BEYİN",
+   "s": 445,
+   "e": 453,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "SUÇU",
+   "s": 453,
+   "e": 461,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "TANRI'YA",
+   "s": 461,
+   "e": 474,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DEVREDER",
+   "s": 474,
+   "e": 486,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "VE",
+   "s": 492,
+   "e": 497,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "VİCDAN",
+   "s": 497,
+   "e": 507,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "SUSAR.",
+   "s": 507,
+   "e": 517,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "YANİ",
+   "s": 521,
+   "e": 532,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "AYNI",
+   "s": 532,
+   "e": 542,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "BEYİN",
+   "s": 542,
+   "e": 553,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "HEM",
+   "s": 553,
+   "e": 559,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "HİLEYİ",
+   "s": 559,
+   "e": 575,
+   "hl": true,
+   "line": "punch"
+  },
+  {
+   "w": "HEM",
+   "s": 575,
+   "e": 580,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "DEHAYI",
+   "s": 580,
+   "e": 596,
+   "hl": true,
+   "line": "punch"
+  },
+  {
+   "w": "ÜRETEBİLİR.",
+   "s": 596,
+   "e": 623,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "VE",
+   "s": 623,
+   "e": 629,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "O",
+   "s": 629,
+   "e": 634,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "YIL",
+   "s": 634,
+   "e": 639,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "DÜNYA",
+   "s": 639,
+   "e": 650,
+   "hl": true,
+   "line": "punch"
+  },
+  {
+   "w": "KUPASI'NI",
+   "s": 650,
+   "e": 672,
+   "hl": true,
+   "line": "punch"
+  },
+  {
+   "w": "KALDIRDI.",
+   "s": 672,
+   "e": 688,
+   "hl": false,
+   "line": "punch"
+  },
+  {
+   "w": "SENCE",
+   "s": 692,
+   "e": 727,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "HİLE",
+   "s": 727,
+   "e": 763,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "Mİ,",
+   "s": 763,
+   "e": 781,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "DEHA",
+   "s": 781,
+   "e": 817,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "MI?",
+   "s": 817,
+   "e": 835,
+   "hl": false,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  386,
+  408,
+  430,
+  450,
+  469,
+  486,
+  502,
+  517
+ ],
+ "impact": -1,
+ "marks": {
+  "el": 178,
+  "asrin": 245,
+  "cozulme": 407,
+  "vicdan": 497
+ },
+ "el": 178,
+ "asrin": 245,
+ "cozulme": 407,
+ "vicdan": 497,
+ "typeStart": 0,
+ "typeRate": 1.3499999999999999,
+ "hud": [],
+ "audio": "mix/maradona.wav"
+}

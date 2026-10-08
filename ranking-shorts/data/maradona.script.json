@@ -1,0 +1,270 @@
+{
+ "slug": "maradona",
+ "series": "PSİKOFUTBOL",
+ "edge_rate": "+18%",
+ "edge_pitch": "-4Hz",
+ "pause": 0.16,
+ "tail": 0.07,
+ "title": "Maradona: 4 Dakikada Hem Hile Hem Deha",
+ "roles": {
+  "kicks": [
+   "hook",
+   "punch"
+  ],
+  "ticks": [
+   "events",
+   "psych"
+  ],
+  "beats": {
+   "from": "psych",
+   "to": "psych",
+   "bpm": [
+    80,
+    128
+   ]
+  },
+  "triumph": "punch",
+  "whoosh": [
+   "events",
+   "quote",
+   "psych",
+   "punch",
+   "cta"
+  ]
+ },
+ "marks": {
+  "el": {
+   "line": "events",
+   "word": "ELLE",
+   "sfx": [
+    "stamp"
+   ]
+  },
+  "asrin": {
+   "line": "events",
+   "word": "ASRIN",
+   "sfx": [
+    "riser"
+   ]
+  },
+  "cozulme": {
+   "line": "psych",
+   "word": "AHLAKİ",
+   "sfx": [
+    "alarm"
+   ]
+  },
+  "vicdan": {
+   "line": "psych",
+   "word": "VİCDAN",
+   "sfx": [
+    "bigglitch"
+   ]
+  }
+ },
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Aynı adam, dört dakikada hem hile yaptı... hem tarihin en güzel golünü attı.",
+   "cap": "Aynı adam *4* *dakikada* hem *hile* yaptı... hem tarihin en güzel *golünü* attı.",
+   "gap": 0.05,
+   "img": "hand",
+   "a": [
+    575,
+    230,
+    260
+   ],
+   "b": [
+    575,
+    250,
+    270
+   ],
+   "fx": [
+    "shake",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "4 DAKİKA:",
+    "l2": "HİLE + DEHA"
+   }
+  },
+  {
+   "id": "events",
+   "say": "Bin dokuz yüz seksen altı, İngiltere: Önce elle gol... sonra yarım takımı geçip, asrın golü.",
+   "cap": "1986, İngiltere: önce *elle* *gol...* sonra yarım takımı geçip *asrın* *golü.*",
+   "gap": 0.05,
+   "img": "hand",
+   "a": [
+    570,
+    250,
+    270
+   ],
+   "b": [
+    565,
+    230,
+    230
+   ],
+   "fx": [
+    "desat",
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "EL!",
+    "stampAt": "el"
+   },
+   "cuts": [
+    {
+     "word": "SONRA",
+     "img": "weave",
+     "a": [
+      560,
+      380,
+      540
+     ],
+     "b": [
+      560,
+      360,
+      460
+     ],
+     "fx": []
+    },
+    {
+     "word": "ASRIN",
+     "img": "shilton",
+     "a": [
+      760,
+      400,
+      540
+     ],
+     "b": [
+      900,
+      420,
+      440
+     ],
+     "fx": [
+      "flash"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "quote",
+   "say": "Maçtan sonra: Biraz Maradona'nın kafası, biraz da Tanrı'nın eli.",
+   "cap": "Maçtan sonra: \"Biraz Maradona'nın kafası, biraz da *Tanrı'nın* *eli.*\"",
+   "gap": 0.05,
+   "img": "room",
+   "a": [
+    560,
+    360,
+    500
+   ],
+   "b": [
+    570,
+    330,
+    420
+   ],
+   "fx": [
+    "quote",
+    "desat"
+   ],
+   "opt": {
+    "text": "“Biraz Maradona'nın kafası, biraz da Tanrı'nın eli.”",
+    "by": "DIEGO MARADONA · 22.06.1986"
+   }
+  },
+  {
+   "id": "psych",
+   "say": "Psikolojide buna ahlaki çözülme denir: Beyin suçu Tanrı'ya devreder... ve vicdan susar.",
+   "cap": "Psikolojide buna *ahlaki* *çözülme* denir: Beyin suçu *Tanrı'ya* devreder... ve *vicdan* susar.",
+   "gap": 0.05,
+   "img": "hand",
+   "a": [
+    570,
+    240,
+    270
+   ],
+   "b": [
+    570,
+    230,
+    230
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "cozulme",
+    "alarm": "VİCDAN SUSTU",
+    "cortex": "PREFRONTAL · AHLAK",
+    "amyg": "SUÇ DEVRİ"
+   }
+  },
+  {
+   "id": "punch",
+   "say": "Yani aynı beyin, hem hileyi hem dehayı üretebilir. Ve o yıl, dünya kupasını kaldırdı.",
+   "cap": "Yani aynı beyin hem *hileyi* hem *dehayı* üretebilir. Ve o yıl *Dünya* *Kupası'nı* kaldırdı.",
+   "gap": 0.05,
+   "img": "weave",
+   "a": [
+    560,
+    360,
+    460
+   ],
+   "b": [
+    560,
+    380,
+    540
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "cuts": [
+    {
+     "word": "DÜNYA",
+     "img": "trophy",
+     "a": [
+      640,
+      360,
+      540
+     ],
+     "b": [
+      630,
+      300,
+      420
+     ],
+     "fx": [
+      "flash"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "say": "Sence hile mi, deha mı? Hile diyorsan yorum yap, deha diyorsan beğen.",
+   "cap": "Sence hile mi, deha mı?",
+   "gap": 0.8,
+   "img": "old",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    440
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "HİLE Mİ, DEHA MI?",
+    "a": "👍 DEHA → BEĞEN",
+    "b": "💬 HİLE → YORUM"
+   }
+  }
+ ]
+}
