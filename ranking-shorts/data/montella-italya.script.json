@@ -1,0 +1,396 @@
+{
+ "slug": "montella-italya",
+ "series": "FUTBOLUN PSİKOLOJİSİ",
+ "speed": 1.0,
+ "piper_tempo": 1.1,
+ "title": "Montella, İtalya'ya Karşı: O Gece Kalbi Kimin İçin Attı?",
+ "roles": {
+  "type": {
+   "line": "date",
+   "hud": [
+    "28.09.2026",
+    "BURSA · ULUSLAR LİGİ",
+    "TÜRKİYE – İTALYA"
+   ]
+  },
+  "kicks": [
+   "date",
+   "freeze"
+  ],
+  "ticks": [
+   "score",
+   "freeze"
+  ],
+  "freeze": "freeze",
+  "resume": "psych",
+  "beats": {
+   "from": "freeze",
+   "to": "q2",
+   "bpm": [
+    66,
+    128
+   ]
+  },
+  "end_beats": "cta",
+  "sad": "q3",
+  "whoosh": [
+   "date",
+   "quote",
+   "score",
+   "bologna",
+   "dunno",
+   "q1",
+   "q2",
+   "q3",
+   "cta"
+  ]
+ },
+ "marks": {
+  "goals": {
+   "line": "score",
+   "word": "3",
+   "sfx": [
+    "triple"
+   ]
+  },
+  "final": {
+   "line": "score",
+   "word": "1-4",
+   "sfx": [
+    "stamp"
+   ]
+  },
+  "four": {
+   "line": "bologna",
+   "word": "DÖRT",
+   "sfx": [
+    "quad"
+   ]
+  },
+  "zero": {
+   "line": "bologna",
+   "word": "SIFIR",
+   "sfx": [
+    "stamp"
+   ]
+  },
+  "catisma": {
+   "line": "psych",
+   "word": "SADAKAT",
+   "sfx": [
+    "alarm"
+   ]
+  }
+ },
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Bir İtalyan, milli takımımızı kendi ülkesine karşı yönetti. Kalbi, kimin için attı?",
+   "cap": "Bir İtalyan milli takımımızı *kendi* *ülkesine* karşı yönetti. Kalbi kimin için attı?",
+   "gap": 0.2,
+   "img": "jr",
+   "a": [
+    820,
+    260,
+    390
+   ],
+   "b": [
+    790,
+    260,
+    370
+   ],
+   "fx": [
+    "flash",
+    "shake",
+    "flags"
+   ]
+  },
+  {
+   "id": "date",
+   "say": "Yirmi sekiz Eylül gecesi, Bursa.",
+   "cap": "28 Eylül gecesi, Bursa.",
+   "gap": 0.1,
+   "img": "bursa",
+   "a": [
+    860,
+    360,
+    540
+   ],
+   "b": [
+    920,
+    340,
+    480
+   ],
+   "fx": [
+    "typehud"
+   ]
+  },
+  {
+   "id": "quote",
+   "say": "Bir gün önce şöyle demişti: Sahaya, yalnızca Türkiye için atan bir kalple çıkacağım.",
+   "cap": "Bir gün önce şöyle demişti: \"Sahaya yalnızca Türkiye için atan bir kalple çıkacağım.\"",
+   "gap": 0.15,
+   "img": "smile",
+   "a": [
+    566,
+    270,
+    340
+   ],
+   "b": [
+    566,
+    250,
+    300
+   ],
+   "fx": [
+    "quote"
+   ],
+   "opt": {
+    "text": "“Sahaya yalnızca Türkiye için atan bir kalple çıkacağım.”",
+    "by": "VINCENZO MONTELLA · 27.09.2026"
+   }
+  },
+  {
+   "id": "score",
+   "say": "İlk yirmi yedi dakikada, üç gol. Maç: bir, dört.",
+   "cap": "İlk 27 dakikada *3* *gol.* Maç: *1-4.*",
+   "gap": 0.15,
+   "img": "bursa",
+   "a": [
+    900,
+    330,
+    460
+   ],
+   "b": [
+    880,
+    360,
+    540
+   ],
+   "fx": [
+    "score",
+    "desat"
+   ],
+   "opt": {
+    "home": "TÜR",
+    "away": "İTA",
+    "hs": 1,
+    "as": 4,
+    "goals": [
+     "9'",
+     "22'",
+     "27'"
+    ]
+   }
+  },
+  {
+   "id": "bologna",
+   "say": "Bir hafta sonra Bolonya: yine yenilgi. Dört maç, sıfır puan.",
+   "say_neural": "Bir hafta sonra Bologna: yine yenilgi. Dört maç, sıfır puan.",
+   "cap": "Bir hafta sonra Bologna: yine yenilgi. *Dört* maç, *sıfır* *puan.*",
+   "gap": 0.55,
+   "img": "bologna",
+   "a": [
+    860,
+    360,
+    520
+   ],
+   "b": [
+    880,
+    340,
+    440
+   ],
+   "fx": [
+    "table",
+    "desat"
+   ],
+   "opt": {
+    "title": "ULUSLAR LİGİ · A1 GRUBU",
+    "last": "İTA 3-1 TÜR"
+   }
+  },
+  {
+   "id": "freeze",
+   "say": "Şimdi... zamanı durduralım.",
+   "cap": "Şimdi... zamanı durduralım.",
+   "gap": 0.25,
+   "img": "presser",
+   "a": [
+    470,
+    250,
+    360
+   ],
+   "b": [
+    470,
+    240,
+    330
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "05.10.2026"
+   }
+  },
+  {
+   "id": "psych",
+   "say": "Psikolojide buna, sadakat çatışması denir. İki kimlik arasında kalan beyin, risk almaktan kaçınabilir.",
+   "cap": "Psikolojide buna *sadakat* *çatışması* denir. İki kimlik arasında kalan beyin risk almaktan *kaçınabilir.*",
+   "gap": 0.2,
+   "img": "smile",
+   "a": [
+    566,
+    260,
+    320
+   ],
+   "b": [
+    566,
+    240,
+    280
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "catisma",
+    "alarm": "ÇATIŞMA",
+    "cortex": "PREFRONTAL · KARAR",
+    "amyg": "SADAKAT",
+    "left": "TÜRKİYE",
+    "right": "İTALYA"
+   }
+  },
+  {
+   "id": "dunno",
+   "say": "Böyle mi oldu? Bilmiyoruz. Ama sormalıyız.",
+   "cap": "Böyle mi oldu? *Bilmiyoruz.* Ama sormalıyız.",
+   "gap": 0.2,
+   "img": "board",
+   "a": [
+    370,
+    420,
+    400
+   ],
+   "b": [
+    380,
+    400,
+    360
+   ],
+   "fx": [
+    "desat",
+    "ecg"
+   ]
+  },
+  {
+   "id": "q1",
+   "say": "Kendi ülkesine karşı oynamak, bir hocanın cesaretini etkiler mi?",
+   "cap": "Kendi ülkesine karşı oynamak bir hocanın *cesaretini* etkiler mi?",
+   "gap": 0.25,
+   "sfx": [
+    "stamp"
+   ],
+   "img": "presser",
+   "a": [
+    470,
+    260,
+    360
+   ],
+   "b": [
+    470,
+    230,
+    300
+   ],
+   "fx": [
+    "question",
+    "redduo",
+    "ecg"
+   ],
+   "opt": {
+    "n": 1
+   }
+  },
+  {
+   "id": "q2",
+   "say": "Dört maçta sıfır puan varken, taktiksel olarak çok iyi oynadık demek, yeterli mi?",
+   "cap": "4 maçta 0 puan varken \"taktiksel olarak çok iyi oynadık\" demek *yeterli* *mi?*",
+   "gap": 0.25,
+   "sfx": [
+    "stamp"
+   ],
+   "img": "bologna",
+   "a": [
+    880,
+    340,
+    440
+   ],
+   "b": [
+    860,
+    360,
+    520
+   ],
+   "fx": [
+    "question",
+    "redduo",
+    "ecg"
+   ],
+   "opt": {
+    "n": 2
+   }
+  },
+  {
+   "id": "q3",
+   "say": "Ve milli takımımız... bu yolda devam etmeli mi?",
+   "cap": "Ve milli takımımız... bu yolda *devam* *etmeli* *mi?*",
+   "gap": 0.3,
+   "sfx": [
+    "stamp"
+   ],
+   "img": "jr",
+   "a": [
+    700,
+    250,
+    420
+   ],
+   "b": [
+    800,
+    250,
+    380
+   ],
+   "fx": [
+    "question",
+    "desat"
+   ],
+   "opt": {
+    "n": 3
+   }
+  },
+  {
+   "id": "cta",
+   "say": "Karar senin. Yorumlara yaz.",
+   "cap": "Karar senin. Yorumlara yaz.",
+   "gap": 0.9,
+   "img": "presser",
+   "a": [
+    470,
+    240,
+    330
+   ],
+   "b": [
+    470,
+    230,
+    300
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "MONTELLA DEVAM ETMELİ Mİ?",
+    "a": "1 · DEVAM",
+    "b": "2 · YOLLAR AYRILSIN"
+   }
+  }
+ ],
+ "edge_rate": "+6%"
+}

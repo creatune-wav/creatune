@@ -5,12 +5,12 @@ import { AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, us
 // "Futbolun Psikolojisi" formatı: fotoğraf + Ken Burns + HUD animasyonları + kelime kelime altyazı.
 // Veriyi tools/psych_build.py üretir (src/data/<slug>.json).
 type Rect = [number, number, number]; // kaynak (1280x720) uzayında merkez x, merkez y, genişlik
-export type Scene = { id: string; from: number; frames: number; img: string; a: Rect; b: Rect; fx: string[] };
+export type Scene = { id: string; from: number; frames: number; img: string; a: Rect; b: Rect; fx: string[]; opt?: Record<string, any> };
 export type Word = { w: string; s: number; e: number; hl: boolean; line: string };
 export type PsychData = {
   slug: string; series: string; frames: number; scenes: Scene[]; words: Word[]; beats: number[];
   impact: number; devre: number; hakaret: number; amigdala: number; typeStart: number; typeRate: number;
-  hud: string[]; audio: string;
+  hud: string[]; audio: string; marks?: Record<string, number>;
 };
 
 const fonts: [string, string, string, string][] = [
@@ -143,7 +143,7 @@ const SceneView: React.FC<{ s: Scene; d: PsychData }> = ({ s, d }) => {
       {fx("clock") && <Clock s={s} />}
       {fx("tags") && <Tags cam={cam} />}
       {fx("stamp:HAKARET") && <Stamp text="HAKARET" at={d.hakaret - s.from} />}
-      {fx("freeze") && <FreezeHud />}
+      {fx("freeze") && <FreezeHud sub={s.opt?.sub ?? "109:58"} />}
       {fx("brain") && <BrainScan d={d} s={s} />}
       {fx("ecg") && <Ecg d={d} s={s} />}
       {fx("logic") && <Logic d={d} s={s} />}
@@ -151,6 +151,12 @@ const SceneView: React.FC<{ s: Scene; d: PsychData }> = ({ s, d }) => {
       {fx("impact") && <ImpactRings cam={cam} />}
       {fx("redcard") && <RedCard />}
       {fx("cta") && <Cta />}
+      {fx("flags") && <Flags />}
+      {fx("quote") && <QuoteCard o={s.opt!} />}
+      {fx("score") && <Score o={s.opt!} d={d} s={s} />}
+      {fx("table") && <Table o={s.opt!} d={d} s={s} />}
+      {fx("question") && <Question n={s.opt!.n} />}
+      {fx("poll") && <Poll o={s.opt!} />}
 
       {/* geçiş flaşı */}
       <AbsoluteFill style={{ background: "#fff", pointerEvents: "none",
@@ -250,7 +256,7 @@ const Stamp: React.FC<{ text: string; at: number }> = ({ text, at }) => {
   );
 };
 
-const FreezeHud: React.FC = () => {
+const FreezeHud: React.FC<{ sub: string }> = ({ sub }) => {
   const f = useCurrentFrame();
   const k = spring({ frame: f - 3, fps: 30, config: { damping: 12 } });
   return (
@@ -262,7 +268,7 @@ const FreezeHud: React.FC = () => {
           <div style={{ width: 46, height: 160, background: "#fff", boxShadow: "0 0 30px rgba(255,255,255,.5)" }} />
         </div>
         <div style={{ ...mono, fontSize: 52, color: "#fff", marginTop: 30, letterSpacing: 10, textShadow: "0 3px 14px #000" }}>ZAMAN DURDU</div>
-        <div style={{ ...mono, fontSize: 40, color: YEL, marginTop: 8, opacity: Math.floor(f / 10) % 2 ? .4 : 1 }}>109:58</div>
+        <div style={{ ...mono, fontSize: 40, color: YEL, marginTop: 8, opacity: Math.floor(f / 10) % 2 ? .4 : 1 }}>{sub}</div>
       </div>
     </>
   );
@@ -277,9 +283,12 @@ const GYRI = ["M220 140 C 260 120 290 150 330 130", "M360 90 C 380 130 430 120 4
 const BrainScan: React.FC<{ d: PsychData; s: Scene }> = ({ d, s }) => {
   const f = useCurrentFrame(), g = s.from + f;
   const k = spring({ frame: f, fps: 30, config: { damping: 15 } });
-  const lit = g >= d.amigdala;
-  const pulse = lit ? .6 + .4 * Math.sin((g - d.amigdala) / 2.2) : 0;
-  const off = g >= d.devre;
+  const o = s.opt ?? {};
+  const alarmAt = o.alarmAt ? d.marks![o.alarmAt] : d.amigdala;
+  const offAt = o.alarmAt ? Infinity : d.devre;
+  const lit = g >= alarmAt;
+  const pulse = lit ? .6 + .4 * Math.sin((g - alarmAt) / 2.2) : 0;
+  const off = g >= offAt;
   const scan = (f * 9) % 460;
   const draw = interpolate(f, [0, 18], [1, 0], clamp);
   return (
@@ -287,9 +296,9 @@ const BrainScan: React.FC<{ d: PsychData; s: Scene }> = ({ d, s }) => {
       background: "rgba(0,12,18,.55)", border: `2px solid rgba(92,242,255,.5)`, borderRadius: 18, overflow: "hidden",
       backgroundImage: "linear-gradient(rgba(92,242,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(92,242,255,.08) 1px, transparent 1px)",
       backgroundSize: "40px 40px" }}>
-      <div style={{ ...mono, position: "absolute", left: 22, top: 16, fontSize: 28, color: CYAN }}>BEYİN TARAMASI · CANLI</div>
+      <div style={{ ...mono, position: "absolute", left: 22, top: 16, fontSize: 28, color: CYAN }}>{o.title ?? "BEYİN TARAMASI · CANLI"}</div>
       <div style={{ ...mono, position: "absolute", right: 22, top: 16, fontSize: 28, color: lit ? RED : CYAN, opacity: lit && Math.floor(f / 6) % 2 ? .4 : 1 }}>
-        {lit ? "⚠ ALARM" : "NORMAL"}
+        {lit ? `⚠ ${o.alarm ?? "ALARM"}` : "NORMAL"}
       </div>
       <svg viewBox="100 20 600 420" style={{ position: "absolute", left: 110, top: 70, width: 680, height: 470 }}>
         <defs>
@@ -298,7 +307,7 @@ const BrainScan: React.FC<{ d: PsychData; s: Scene }> = ({ d, s }) => {
         <path d={BRAIN} fill="rgba(92,242,255,.08)" stroke={CYAN} strokeWidth="4" pathLength={1} strokeDasharray="1" strokeDashoffset={draw} />
         {GYRI.map((p, i) => <path key={i} d={p} fill="none" stroke={CYAN} strokeWidth="2.5" opacity={.55} pathLength={1} strokeDasharray="1" strokeDashoffset={draw} />)}
         {/* prefrontal korteks (ön, solda): mantık */}
-        <ellipse cx="215" cy="215" rx="70" ry="95" fill={off ? "rgba(80,80,80,.25)" : `rgba(92,242,255,${.35 - interpolate(g, [d.amigdala, d.devre], [0, .25], clamp)})`} />
+        <ellipse cx="215" cy="215" rx="70" ry="95" fill={off ? "rgba(80,80,80,.25)" : `rgba(92,242,255,${.35 - interpolate(g, [alarmAt, o.alarmAt ? alarmAt + 90 : d.devre], [0, .25], clamp)})`} />
         {/* amigdala */}
         {lit && <circle cx="360" cy="320" r={60 + pulse * 70} fill="url(#am)" opacity={.9} />}
         <ellipse cx="360" cy="320" rx="26" ry="16" fill={lit ? "#ff3b3b" : "rgba(92,242,255,.5)"} stroke="#fff" strokeWidth="2" />
@@ -306,10 +315,11 @@ const BrainScan: React.FC<{ d: PsychData; s: Scene }> = ({ d, s }) => {
       </svg>
       {/* etiketler */}
       <div style={{ ...mono, position: "absolute", left: 40, top: 470, fontSize: 30, color: off ? "#888" : CYAN }}>
-        PREFRONTAL · MANTIK{off ? " ✕" : ""}
+        {o.cortex ?? "PREFRONTAL · MANTIK"}{off ? " ✕" : ""}
       </div>
       {lit && <div style={{ ...mono, position: "absolute", right: 40, top: 470, fontSize: 34, color: "#fff", background: RED, padding: "4px 14px",
-        transform: `scale(${spring({ frame: g - d.amigdala, fps: 30, config: { damping: 10 } })})` }}>AMİGDALA</div>}
+        transform: `scale(${spring({ frame: g - alarmAt, fps: 30, config: { damping: 10 } })})` }}>{o.amyg ?? "AMİGDALA"}</div>}
+      {o.left && lit && <TugOfWar left={o.left} right={o.right} f={g - alarmAt} />}
     </div>
   );
 };
@@ -424,6 +434,167 @@ const Cta: React.FC = () => {
   );
 };
 
+// ---------- 2. bölüm parçaları ----------
+const TurkFlag: React.FC<{ w: number }> = ({ w }) => (
+  <svg width={w} height={w * 2 / 3} viewBox="0 0 30 20" style={{ display: "block" }}>
+    <rect width="30" height="20" fill="#E30A17" />
+    <circle cx="11.25" cy="10" r="5" fill="#fff" /><circle cx="12.5" cy="10" r="4" fill="#E30A17" />
+    <polygon fill="#fff" transform="translate(17.6 10) rotate(-90) scale(1.25)"
+      points="0,-1 0.2245,-0.309 0.951,-0.309 0.363,0.118 0.588,0.809 0,0.382 -0.588,0.809 -0.363,0.118 -0.951,-0.309 -0.2245,-0.309" />
+  </svg>
+);
+const ItaFlag: React.FC<{ w: number }> = ({ w }) => (
+  <svg width={w} height={w * 2 / 3} viewBox="0 0 3 2" style={{ display: "block" }}>
+    <rect width="1" height="2" fill="#009246" /><rect x="1" width="1" height="2" fill="#fff" /><rect x="2" width="1" height="2" fill="#CE2B37" />
+  </svg>
+);
+
+// kanca: iki bayrak arasında çatlayan kalp
+const Flags: React.FC = () => {
+  const f = useCurrentFrame();
+  const k = spring({ frame: f - 4, fps: 30, config: { damping: 12 } });
+  const crack = interpolate(f, [40, 52], [0, 1], clamp);
+  const split = crack * 18;
+  const flag = (el: React.ReactNode, side: number) => (
+    <div style={{ transform: `translateX(${side * (1 - k) * 300}px) rotate(${side * -6}deg)`, boxShadow: "0 16px 40px rgba(0,0,0,.6)",
+      border: "6px solid #fff", borderRadius: 10, overflow: "hidden" }}>{el}</div>
+  );
+  return (
+    <div style={{ position: "absolute", top: 330, width: W, display: "flex", justifyContent: "center", alignItems: "center", gap: 40 }}>
+      {flag(<ItaFlag w={250} />, -1)}
+      <svg width="190" height="180" viewBox="0 0 100 95" style={{ transform: `scale(${k})`, filter: "drop-shadow(0 0 24px rgba(255,0,0,.7))", overflow: "visible" }}>
+        <g transform={`translate(${-split} 0) rotate(${-crack * 8} 50 90)`}>
+          <path d="M50 90 L50 25 C 45 8 25 0 12 10 C -2 22 2 45 20 60 Z" fill={RED} />
+        </g>
+        <g transform={`translate(${split} 0) rotate(${crack * 8} 50 90)`}>
+          <path d="M50 90 L50 25 C 55 8 75 0 88 10 C 102 22 98 45 80 60 Z" fill={RED} />
+        </g>
+        {crack > 0 && <polyline points="50,22 44,40 56,52 46,66 52,80 50,90" fill="none" stroke="#fff" strokeWidth={3 * crack} />}
+      </svg>
+      {flag(<TurkFlag w={250} />, 1)}
+    </div>
+  );
+};
+
+const QuoteCard: React.FC<{ o: Record<string, any> }> = ({ o }) => {
+  const f = useCurrentFrame();
+  const k = spring({ frame: f - 3, fps: 30, config: { damping: 14 } });
+  const n = Math.floor(interpolate(f, [8, 8 + o.text.length * 1.1], [0, o.text.length], clamp));
+  return (
+    <div style={{ position: "absolute", left: 60, right: 60, top: 280, transform: `translateY(${(1 - k) * 60}px)`, opacity: k,
+      background: "rgba(0,0,0,.62)", borderLeft: `12px solid ${RED}`, padding: "30px 36px", borderRadius: 8 }}>
+      <div style={{ fontFamily: "Anton", fontSize: 64, color: "#fff", lineHeight: 1.15 }}>
+        {o.text.slice(0, n)}<span style={{ opacity: 0 }}>{o.text.slice(n)}</span>
+      </div>
+      <div style={{ ...mono, fontSize: 30, color: YEL, marginTop: 18 }}>— {o.by}</div>
+    </div>
+  );
+};
+
+const Score: React.FC<{ o: Record<string, any>; d: PsychData; s: Scene }> = ({ o, d, s }) => {
+  const f = useCurrentFrame(), g = s.from + f;
+  const gAt = d.marks!.goals, fin = d.marks!.final;
+  const k = spring({ frame: f - 2, fps: 30, config: { damping: 14 } });
+  const shown = g >= fin;
+  const pop = spring({ frame: g - fin, fps: 30, config: { damping: 9, stiffness: 200 } });
+  return (
+    <div style={{ position: "absolute", top: 280, width: W, display: "flex", flexDirection: "column", alignItems: "center", transform: `scale(${k})` }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 26, background: "rgba(0,0,0,.7)", padding: "18px 34px", borderRadius: 16,
+        border: "2px solid rgba(255,255,255,.2)" }}>
+        <TurkFlag w={96} />
+        <span style={{ ...mono, fontSize: 56, color: "#fff" }}>{o.home}</span>
+        <span style={{ fontFamily: "Anton", fontSize: 130, color: shown ? "#fff" : "rgba(255,255,255,.25)", minWidth: 250, textAlign: "center",
+          transform: `scale(${shown ? .8 + .2 * pop : 1})`, display: "inline-block" }}>{shown ? `${o.hs} - ${o.as}` : "? - ?"}</span>
+        <span style={{ ...mono, fontSize: 56, color: "#fff" }}>{o.away}</span>
+        <ItaFlag w={96} />
+      </div>
+      <div style={{ display: "flex", gap: 22, marginTop: 26 }}>
+        {o.goals.map((m: string, i: number) => {
+          const t = g - (gAt + i * 6);
+          if (t < 0) return null;
+          const p = spring({ frame: t, fps: 30, config: { damping: 9, stiffness: 220 } });
+          return <div key={m} style={{ ...mono, fontSize: 44, color: "#fff", background: RED, padding: "8px 22px", borderRadius: 8,
+            transform: `scale(${p})` }}>⚽ {m}</div>;
+        })}
+      </div>
+    </div>
+  );
+};
+
+const Table: React.FC<{ o: Record<string, any>; d: PsychData; s: Scene }> = ({ o, d, s }) => {
+  const f = useCurrentFrame(), g = s.from + f;
+  const four = d.marks!.four, zero = d.marks!.zero;
+  const k = spring({ frame: f - 2, fps: 30, config: { damping: 14 } });
+  const z = spring({ frame: g - zero, fps: 30, config: { damping: 8, stiffness: 200 } });
+  return (
+    <div style={{ position: "absolute", top: 280, width: W, display: "flex", flexDirection: "column", alignItems: "center", opacity: k }}>
+      <div style={{ ...mono, fontSize: 32, color: YEL, letterSpacing: 4 }}>{o.title}</div>
+      <div style={{ ...mono, fontSize: 40, color: "#fff", marginTop: 10, background: "rgba(0,0,0,.6)", padding: "6px 20px" }}>{o.last}</div>
+      <div style={{ display: "flex", gap: 20, marginTop: 30 }}>
+        {[0, 1, 2, 3].map((i) => {
+          const t = g - (four + i * 5);
+          const p = t >= 0 ? spring({ frame: t, fps: 30, config: { damping: 10, stiffness: 220 } }) : 0;
+          return <div key={i} style={{ width: 150, height: 150, borderRadius: 14, background: p ? RED : "rgba(255,255,255,.12)",
+            display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${t >= 0 ? .7 + .3 * p : 1})`,
+            border: "3px solid rgba(255,255,255,.3)" }}>
+            <span style={{ fontFamily: "Anton", fontSize: 90, color: "#fff", opacity: p }}>M</span>
+          </div>;
+        })}
+      </div>
+      {g >= zero && <div style={{ marginTop: 34, transform: `rotate(-5deg) scale(${interpolate(g - zero, [0, 6], [2.2, 1], { ...clamp, easing: Easing.out(Easing.back(2)) })})`,
+        border: `10px solid ${RED}`, padding: "4px 34px", fontFamily: "Anton", fontSize: 130, color: RED, background: "rgba(0,0,0,.55)", opacity: z > 0 ? 1 : 0 }}>
+        0 PUAN</div>}
+    </div>
+  );
+};
+
+// beyin taramasının altında iki kimlik arasında halat çekme
+const TugOfWar: React.FC<{ left: string; right: string; f: number }> = ({ left, right, f }) => {
+  const x = Math.sin(f / 5) * 60 + Math.sin(f / 2.3) * 18;
+  return (
+    <div style={{ position: "absolute", left: 40, right: 40, top: 70, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}><TurkFlag w={60} /><span style={{ ...mono, fontSize: 26, color: "#fff" }}>{left}</span></div>
+      <div style={{ position: "absolute", left: "50%", top: 18, width: 16, height: 16, borderRadius: 8, background: RED, transform: `translateX(${x - 8}px)`,
+        boxShadow: "0 0 18px red" }} />
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}><span style={{ ...mono, fontSize: 26, color: "#fff" }}>{right}</span><ItaFlag w={60} /></div>
+    </div>
+  );
+};
+
+const Question: React.FC<{ n: number }> = ({ n }) => {
+  const f = useCurrentFrame();
+  const k = interpolate(f, [0, 7], [2.2, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
+  return (
+    <div style={{ position: "absolute", top: 330, width: W, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ transform: `rotate(-4deg) scale(${k})`, opacity: interpolate(f, [0, 3], [0, 1], clamp), border: `10px solid #fff`,
+        padding: "0 40px", background: RED, boxShadow: "0 20px 60px rgba(0,0,0,.6)" }}>
+        <span style={{ fontFamily: "Anton", fontSize: 150, color: "#fff", letterSpacing: 4 }}>SORU {n}</span>
+      </div>
+      <div style={{ display: "flex", gap: 14, marginTop: 28 }}>
+        {[1, 2, 3].map((i) => <div key={i} style={{ width: 70, height: 12, borderRadius: 6, background: i <= n ? "#fff" : "rgba(255,255,255,.25)" }} />)}
+      </div>
+    </div>
+  );
+};
+
+const Poll: React.FC<{ o: Record<string, any> }> = ({ o }) => {
+  const f = useCurrentFrame();
+  const k = spring({ frame: f - 2, fps: 30, config: { damping: 12 } });
+  const opt = (t: string, c: string, i: number) => {
+    const p = spring({ frame: f - 10 - i * 5, fps: 30, config: { damping: 11 } });
+    return <div style={{ ...mono, fontSize: 52, color: "#fff", background: c, padding: "18px 40px", borderRadius: 14, marginTop: 22,
+      transform: `translateX(${(1 - p) * (i ? 400 : -400)}px)`, minWidth: 640, textAlign: "center", boxShadow: "0 12px 30px rgba(0,0,0,.5)" }}>{t}</div>;
+  };
+  return (
+    <div style={{ position: "absolute", top: 300, width: W, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ ...stroke(10), fontSize: 104, color: "#fff", lineHeight: 1.05, textAlign: "center", padding: "0 50px", transform: `scale(${k})` }}>{o.q}</div>
+      {opt(o.a, "#1E9E5A", 0)}
+      {opt(o.b, RED, 1)}
+      <div style={{ ...mono, fontSize: 40, color: YEL, marginTop: 34, transform: `translateY(${Math.sin(f / 4) * 8}px)` }}>YORUMLARA YAZ ↓</div>
+    </div>
+  );
+};
+
 // ---------- altyazı ----------
 type Chunk = { words: Word[]; s: number; e: number };
 const chunkWords = (ws: Word[]): Chunk[] => {
@@ -441,7 +612,10 @@ const chunkWords = (ws: Word[]): Chunk[] => {
 
 const Captions: React.FC<{ d: PsychData }> = ({ d }) => {
   const f = useCurrentFrame();
-  const chunks = React.useMemo(() => chunkWords(d.words.filter((w) => w.line !== "cta")), [d]);
+  const chunks = React.useMemo(() => {
+    const hidden = new Set(d.scenes.filter((x) => x.fx.includes("nocap")).map((x) => x.id));
+    return chunkWords(d.words.filter((w) => w.line !== "cta" && !hidden.has(w.line)));
+  }, [d]);
   const idx = chunks.findIndex((c, i) => f >= c.s - 1 && f < Math.min(c.e + 12, chunks[i + 1]?.s ?? Infinity));
   if (idx < 0) return null;
   const c = chunks[idx];

@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { Ranking, RankingData, totalFrames } from "./Ranking";
 import { Psych, PsychData } from "./Psych";
 import zk from "./data/zidane-kafa.json";
+import mi from "./data/montella-italya.json";
 import d0 from "./data/biggest-waves.json";
 import d1 from "./data/craziest-base-jumps.json";
 import d2 from "./data/craziest-bike-jumps.json";
@@ -17,7 +18,7 @@ export const Root = () => (
       <Composition key={d.slug} id={d.slug} component={Ranking} defaultProps={d}
         durationInFrames={totalFrames(d)} fps={30} width={1080} height={1920} />
     ))}
-    {([zk] as PsychData[]).map((d) => (
+    {([zk, mi] as unknown as PsychData[]).map((d) => (
       <Composition key={d.slug} id={d.slug} component={Psych} defaultProps={d}
         durationInFrames={d.frames} fps={30} width={1080} height={1920} />
     ))}

@@ -1,0 +1,1078 @@
+{
+ "slug": "montella-italya",
+ "series": "FUTBOLUN PSİKOLOJİSİ",
+ "fps": 30,
+ "frames": 1274,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/montella-italya/jr.jpg",
+   "a": [
+    820,
+    260,
+    390
+   ],
+   "b": [
+    790,
+    260,
+    370
+   ],
+   "fx": [
+    "flash",
+    "shake",
+    "flags"
+   ],
+   "opt": {},
+   "to": 139,
+   "frames": 139
+  },
+  {
+   "id": "date",
+   "from": 139,
+   "img": "img/montella-italya/bursa.jpg",
+   "a": [
+    860,
+    360,
+    540
+   ],
+   "b": [
+    920,
+    340,
+    480
+   ],
+   "fx": [
+    "typehud"
+   ],
+   "opt": {},
+   "to": 203,
+   "frames": 64
+  },
+  {
+   "id": "quote",
+   "from": 203,
+   "img": "img/montella-italya/smile.jpg",
+   "a": [
+    566,
+    270,
+    340
+   ],
+   "b": [
+    566,
+    250,
+    300
+   ],
+   "fx": [
+    "quote"
+   ],
+   "opt": {
+    "text": "“Sahaya yalnızca Türkiye için atan bir kalple çıkacağım.”",
+    "by": "VINCENZO MONTELLA · 27.09.2026"
+   },
+   "to": 344,
+   "frames": 141
+  },
+  {
+   "id": "score",
+   "from": 344,
+   "img": "img/montella-italya/bursa.jpg",
+   "a": [
+    900,
+    330,
+    460
+   ],
+   "b": [
+    880,
+    360,
+    540
+   ],
+   "fx": [
+    "score",
+    "desat"
+   ],
+   "opt": {
+    "home": "TÜR",
+    "away": "İTA",
+    "hs": 1,
+    "as": 4,
+    "goals": [
+     "9'",
+     "22'",
+     "27'"
+    ]
+   },
+   "to": 441,
+   "frames": 97
+  },
+  {
+   "id": "bologna",
+   "from": 441,
+   "img": "img/montella-italya/bologna.jpg",
+   "a": [
+    860,
+    360,
+    520
+   ],
+   "b": [
+    880,
+    340,
+    440
+   ],
+   "fx": [
+    "table",
+    "desat"
+   ],
+   "opt": {
+    "title": "ULUSLAR LİGİ · A1 GRUBU",
+    "last": "İTA 3-1 TÜR"
+   },
+   "to": 561,
+   "frames": 120
+  },
+  {
+   "id": "freeze",
+   "from": 561,
+   "img": "img/montella-italya/presser.jpg",
+   "a": [
+    470,
+    250,
+    360
+   ],
+   "b": [
+    470,
+    240,
+    330
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "05.10.2026"
+   },
+   "to": 619,
+   "frames": 58
+  },
+  {
+   "id": "psych",
+   "from": 619,
+   "img": "img/montella-italya/smile.jpg",
+   "a": [
+    566,
+    260,
+    320
+   ],
+   "b": [
+    566,
+    240,
+    280
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "catisma",
+    "alarm": "ÇATIŞMA",
+    "cortex": "PREFRONTAL · KARAR",
+    "amyg": "SADAKAT",
+    "left": "TÜRKİYE",
+    "right": "İTALYA"
+   },
+   "to": 789,
+   "frames": 170
+  },
+  {
+   "id": "dunno",
+   "from": 789,
+   "img": "img/montella-italya/board.jpg",
+   "a": [
+    370,
+    420,
+    400
+   ],
+   "b": [
+    380,
+    400,
+    360
+   ],
+   "fx": [
+    "desat",
+    "ecg"
+   ],
+   "opt": {},
+   "to": 867,
+   "frames": 78
+  },
+  {
+   "id": "q1",
+   "from": 867,
+   "img": "img/montella-italya/presser.jpg",
+   "a": [
+    470,
+    260,
+    360
+   ],
+   "b": [
+    470,
+    230,
+    300
+   ],
+   "fx": [
+    "question",
+    "redduo",
+    "ecg"
+   ],
+   "opt": {
+    "n": 1
+   },
+   "to": 971,
+   "frames": 104
+  },
+  {
+   "id": "q2",
+   "from": 971,
+   "img": "img/montella-italya/bologna.jpg",
+   "a": [
+    880,
+    340,
+    440
+   ],
+   "b": [
+    860,
+    360,
+    520
+   ],
+   "fx": [
+    "question",
+    "redduo",
+    "ecg"
+   ],
+   "opt": {
+    "n": 2
+   },
+   "to": 1110,
+   "frames": 139
+  },
+  {
+   "id": "q3",
+   "from": 1110,
+   "img": "img/montella-italya/jr.jpg",
+   "a": [
+    700,
+    250,
+    420
+   ],
+   "b": [
+    800,
+    250,
+    380
+   ],
+   "fx": [
+    "question",
+    "desat"
+   ],
+   "opt": {
+    "n": 3
+   },
+   "to": 1194,
+   "frames": 84
+  },
+  {
+   "id": "cta",
+   "from": 1194,
+   "img": "img/montella-italya/presser.jpg",
+   "a": [
+    470,
+    240,
+    330
+   ],
+   "b": [
+    470,
+    230,
+    300
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "MONTELLA DEVAM ETMELİ Mİ?",
+    "a": "1 · DEVAM",
+    "b": "2 · YOLLAR AYRILSIN"
+   },
+   "to": 1274,
+   "frames": 80
+  }
+ ],
+ "words": [
+  {
+   "w": "BİR",
+   "s": 4,
+   "e": 8,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "İTALYAN",
+   "s": 8,
+   "e": 20,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "MİLLİ",
+   "s": 20,
+   "e": 28,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "TAKIMIMIZI",
+   "s": 28,
+   "e": 49,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "KENDİ",
+   "s": 49,
+   "e": 57,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "ÜLKESİNE",
+   "s": 57,
+   "e": 74,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "KARŞI",
+   "s": 74,
+   "e": 82,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "YÖNETTİ.",
+   "s": 82,
+   "e": 94,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "KALBİ",
+   "s": 99,
+   "e": 107,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "KİMİN",
+   "s": 107,
+   "e": 116,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "İÇİN",
+   "s": 116,
+   "e": 124,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ATTI?",
+   "s": 124,
+   "e": 133,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "28",
+   "s": 143,
+   "e": 154,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "EYLÜL",
+   "s": 154,
+   "e": 165,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "GECESİ,",
+   "s": 165,
+   "e": 182,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "BURSA.",
+   "s": 187,
+   "e": 201,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "BİR",
+   "s": 207,
+   "e": 211,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "GÜN",
+   "s": 211,
+   "e": 215,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "ÖNCE",
+   "s": 215,
+   "e": 224,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "ŞÖYLE",
+   "s": 224,
+   "e": 232,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "DEMİŞTİ:",
+   "s": 232,
+   "e": 245,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "\"SAHAYA",
+   "s": 251,
+   "e": 264,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "YALNIZCA",
+   "s": 264,
+   "e": 278,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "TÜRKİYE",
+   "s": 278,
+   "e": 291,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "İÇİN",
+   "s": 291,
+   "e": 300,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "ATAN",
+   "s": 300,
+   "e": 309,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "BİR",
+   "s": 309,
+   "e": 314,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "KALPLE",
+   "s": 314,
+   "e": 323,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "ÇIKACAĞIM.\"",
+   "s": 323,
+   "e": 340,
+   "hl": false,
+   "line": "quote"
+  },
+  {
+   "w": "İLK",
+   "s": 348,
+   "e": 355,
+   "hl": false,
+   "line": "score"
+  },
+  {
+   "w": "27",
+   "s": 355,
+   "e": 370,
+   "hl": false,
+   "line": "score"
+  },
+  {
+   "w": "DAKİKADA",
+   "s": 370,
+   "e": 399,
+   "hl": false,
+   "line": "score"
+  },
+  {
+   "w": "3",
+   "s": 399,
+   "e": 407,
+   "hl": true,
+   "line": "score"
+  },
+  {
+   "w": "GOL.",
+   "s": 407,
+   "e": 414,
+   "hl": true,
+   "line": "score"
+  },
+  {
+   "w": "MAÇ:",
+   "s": 414,
+   "e": 422,
+   "hl": false,
+   "line": "score"
+  },
+  {
+   "w": "1-4.",
+   "s": 422,
+   "e": 436,
+   "hl": true,
+   "line": "score"
+  },
+  {
+   "w": "BİR",
+   "s": 444,
+   "e": 449,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "HAFTA",
+   "s": 449,
+   "e": 460,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "SONRA",
+   "s": 460,
+   "e": 470,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "BOLOGNA:",
+   "s": 470,
+   "e": 486,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "YİNE",
+   "s": 486,
+   "e": 497,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "YENİLGİ.",
+   "s": 497,
+   "e": 512,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "DÖRT",
+   "s": 512,
+   "e": 517,
+   "hl": true,
+   "line": "bologna"
+  },
+  {
+   "w": "MAÇ,",
+   "s": 517,
+   "e": 523,
+   "hl": false,
+   "line": "bologna"
+  },
+  {
+   "w": "SIFIR",
+   "s": 523,
+   "e": 533,
+   "hl": true,
+   "line": "bologna"
+  },
+  {
+   "w": "PUAN.",
+   "s": 533,
+   "e": 544,
+   "hl": true,
+   "line": "bologna"
+  },
+  {
+   "w": "ŞİMDİ",
+   "s": 564,
+   "e": 576,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "ZAMANI",
+   "s": 585,
+   "e": 596,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "DURDURALIM.",
+   "s": 596,
+   "e": 612,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "PSİKOLOJİDE",
+   "s": 623,
+   "e": 644,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BUNA",
+   "s": 644,
+   "e": 653,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "SADAKAT",
+   "s": 653,
+   "e": 666,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "ÇATIŞMASI",
+   "s": 666,
+   "e": 683,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DENİR.",
+   "s": 683,
+   "e": 691,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "İKİ",
+   "s": 691,
+   "e": 700,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KİMLİK",
+   "s": 700,
+   "e": 709,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "ARASINDA",
+   "s": 709,
+   "e": 726,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KALAN",
+   "s": 726,
+   "e": 734,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BEYİN",
+   "s": 734,
+   "e": 743,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "RİSK",
+   "s": 743,
+   "e": 747,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "ALMAKTAN",
+   "s": 747,
+   "e": 760,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KAÇINABİLİR.",
+   "s": 760,
+   "e": 782,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "BÖYLE",
+   "s": 792,
+   "e": 808,
+   "hl": false,
+   "line": "dunno"
+  },
+  {
+   "w": "Mİ",
+   "s": 808,
+   "e": 815,
+   "hl": false,
+   "line": "dunno"
+  },
+  {
+   "w": "OLDU?",
+   "s": 815,
+   "e": 831,
+   "hl": false,
+   "line": "dunno"
+  },
+  {
+   "w": "BİLMİYORUZ.",
+   "s": 837,
+   "e": 847,
+   "hl": true,
+   "line": "dunno"
+  },
+  {
+   "w": "AMA",
+   "s": 847,
+   "e": 851,
+   "hl": false,
+   "line": "dunno"
+  },
+  {
+   "w": "SORMALIYIZ.",
+   "s": 851,
+   "e": 860,
+   "hl": false,
+   "line": "dunno"
+  },
+  {
+   "w": "KENDİ",
+   "s": 871,
+   "e": 879,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "ÜLKESİNE",
+   "s": 879,
+   "e": 895,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "KARŞI",
+   "s": 895,
+   "e": 902,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "OYNAMAK",
+   "s": 902,
+   "e": 914,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "BİR",
+   "s": 914,
+   "e": 918,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "HOCANIN",
+   "s": 918,
+   "e": 930,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "CESARETİNİ",
+   "s": 930,
+   "e": 950,
+   "hl": true,
+   "line": "q1"
+  },
+  {
+   "w": "ETKİLER",
+   "s": 950,
+   "e": 961,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "Mİ?",
+   "s": 961,
+   "e": 965,
+   "hl": false,
+   "line": "q1"
+  },
+  {
+   "w": "4",
+   "s": 975,
+   "e": 980,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "MAÇTA",
+   "s": 980,
+   "e": 991,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "0",
+   "s": 991,
+   "e": 997,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "PUAN",
+   "s": 997,
+   "e": 1007,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "VARKEN",
+   "s": 1007,
+   "e": 1018,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "\"TAKTİKSEL",
+   "s": 1018,
+   "e": 1034,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "OLARAK",
+   "s": 1034,
+   "e": 1050,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "ÇOK",
+   "s": 1050,
+   "e": 1055,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "İYİ",
+   "s": 1055,
+   "e": 1066,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "OYNADIK\"",
+   "s": 1066,
+   "e": 1082,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "DEMEK",
+   "s": 1087,
+   "e": 1092,
+   "hl": false,
+   "line": "q2"
+  },
+  {
+   "w": "YETERLİ",
+   "s": 1092,
+   "e": 1100,
+   "hl": true,
+   "line": "q2"
+  },
+  {
+   "w": "Mİ?",
+   "s": 1100,
+   "e": 1103,
+   "hl": true,
+   "line": "q2"
+  },
+  {
+   "w": "VE",
+   "s": 1114,
+   "e": 1118,
+   "hl": false,
+   "line": "q3"
+  },
+  {
+   "w": "MİLLİ",
+   "s": 1118,
+   "e": 1125,
+   "hl": false,
+   "line": "q3"
+  },
+  {
+   "w": "TAKIMIMIZ",
+   "s": 1125,
+   "e": 1141,
+   "hl": false,
+   "line": "q3"
+  },
+  {
+   "w": "BU",
+   "s": 1152,
+   "e": 1156,
+   "hl": false,
+   "line": "q3"
+  },
+  {
+   "w": "YOLDA",
+   "s": 1156,
+   "e": 1163,
+   "hl": false,
+   "line": "q3"
+  },
+  {
+   "w": "DEVAM",
+   "s": 1163,
+   "e": 1171,
+   "hl": true,
+   "line": "q3"
+  },
+  {
+   "w": "ETMELİ",
+   "s": 1171,
+   "e": 1182,
+   "hl": true,
+   "line": "q3"
+  },
+  {
+   "w": "Mİ?",
+   "s": 1182,
+   "e": 1186,
+   "hl": true,
+   "line": "q3"
+  },
+  {
+   "w": "KARAR",
+   "s": 1198,
+   "e": 1208,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "SENİN.",
+   "s": 1208,
+   "e": 1219,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YORUMLARA",
+   "s": 1219,
+   "e": 1240,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YAZ.",
+   "s": 1240,
+   "e": 1246,
+   "hl": false,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  570,
+  597,
+  624,
+  651,
+  676,
+  701,
+  725,
+  749,
+  771,
+  793,
+  815,
+  836,
+  856,
+  875,
+  894,
+  913,
+  931,
+  949,
+  966,
+  983,
+  1000,
+  1016,
+  1032,
+  1047,
+  1062,
+  1077,
+  1092,
+  1106,
+  1205,
+  1229
+ ],
+ "impact": -1,
+ "marks": {
+  "goals": 399,
+  "final": 422,
+  "four": 512,
+  "zero": 523,
+  "catisma": 653
+ },
+ "goals": 399,
+ "final": 422,
+ "four": 512,
+ "zero": 523,
+ "catisma": 653,
+ "typeStart": 144,
+ "typeRate": 1.3499999999999999,
+ "hud": [
+  "28.09.2026",
+  "BURSA · ULUSLAR LİGİ",
+  "TÜRKİYE – İTALYA"
+ ],
+ "audio": "mix/montella-italya.wav"
+}

@@ -22,7 +22,11 @@ for ln in sc["lines"]:
     t += len(y) / SR + ln["gap"]
 TOTAL = t
 L = {x["id"]: x for x in lines}
-IMPACT = L["turn"]["start"] + L["turn"]["dur"] + 0.38   # "dönüyor" + nefes kadar sessizlik
+R = sc.get("roles", {})
+IMPACT = None
+if R.get("impact"):
+    il = L[R["impact"]["after"]]
+    IMPACT = il["start"] + il["dur"] + R["impact"].get("pad", 0.38)   # cümle + nefes kadar sessizlik
 
 def tr_upper(s):
     return s.replace("i", "İ").replace("ı", "I").upper()
@@ -71,30 +75,40 @@ for ln in lines:
                               "hl": hl, "line": ln["id"]})
             acc += d
 
-# kalp atışları: freeze başından turn sonuna, 64 -> 168 bpm
+# kalp atışları: roles.beats.from başından roles.beats.to sonuna, bpm0 -> bpm1
 beats = []
-hb0, hb1 = L["freeze"]["start"] + 0.2, L["turn"]["start"] + L["turn"]["dur"] + 0.05
-bt = hb0
-while bt < hb1:
-    beats.append(round(bt, 3))
-    k = (bt - hb0) / (hb1 - hb0)
-    bpm = 64 + (168 - 64) * k ** 1.4
-    bt += 60 / bpm
-beats += [round(L["cta"]["start"] + 0.25, 3), round(L["cta"]["start"] + 1.05, 3)]
+if R.get("beats"):
+    B = R["beats"]
+    hb0 = L[B["from"]]["start"] + 0.2
+    hb1 = L[B["to"]]["start"] + L[B["to"]]["dur"] + 0.05
+    bt = hb0
+    while bt < hb1:
+        beats.append(round(bt, 3))
+        k = (bt - hb0) / (hb1 - hb0)
+        bt += 60 / (B["bpm"][0] + (B["bpm"][1] - B["bpm"][0]) * k ** 1.4)
+if R.get("end_beats"):
+    beats += [round(L[R["end_beats"]]["start"] + 0.25, 3), round(L[R["end_beats"]]["start"] + 1.05, 3)]
 
-devre = next((w["s"] for w in words if w["line"] == "brain" and w["w"].startswith("DEVRE")), L["brain"]["start"] + L["brain"]["dur"] - 1)
-haka = next((w["s"] for w in words if w["line"] == "insult" and w["w"].startswith("HAKARET")), L["insult"]["start"] + 1.2)
-amig = next((w["s"] for w in words if w["line"] == "brain" and w["w"].startswith("AMİGDALA")), L["brain"]["start"] + 1)
-TYPE_START, TYPE_RATE = L["date"]["start"] + 0.05, 0.045   # HUD daktilo: karakter/sn
-HUD = ["09.07.2006", "BERLİN · OLYMPIASTADION", "DÜNYA KUPASI FİNALİ"]
+# işaretler: belirli bir kelimenin başladığı an (görsel + ses olayı)
+marks = {}
+for name, m in sc.get("marks", {}).items():
+    ln = L[m["line"]]
+    marks[name] = next((w["s"] for w in words if w["line"] == m["line"] and w["w"].startswith(m["word"])),
+                       ln["start"] + ln["dur"] * 0.5)
+TYPE_RATE = 0.045   # HUD daktilo: karakter başına sn
+TYPE = R.get("type")
+TYPE_START = L[TYPE["line"]]["start"] + 0.05 if TYPE else 0
+HUD = TYPE["hud"] if TYPE else []
 
 f = lambda s: int(round(s * FPS))
 scenes = []
 for ln in lines:
-    scenes.append({"id": ln["id"], "from": f(ln["start"] - (0.12 if ln["id"] != "hook" else LEAD)), "img": ln["img"],
-                   "a": ln["a"], "b": ln["b"], "fx": ln["fx"]})
-imp = sc["impact"]
-scenes.append({"id": "impact", "from": f(IMPACT), "img": imp["img"], "a": imp["a"], "b": imp["b"], "fx": imp["fx"]})
+    if ln.get("img") is None: continue   # önceki sahne devam eder
+    scenes.append({"id": ln["id"], "from": f(ln["start"] - (0.12 if ln is not lines[0] else LEAD)), "img": ln["img"],
+                   "a": ln["a"], "b": ln["b"], "fx": ln["fx"], "opt": ln.get("opt", {})})
+if IMPACT is not None:
+    imp = R["impact"]["scene"]
+    scenes.append({"id": "impact", "from": f(IMPACT), "img": imp["img"], "a": imp["a"], "b": imp["b"], "fx": imp["fx"], "opt": {}})
 scenes.sort(key=lambda s: s["from"])
 for i, s in enumerate(scenes):
     s["to"] = scenes[i + 1]["from"] if i + 1 < len(scenes) else f(TOTAL)
@@ -103,11 +117,12 @@ for i, s in enumerate(scenes):
 
 out = {"slug": slug, "series": sc["series"], "fps": FPS, "frames": f(TOTAL), "scenes": scenes,
        "words": [{**w, "s": f(w["s"]), "e": f(w["e"])} for w in words],
-       "beats": [f(b) for b in beats], "impact": f(IMPACT), "devre": f(devre), "hakaret": f(haka), "amigdala": f(amig),
+       "beats": [f(b) for b in beats], "impact": f(IMPACT) if IMPACT is not None else -1,
+       "marks": {k: f(v) for k, v in marks.items()}, **{k: f(v) for k, v in marks.items()},
        "typeStart": f(TYPE_START), "typeRate": TYPE_RATE * FPS, "hud": HUD,
        "audio": f"mix/{slug}.wav"}
 json.dump(out, open(f"src/data/{slug}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-print(f"timeline: {TOTAL:.2f}s, {len(words)} words, {len(beats)} beats, impact {IMPACT:.2f}s")
+print(f"timeline: {TOTAL:.2f}s, {len(words)} words, {len(beats)} beats, impact {IMPACT}")
 
 # ---------- 2) ses tasarımı ----------
 N = int((TOTAL + 0.5) * SR)
@@ -222,87 +237,97 @@ def tinnitus(d, f0=5200):
 
 hz = lambda n: 440 * 2 ** ((n - 69) / 12)   # MIDI -> Hz
 
-# --- müzik: karanlık D minör drone, gerilim yükselir, darbe anında kesilir
-pre_end = IMPACT - 0.35
+# --- müzik: karanlık D minör drone; darbe ya da hüzün bölümünde biter
+SAD = L[R["sad"]]["start"] + 0.25 if R.get("sad") else TOTAL
+pre_end = IMPACT - 0.35 if IMPACT is not None else SAD
 d0 = pre_end
 x = tt(d0)
 swell = np.clip(x / d0, 0, 1)
 drone = (np.sin(2 * np.pi * hz(26) * x) * 0.55 + saw(hz(38), d0, 600) * 0.35 + saw(hz(38) * 1.004, d0, 600) * 0.3
          + saw(hz(45), d0, 700) * 0.18 * swell)
 drone *= (0.55 + 0.45 * swell) * (1 + 0.15 * np.sin(2 * np.pi * 0.25 * x))
-# gerilim kümesi (D5 + Eb5) beynin içinde yükselir
-k0 = L["freeze"]["start"]
+fz = L[R["freeze"]]["start"] if R.get("freeze") else None
+k0 = fz if fz is not None else d0 * 0.5
 clus = (saw(hz(74), d0, 3000) + saw(hz(75), d0, 3000) * 0.8) * np.clip((x - k0) / (pre_end - k0), 0, 1) ** 2 * 0.07
-dr = np.stack([drone + clus * 1.1, drone * 0.97 + clus * 0.9], 1) * env_adsr(len(x), 0.6, 0.05)[:, None]
-# donma anında drone durur, beyin bölümünde geri döner
-fz = L["freeze"]["start"]; fz_i = int(fz * SR); back_i = int((L["brain"]["start"] + 0.2) * SR)
-g = np.ones(len(x)); g[fz_i:back_i] = 0
-ramp = int(0.8 * SR); g[back_i:back_i + ramp] = np.linspace(0, 1, ramp)[: len(g[back_i:back_i + ramp])]
-dr *= g[:, None]
+dr = np.stack([drone + clus * 1.1, drone * 0.97 + clus * 0.9], 1) * env_adsr(len(x), 0.6, 0.6 if IMPACT is None else 0.05)[:, None]
+if fz is not None:   # donma anında drone durur, resume satırında geri döner
+    fz_i = int(fz * SR); back_i = int((L[R["resume"]]["start"] + 0.2) * SR)
+    g = np.ones(len(x)); g[fz_i:back_i] = 0
+    ramp = int(0.8 * SR); g[back_i:back_i + ramp] = np.linspace(0, 1, ramp)[: len(g[back_i:back_i + ramp])]
+    dr *= g[:, None]
 put(music, reverb(hp(lp(dr, 2400), 45), 3.0, 0.3), 0, 0.3)
 
-# sub darbeler + saat tik-takları (tarih -> donma)
-p = L["date"]["start"]
-while p < fz - 0.1:
-    x2 = tt(0.5); kick = np.sin(2 * np.pi * np.cumsum(40 + 50 * np.exp(-x2 * 25)) / SR) * np.exp(-x2 * 7)
-    put(music, lp(kick, 150), p, 0.3)
-    p += 0.75
-p = L["min"]["start"]
-while p < fz - 0.05:
-    put(sfx, tick(), p, 0.22, pan=0.3 if int(p / 0.375) % 2 else -0.3); p += 0.375
+# sub darbeler + saat tik-takları
+if R.get("kicks"):
+    p, end = L[R["kicks"][0]]["start"], L[R["kicks"][1]]["start"]
+    while p < end - 0.1:
+        x2 = tt(0.5); kick = np.sin(2 * np.pi * np.cumsum(40 + 50 * np.exp(-x2 * 25)) / SR) * np.exp(-x2 * 7)
+        put(music, lp(kick, 150), p, 0.3)
+        p += 0.75
+if R.get("ticks"):
+    p, end = L[R["ticks"][0]]["start"], L[R["ticks"][1]]["start"]
+    while p < end - 0.05:
+        put(sfx, tick(), p, 0.22, pan=0.3 if int(p / 0.375) % 2 else -0.3); p += 0.375
 
-# kanca: darbe + riser
+# kanca: darbe
 put(sfx, boom(1.8), 0.0, 0.55)
 put(sfx, reverb(whoosh(0.5, False), 1.5, 0.3), 0.0, 0.5)
 put(sfx, tinnitus(1.4), 0.15, 0.6)
 
 # sahne geçiş whoosh'ları
 for s in scenes:
-    if s["id"] in ("date", "min", "shirt", "walk", "why", "turn", "trophy", "cta"):
+    if s["id"] in R.get("whoosh", []):
         put(sfx, whoosh(0.45, True), max(0, s["from"] / FPS - 0.22), 0.32, pan=rng.uniform(-.4, .4))
 
 # HUD daktilo
-nch = sum(len(h) for h in HUD)
-for i in range(nch):
-    put(sfx, type_key(), TYPE_START + i * TYPE_RATE + (0.12 if i >= len(HUD[0]) else 0) + (0.12 if i >= len(HUD[0]) + len(HUD[1]) else 0),
-        0.35 * rng.uniform(.7, 1), pan=rng.uniform(-.3, .3))
+if HUD:
+    for i in range(sum(len(h) for h in HUD)):
+        put(sfx, type_key(), TYPE_START + i * TYPE_RATE + (0.12 if i >= len(HUD[0]) else 0) + (0.12 if len(HUD) > 2 and i >= len(HUD[0]) + len(HUD[1]) else 0),
+            0.35 * rng.uniform(.7, 1), pan=rng.uniform(-.3, .3))
 
-# hakaret: vuruş + glitch
-put(sfx, boom(0.9) * 0.6, haka, 0.5); put(sfx, glitch(0.3), haka, 0.5)
+# adlandırılmış ses olayları (işaretlerde ve satır başlarında)
+def event(name, t0):
+    if name == "hit": put(sfx, boom(0.9) * 0.6, t0, 0.5)
+    elif name == "glitch": put(sfx, glitch(0.3), t0, 0.5)
+    elif name == "bigglitch": put(sfx, glitch(0.45), t0, 0.75); put(sfx, tape_stop(0.6, 220) * 0.6, t0 + 0.05, 0.6)
+    elif name == "alarm": put(sfx, reverb(lp(boom(1.2), 900), 2, .4), t0, 0.35)
+    elif name == "stamp": put(sfx, reverb(boom(0.7), 1.2, .3) * 0.7, t0, 0.45); put(sfx, click(0.03, 1500), t0, 0.6)
+    elif name == "triple":
+        for k in range(3): put(sfx, reverb(boom(0.6), 1.0, .3) * 0.6, t0 + k * 0.2, 0.45)
+    elif name == "quad":
+        for k in range(4): put(sfx, lp(boom(0.5), 700), t0 + k * 0.16, 0.4)
+    elif name == "whistle": put(sfx, reverb(whistle(0.85), 2.0, 0.3), t0 - 0.35, 0.55); put(sfx, reverb(whoosh(0.4, False), 1.2, 0.3), t0 - 0.05, 0.3)
+for name, m in sc.get("marks", {}).items():
+    for e in m.get("sfx", []): event(e, marks[name])
+for ln in lines:
+    for e in ln.get("sfx", []): event(e, ln["start"] - 0.05)
+
 # zamanı durdur: tape-stop + uğultu
-put(sfx, reverb(tape_stop(), 2.0, 0.4), fz - 0.05, 0.8)
-put(sfx, tinnitus(L["brain"]["start"] - fz + 0.5, 6100), fz + 0.2, 0.5)
-# amigdala: alarm darbesi
-put(sfx, reverb(lp(boom(1.2), 900), 2, .4), amig, 0.35)
-# devre dışı: glitch + düşen ton
-put(sfx, glitch(0.45), devre, 0.75)
-put(sfx, tape_stop(0.6, 220) * 0.6, devre + 0.05, 0.6)
-# kalp atışları
+if fz is not None:
+    put(sfx, reverb(tape_stop(), 2.0, 0.4), fz - 0.05, 0.8)
+    put(sfx, tinnitus(L[R["resume"]]["start"] - fz + 0.5, 6100), fz + 0.2, 0.5)
 for b in beats: put(sfx, heartbeat(), b, 0.65)
-# dönüyor: ters yükselen + darbe
-sw = reverse_swell(1.5); put(sfx, sw, IMPACT - 1.5, 0.75)
-put(sfx, reverb(boom(2.6), 3.2, 0.35), IMPACT, 1.0)
-put(sfx, tinnitus(2.4, 4700), IMPACT + 0.3, 0.9)
-# kırmızı kart: düdük
-put(sfx, reverb(whistle(0.85), 2.0, 0.3), L["red"]["start"] - 0.35, 0.55)
-put(sfx, reverb(whoosh(0.4, False), 1.2, 0.3), L["red"]["start"] - 0.05, 0.3)
+if IMPACT is not None:   # ters yükselen + büyük darbe
+    put(sfx, reverse_swell(1.5), IMPACT - 1.5, 0.75)
+    put(sfx, reverb(boom(2.6), 3.2, 0.35), IMPACT, 1.0)
+    put(sfx, tinnitus(2.4, 4700), IMPACT + 0.3, 0.9)
 
-# hüzünlü piyano (kırmızı kart -> son)
-pst = L["red"]["start"] + 0.25
-chords = [[38, 50, 53, 57, 62], [34, 46, 50, 53, 58], [41, 53, 57, 60, 65], [33, 45, 49, 52, 57]]  # Dm Bb F A
-dur_ch = (TOTAL - pst) / 4
-pn = np.zeros((int((TOTAL - pst + 4) * SR), 2))
-for ci, ch in enumerate(chords):
-    for ni, n in enumerate(ch):
-        put_at = ci * dur_ch + ni * 0.05
-        y = piano(hz(n), dur_ch + 2.5, 0.5 if ni else 0.7)
-        i = int(put_at * SR); pn[i:i + len(y)] += np.stack([y * (1 - 0.1 * ni), y * (0.6 + 0.1 * ni)], 1)[: len(pn) - i]
-    mel = [69, 65, 65, 64][ci]
-    y = piano(hz(mel), dur_ch + 2, 0.55); i = int((ci * dur_ch + dur_ch * 0.5) * SR); pn[i:i + len(y)] += np.stack([y, y], 1)[: len(pn) - i]
-pad_x = tt(TOTAL - pst + 1)
-pad = sum(saw(hz(n), TOTAL - pst + 1, 1800) for n in (50, 57, 62)) * env_adsr(len(pad_x), 1.5, 1.0) * 0.05
-put(music, reverb(pn, 3.5, 0.45), pst, 0.5)
-put(music, reverb(lp(pad, 1500), 3.0, 0.4), pst, 0.6)
+# hüzünlü piyano (sad satırı -> son)
+pst = SAD
+if pst < TOTAL:
+    chords = [[38, 50, 53, 57, 62], [34, 46, 50, 53, 58], [41, 53, 57, 60, 65], [33, 45, 49, 52, 57]]  # Dm Bb F A
+    dur_ch = (TOTAL - pst) / 4
+    pn = np.zeros((int((TOTAL - pst + 4) * SR), 2))
+    for ci, ch in enumerate(chords):
+        for ni, n in enumerate(ch):
+            y = piano(hz(n), dur_ch + 2.5, 0.5 if ni else 0.7)
+            i = int((ci * dur_ch + ni * 0.05) * SR); pn[i:i + len(y)] += np.stack([y * (1 - 0.1 * ni), y * (0.6 + 0.1 * ni)], 1)[: len(pn) - i]
+        y = piano(hz([69, 65, 65, 64][ci]), dur_ch + 2, 0.55); i = int((ci * dur_ch + dur_ch * 0.5) * SR)
+        pn[i:i + len(y)] += np.stack([y, y], 1)[: len(pn) - i]
+    pad_x = tt(TOTAL - pst + 1)
+    pad = sum(saw(hz(n), TOTAL - pst + 1, 1800) for n in (50, 57, 62)) * env_adsr(len(pad_x), 1.5, 1.0) * 0.05
+    put(music, reverb(pn, 3.5, 0.45), pst, 0.5)
+    put(music, reverb(lp(pad, 1500), 3.0, 0.4), pst, 0.6)
 
 # --- seslendirme + ducking
 for ln in lines: put_vo_i = int(ln["start"] * SR); vo[put_vo_i:put_vo_i + len(ln["audio"])] += ln["audio"]

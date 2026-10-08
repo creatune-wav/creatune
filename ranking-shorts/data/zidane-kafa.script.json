@@ -230,6 +230,9 @@
    ],
    "fx": [
     "redcard"
+   ],
+   "sfx": [
+    "whistle"
    ]
   },
   {
@@ -277,20 +280,88 @@
  "speed": 1.1,
  "series": "FUTBOLUN PSİKOLOJİSİ",
  "title": "Zidane'ın Kafası: 3 Saniyede Kariyer Nasıl Yanar?",
- "impact": {
-  "img": "head",
-  "a": [
-   740,
-   330,
-   470
+ "roles": {
+  "type": {
+   "line": "date",
+   "hud": [
+    "09.07.2006",
+    "BERLİN · OLYMPIASTADION",
+    "DÜNYA KUPASI FİNALİ"
+   ]
+  },
+  "kicks": [
+   "date",
+   "freeze"
   ],
-  "b": [
-   730,
-   360,
-   540
+  "ticks": [
+   "min",
+   "freeze"
   ],
-  "fx": [
-   "impact"
+  "freeze": "freeze",
+  "resume": "brain",
+  "beats": {
+   "from": "freeze",
+   "to": "turn",
+   "bpm": [
+    64,
+    168
+   ]
+  },
+  "end_beats": "cta",
+  "impact": {
+   "after": "turn",
+   "pad": 0.38,
+   "scene": {
+    "img": "head",
+    "a": [
+     740,
+     330,
+     470
+    ],
+    "b": [
+     730,
+     360,
+     540
+    ],
+    "fx": [
+     "impact"
+    ]
+   }
+  },
+  "sad": "red",
+  "whoosh": [
+   "date",
+   "min",
+   "shirt",
+   "walk",
+   "why",
+   "turn",
+   "trophy",
+   "cta"
   ]
+ },
+ "marks": {
+  "hakaret": {
+   "line": "insult",
+   "word": "HAKARET",
+   "sfx": [
+    "hit",
+    "glitch"
+   ]
+  },
+  "amigdala": {
+   "line": "brain",
+   "word": "AMİGDALA",
+   "sfx": [
+    "alarm"
+   ]
+  },
+  "devre": {
+   "line": "brain",
+   "word": "DEVRE",
+   "sfx": [
+    "bigglitch"
+   ]
+  }
  }
 }
