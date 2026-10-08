@@ -1,8 +1,9 @@
 # Kullanım: python tools/vo_tr.py data/<slug>.script.json [edge|piper]
 # Her satırı ayrı üretir: public/vo/<slug>/<id>.wav
 #  edge : Microsoft nöral sesi (tr-TR-AhmetNeural). speech.platform.bing.com ağ izni gerekir.
+#  gtrans: Google'ın nöral Türkçe sesi (translate.googleapis.com, kadın anlatıcı). Doğal ve telaffuzu kusursuz.
 #  piper: yerel Türkçe Piper sesi (fahrettin, sherpa-onnx); model tools/voice/ içine indirilir.
-# Motor verilmezse önce edge denenir, erişilemezse piper'a düşülür.
+# Motor verilmezse sırayla edge, gtrans, piper denenir; ilk çalışan kullanılır.
 # Satırda "say_neural" varsa edge onu okur (özel isimleri düzgün okuduğu için fonetik yazım gerekmez).
 import asyncio, json, os, subprocess, sys, tempfile
 import numpy as np, soundfile as sf
@@ -28,6 +29,15 @@ def load_any(path):
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-ac", "1", "-ar", "48000", wav], check=True)
     return sf.read(wav, dtype="float32")
 
+def gtrans_chunk(text):
+    import urllib.parse, urllib.request
+    q = urllib.parse.urlencode({"ie": "UTF-8", "client": "gtx", "tl": "tr", "q": text})
+    with tempfile.TemporaryDirectory() as d:
+        mp3 = os.path.join(d, "a.mp3")
+        with urllib.request.urlopen(f"https://translate.googleapis.com/translate_tts?{q}", timeout=30) as r:
+            open(mp3, "wb").write(r.read())
+        return load_any(mp3)
+
 _piper = None
 def piper_chunk(text, speed):
     global _piper
@@ -45,27 +55,35 @@ def piper_chunk(text, speed):
     return np.array(a.samples, dtype="float32"), a.sample_rate
 
 if engine == "auto":
-    try:
-        edge_chunk("Deneme.", "+0%"); engine = "edge"
-    except Exception as e:
-        print("edge erişilemedi, piper kullanılıyor:", type(e).__name__); engine = "piper"
+    for cand, probe in (("edge", lambda: edge_chunk("Deneme.", "+0%")), ("gtrans", lambda: gtrans_chunk("Deneme."))):
+        try:
+            probe(); engine = cand; break
+        except Exception as e:
+            print(f"{cand} erişilemedi:", type(e).__name__)
+    else:
+        engine = "piper"
 
 # motor başına son işlem: piper biraz kalınlaştırılır; nöral ses zaten doğal, hafif dokunulur
 POST = {
     "piper": f"asetrate=22050*0.965,aresample=48000,atempo={sc.get('piper_tempo', 1.07)},highpass=f=70,bass=g=5:f=110,treble=g=2:f=5000,"
              "acompressor=threshold=-22dB:ratio=4:attack=4:release=90,silenceremove=start_periods=1:start_threshold=-50dB,"
              "loudnorm=I=-15:TP=-1.5:LRA=7",
+    "gtrans": f"aresample=48000,atempo={sc.get('gtrans_tempo', 1.2)},highpass=f=80,equalizer=f=180:t=q:w=1:g=2,"
+              "equalizer=f=3500:t=q:w=1.5:g=2,acompressor=threshold=-20dB:ratio=3:attack=5:release=100,"
+              "silenceremove=start_periods=1:start_threshold=-50dB,loudnorm=I=-15:TP=-1.5:LRA=7",
     "edge": "aresample=48000,highpass=f=70,bass=g=3:f=120,acompressor=threshold=-20dB:ratio=3:attack=5:release=100,"
             "silenceremove=start_periods=1:start_threshold=-50dB,loudnorm=I=-15:TP=-1.5:LRA=7",
 }
 for ln in sc["lines"]:
-    text = ln.get("say_neural", ln["say"]) if engine == "edge" else ln["say"]
+    text = ln.get("say_neural", ln["say"]) if engine in ("edge", "gtrans") else ln["say"]
     # "..." = dramatik duraklama: parçaları ayrı üret, araya sessizlik koy
     parts, sr = [], 48000
     for chunk in (x.strip() for x in text.split("...")):
         if not chunk: continue
         if engine == "edge":
             y, sr = edge_chunk(chunk, sc.get("edge_rate", "+4%"))
+        elif engine == "gtrans":
+            y, sr = gtrans_chunk(chunk)
         else:
             y, sr = piper_chunk(chunk, ln.get("speed", sc.get("speed", 1.0)))
         nz = np.nonzero(np.abs(y) > 0.01)[0]

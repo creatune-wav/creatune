@@ -1,0 +1,359 @@
+{
+ "slug": "arda-guler",
+ "series": "FUTBOLUN PSİKOLOJİSİ",
+ "gtrans_tempo": 1.18,
+ "title": "Arda Güler ve 'Brezilya Çetesi': Cevabını Sahada Verdi",
+ "roles": {
+  "type": {
+   "line": "date",
+   "hud": [
+    "22.08.2026",
+    "LALİGA",
+    "REAL MADRİD · ESPANYOL"
+   ]
+  },
+  "kicks": [
+   "date",
+   "freeze"
+  ],
+  "ticks": [
+   "derby",
+   "freeze"
+  ],
+  "freeze": "freeze",
+  "resume": "psych",
+  "beats": {
+   "from": "freeze",
+   "to": "psych",
+   "bpm": [
+    66,
+    122
+   ]
+  },
+  "end_beats": "cta",
+  "triumph": "pivot",
+  "whoosh": [
+   "date",
+   "lip",
+   "answer",
+   "derby",
+   "pivot",
+   "proof",
+   "value",
+   "cta"
+  ]
+ },
+ "marks": {
+  "asist": {
+   "line": "answer",
+   "word": "ASİST",
+   "sfx": [
+    "stamp"
+   ]
+  },
+  "acı": {
+   "line": "psych",
+   "word": "DIŞLANMAK",
+   "sfx": [
+    "alarm"
+   ]
+  },
+  "yakit": {
+   "line": "pivot",
+   "word": "YAKITA",
+   "sfx": [
+    "riser"
+   ]
+  },
+  "stats": {
+   "line": "proof",
+   "word": "7",
+   "sfx": [
+    "triple"
+   ]
+  },
+  "yuz": {
+   "line": "value",
+   "word": "100",
+   "sfx": [
+    "stamp"
+   ]
+  }
+ },
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Türk basını buna, Brezilya çetesi dedi. Arda ise... cevabını sahada verdi.",
+   "cap": "Türk basını buna *Brezilya* *çetesi* dedi. Arda ise... cevabını *sahada* verdi.",
+   "gap": 0.2,
+   "img": "shh",
+   "a": [
+    750,
+    300,
+    380
+   ],
+   "b": [
+    750,
+    320,
+    420
+   ],
+   "fx": [
+    "flash",
+    "shake"
+   ]
+  },
+  {
+   "id": "date",
+   "say": "Yirmi iki Ağustos. Espanyol maçı.",
+   "cap": "22 Ağustos. Espanyol maçı.",
+   "gap": 0.1,
+   "img": "cl",
+   "a": [
+    700,
+    360,
+    460
+   ],
+   "b": [
+    690,
+    330,
+    400
+   ],
+   "fx": [
+    "typehud"
+   ]
+  },
+  {
+   "id": "lip",
+   "say": "Dudak okumalarına göre Vinicius bağırdı: Arda, bir kere de bana at!",
+   "cap": "Dudak okumalarına göre Vinicius bağırdı: \"Arda, bir kere de bana at!\"",
+   "gap": 0.15,
+   "img": "vini",
+   "a": [
+    640,
+    330,
+    400
+   ],
+   "b": [
+    640,
+    300,
+    340
+   ],
+   "fx": [
+    "quote"
+   ],
+   "opt": {
+    "text": "“Arda, bir kere de bana at! Hep aynı şey!”",
+    "by": "VINÍCIUS JR. · DUDAK OKUMA İDDİASI"
+   }
+  },
+  {
+   "id": "answer",
+   "say": "Arda'nın cevabı? Aynı maçta, asist.",
+   "cap": "Arda'nın cevabı? Aynı maçta *asist.*",
+   "gap": 0.6,
+   "img": "point",
+   "a": [
+    620,
+    320,
+    420
+   ],
+   "b": [
+    620,
+    280,
+    360
+   ],
+   "fx": [
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "ASİST ✓",
+    "stampAt": "asist",
+    "color": "#1ED760"
+   }
+  },
+  {
+   "id": "derby",
+   "say": "Derbide de, top yine Embappe'ye gitti.",
+   "cap": "Derbide de top yine *Mbappé'ye* gitti.",
+   "gap": 0.15,
+   "img": "derby",
+   "a": [
+    230,
+    400,
+    400
+   ],
+   "b": [
+    240,
+    420,
+    440
+   ],
+   "fx": [
+    "passmap",
+    "desat"
+   ]
+  },
+  {
+   "id": "freeze",
+   "say": "Şimdi... zamanı durduralım.",
+   "cap": "Şimdi... zamanı durduralım.",
+   "gap": 0.2,
+   "img": "lonely",
+   "a": [
+    780,
+    400,
+    420
+   ],
+   "b": [
+    780,
+    360,
+    380
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "20.09.2026"
+   }
+  },
+  {
+   "id": "psych",
+   "say": "Bilim diyor ki: dışlanmak, beyinde fiziksel acı gibi hissedilir.",
+   "cap": "Bilim diyor ki: *dışlanmak* beyinde *fiziksel* *acı* gibi hissedilir.",
+   "gap": 0.2,
+   "img": "lonely",
+   "a": [
+    780,
+    340,
+    380
+   ],
+   "b": [
+    780,
+    320,
+    340
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "acı",
+    "alarm": "SOSYAL ACI",
+    "cortex": "PREFRONTAL · KONTROL",
+    "amyg": "ACI ALARMI"
+   }
+  },
+  {
+   "id": "pivot",
+   "say": "Ama güçlü bir zihin, bu acıyı yakıta çevirir... ve oyununa odaklanır.",
+   "cap": "Ama güçlü bir zihin bu acıyı *yakıta* çevirir... ve *oyununa* *odaklanır.*",
+   "gap": 0.2,
+   "img": "look",
+   "a": [
+    640,
+    380,
+    440
+   ],
+   "b": [
+    640,
+    330,
+    380
+   ],
+   "fx": [
+    "colorup"
+   ]
+  },
+  {
+   "id": "proof",
+   "say": "Arda da öyle yaptı: yedi maçta, bir gol, iki asist.",
+   "cap": "Arda da öyle yaptı: *7* maçta *1* *gol,* *2* *asist.*",
+   "gap": 0.2,
+   "img": "stad",
+   "a": [
+    640,
+    380,
+    460
+   ],
+   "b": [
+    640,
+    330,
+    400
+   ],
+   "fx": [
+    "stats"
+   ],
+   "opt": {
+    "at": "stats",
+    "rows": [
+     [
+      "7",
+      "LİG MAÇI"
+     ],
+     [
+      "1",
+      "GOL"
+     ],
+     [
+      "2",
+      "ASİST"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "value",
+   "say": "Ve piyasa değeri, yüz milyon euro. Bunu başaran ilk Türk.",
+   "cap": "Ve piyasa değeri *100* *milyon* *euro.* Bunu başaran *ilk* *Türk.*",
+   "gap": 0.25,
+   "img": "face",
+   "a": [
+    330,
+    380,
+    480
+   ],
+   "b": [
+    330,
+    340,
+    420
+   ],
+   "fx": [
+    "bigstat"
+   ],
+   "opt": {
+    "at": "yuz",
+    "big": "€100M",
+    "sub": "TÜRK FUTBOL TARİHİNDE İLK",
+    "src": "TRANSFERMARKT"
+   }
+  },
+  {
+   "id": "cta",
+   "say": "Sence Arda, Madrid'in yeni lideri olur mu? Yorumlara yaz.",
+   "cap": "Sence Arda Madrid'in yeni lideri olur mu? Yorumlara yaz.",
+   "gap": 0.9,
+   "img": "point",
+   "a": [
+    620,
+    300,
+    400
+   ],
+   "b": [
+    620,
+    280,
+    360
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "ARDA, REAL MADRİD'İN YENİ LİDERİ OLUR MU?",
+    "a": "1 · OLUR, ZAMAN MESELESİ",
+    "b": "2 · DAHA ERKEN"
+   }
+  }
+ ],
+ "edge_rate": "+14%",
+ "edge_pitch": "-4Hz"
+}

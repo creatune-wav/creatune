@@ -239,6 +239,8 @@ hz = lambda n: 440 * 2 ** ((n - 69) / 12)   # MIDI -> Hz
 
 # --- müzik: karanlık D minör drone; darbe ya da hüzün bölümünde biter
 SAD = L[R["sad"]]["start"] + 0.25 if R.get("sad") else TOTAL
+TRI = L[R["triumph"]]["start"] - 0.1 if R.get("triumph") else None
+if TRI is not None: SAD = TRI   # drone, zafer müziği başlayınca biter
 pre_end = IMPACT - 0.35 if IMPACT is not None else SAD
 d0 = pre_end
 x = tt(d0)
@@ -296,6 +298,7 @@ def event(name, t0):
         for k in range(3): put(sfx, reverb(boom(0.6), 1.0, .3) * 0.6, t0 + k * 0.2, 0.45)
     elif name == "quad":
         for k in range(4): put(sfx, lp(boom(0.5), 700), t0 + k * 0.16, 0.4)
+    elif name == "riser": put(sfx, reverse_swell(0.9), t0 - 0.9, 0.5)
     elif name == "whistle": put(sfx, reverb(whistle(0.85), 2.0, 0.3), t0 - 0.35, 0.55); put(sfx, reverb(whoosh(0.4, False), 1.2, 0.3), t0 - 0.05, 0.3)
 for name, m in sc.get("marks", {}).items():
     for e in m.get("sfx", []): event(e, marks[name])
@@ -314,6 +317,28 @@ if IMPACT is not None:   # ters yükselen + büyük darbe
 
 # hüzünlü piyano (sad satırı -> son)
 pst = SAD
+if TRI is not None:
+    # zafer: D majör akorlar (D A Bm G), sekizlik piyano + yükselen pad + vuruş
+    seq = [[50, 57, 62, 66], [45, 57, 61, 64], [47, 59, 62, 66], [43, 55, 59, 62]]
+    span = TOTAL - TRI
+    bar = span / 4
+    tri = np.zeros((int((span + 4) * SR), 2))
+    for ci, ch in enumerate(seq):
+        st8 = bar / 8
+        for k in range(8):
+            n = ch[1:][k % 3] + (12 if k % 4 == 3 else 0)
+            y = piano(hz(n), 1.4, 0.32 + 0.1 * (k % 2 == 0)); i = int((ci * bar + k * st8) * SR)
+            tri[i:i + len(y)] += np.stack([y * (0.8 if k % 2 else 1), y * (1 if k % 2 else 0.8)], 1)[: len(tri) - i]
+        y = piano(hz(ch[0] - 12), bar + 1.5, 0.7); i = int(ci * bar * SR); tri[i:i + len(y)] += np.stack([y, y], 1)[: len(tri) - i]
+        x2 = tt(0.5)
+        for b in range(4):   # dörtlük vuruş
+            kick = np.sin(2 * np.pi * np.cumsum(45 + 70 * np.exp(-x2 * 30)) / SR) * np.exp(-x2 * 9)
+            i = int((ci * bar + b * bar / 4) * SR); tri[i:i + len(kick)] += np.stack([kick, kick], 1)[: len(tri) - i] * 0.5
+    pad_x = tt(span + 1)
+    pad = sum(saw(hz(n), span + 1, 2500) for n in (62, 66, 69, 74)) * env_adsr(len(pad_x), 2.0, 1.0) * 0.035 * np.linspace(0.6, 1.2, len(pad_x))
+    put(music, reverb(tri, 2.6, 0.35), TRI, 0.55)
+    put(music, reverb(lp(pad, 3000), 3.0, 0.4), TRI, 0.6)
+    pst = TOTAL
 if pst < TOTAL:
     chords = [[38, 50, 53, 57, 62], [34, 46, 50, 53, 58], [41, 53, 57, 60, 65], [33, 45, 49, 52, 57]]  # Dm Bb F A
     dur_ch = (TOTAL - pst) / 4

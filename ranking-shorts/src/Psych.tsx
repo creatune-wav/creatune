@@ -108,6 +108,7 @@ const SceneView: React.FC<{ s: Scene; d: PsychData }> = ({ s, d }) => {
   if (fx("redduo")) filter = "grayscale(1) contrast(1.35) brightness(.75)";
   if (fx("dark")) filter = `saturate(.5) contrast(1.25) brightness(${interpolate(f, [0, s.frames], [.8, .45], clamp)})`;
   if (fx("impact")) filter = "contrast(1.2) saturate(1.15)";
+  if (fx("colorup")) filter = `grayscale(${interpolate(f, [0, 40], [1, 0], { ...clamp, easing: Easing.inOut(Easing.cubic) })}) contrast(1.12) saturate(1.15)`;
 
   const chroma = fx("impact") ? Math.max(0, 14 - f) * 1.6 : 0;
   const hakG = g - d.hakaret;
@@ -157,6 +158,10 @@ const SceneView: React.FC<{ s: Scene; d: PsychData }> = ({ s, d }) => {
       {fx("table") && <Table o={s.opt!} d={d} s={s} />}
       {fx("question") && <Question n={s.opt!.n} />}
       {fx("poll") && <Poll o={s.opt!} />}
+      {fx("stamp") && <Stamp text={s.opt!.stamp} at={d.marks![s.opt!.stampAt] - s.from} color={s.opt!.color} />}
+      {fx("passmap") && <PassMap />}
+      {fx("stats") && <Stats o={s.opt!} d={d} s={s} />}
+      {fx("bigstat") && <BigStat o={s.opt!} d={d} s={s} />}
 
       {/* geçiş flaşı */}
       <AbsoluteFill style={{ background: "#fff", pointerEvents: "none",
@@ -243,15 +248,15 @@ const Tags: React.FC<{ cam: Rect }> = ({ cam }) => {
   );
 };
 
-const Stamp: React.FC<{ text: string; at: number }> = ({ text, at }) => {
+const Stamp: React.FC<{ text: string; at: number; color?: string }> = ({ text, at, color = RED }) => {
   const f = useCurrentFrame() - at;
   if (f < 0) return null;
   const k = interpolate(f, [0, 6], [2.4, 1], { ...clamp, easing: Easing.out(Easing.back(2)) });
   return (
     <div style={{ position: "absolute", top: 430, width: W, display: "flex", justifyContent: "center" }}>
       <div style={{ transform: `rotate(-8deg) scale(${k})`, opacity: interpolate(f, [0, 3], [0, 1], clamp),
-        border: `10px solid ${RED}`, padding: "6px 34px", fontFamily: "Anton", fontSize: 150, color: RED, letterSpacing: 6,
-        textShadow: "0 0 30px rgba(255,0,0,.5)", background: "rgba(0,0,0,.35)" }}>{text}</div>
+        border: `10px solid ${color}`, padding: "6px 34px", fontFamily: "Anton", fontSize: 150, color, letterSpacing: 6,
+        textShadow: `0 0 30px ${color}88`, background: "rgba(0,0,0,.45)" }}>{text}</div>
     </div>
   );
 };
@@ -544,6 +549,79 @@ const Table: React.FC<{ o: Record<string, any>; d: PsychData; s: Scene }> = ({ o
       {g >= zero && <div style={{ marginTop: 34, transform: `rotate(-5deg) scale(${interpolate(g - zero, [0, 6], [2.2, 1], { ...clamp, easing: Easing.out(Easing.back(2)) })})`,
         border: `10px solid ${RED}`, padding: "4px 34px", fontFamily: "Anton", fontSize: 130, color: RED, background: "rgba(0,0,0,.55)", opacity: z > 0 ? 1 : 0 }}>
         0 PUAN</div>}
+    </div>
+  );
+};
+
+// derbi: Vinicius topu Mbappé'ye verir, Arda boşta bekler
+const PassMap: React.FC = () => {
+  const f = useCurrentFrame();
+  const k = spring({ frame: f - 2, fps: 30, config: { damping: 14 } });
+  const t = interpolate(f, [14, 34], [0, 1], { ...clamp, easing: Easing.inOut(Easing.cubic) });
+  const V = { x: 540, y: 300 }, M = { x: 230, y: 130 }, A = { x: 860, y: 140 };
+  const node = (p: { x: number; y: number }, label: string, col: string, dim = false) => (
+    <g opacity={dim ? .9 : 1}>
+      <circle cx={p.x} cy={p.y} r={34} fill={col} stroke="#fff" strokeWidth={5} />
+      <text x={p.x} y={p.y + 82} fill="#fff" fontFamily="JBM" fontWeight={700} fontSize={36} textAnchor="middle">{label}</text>
+    </g>
+  );
+  const bx = V.x + (M.x - V.x) * t, by = V.y + (M.y - V.y) * t;
+  return (
+    <div style={{ position: "absolute", top: 260, left: 0, width: W, height: 440, opacity: k }}>
+      <svg width={W} height={440} style={{ background: "rgba(10,60,30,.55)", borderTop: "3px solid rgba(255,255,255,.4)", borderBottom: "3px solid rgba(255,255,255,.4)" }}>
+        <line x1={W / 2} y1={0} x2={W / 2} y2={440} stroke="rgba(255,255,255,.25)" strokeWidth={3} />
+        <circle cx={W / 2} cy={220} r={80} fill="none" stroke="rgba(255,255,255,.25)" strokeWidth={3} />
+        <line x1={V.x} y1={V.y} x2={bx} y2={by} stroke={YEL} strokeWidth={8} strokeDasharray="18 12" />
+        <line x1={V.x} y1={V.y} x2={A.x} y2={A.y} stroke="rgba(255,255,255,.35)" strokeWidth={5} strokeDasharray="6 12" />
+        {node(M, "MBAPPÉ", "#2B5BD7")}
+        {node(V, "VINÍCIUS", "#2B5BD7")}
+        {node(A, "ARDA", RED)}
+        <circle cx={bx} cy={by} r={14} fill="#fff" stroke="#000" strokeWidth={3} />
+        {t >= 1 && <text x={A.x} y={A.y - 50} fill={YEL} fontFamily="Anton" fontSize={60} textAnchor="middle"
+          opacity={Math.floor(f / 6) % 2 ? .5 : 1}>?</text>}
+      </svg>
+      <div style={{ ...mono, position: "absolute", left: 24, top: 14, fontSize: 26, color: "rgba(255,255,255,.85)" }}>DERBİ · 31'</div>
+    </div>
+  );
+};
+
+const Counter: React.FC<{ to: number; t: number }> = ({ to, t }) => <>{Math.round(to * Math.min(1, Math.max(0, t)))}</>;
+
+const Stats: React.FC<{ o: Record<string, any>; d: PsychData; s: Scene }> = ({ o, d, s }) => {
+  const f = useCurrentFrame(), g = s.from + f;
+  const at = d.marks![o.at];
+  return (
+    <div style={{ position: "absolute", top: 300, width: W, display: "flex", justifyContent: "center", gap: 24 }}>
+      {o.rows.map(([v, label]: [string, string], i: number) => {
+        const t0 = at + i * 9;
+        const p = spring({ frame: g - t0, fps: 30, config: { damping: 11, stiffness: 200 } });
+        const cnt = interpolate(g, [t0, t0 + 10], [0, 1], clamp);
+        return (
+          <div key={label} style={{ width: 300, padding: "24px 0", borderRadius: 18, textAlign: "center", background: i ? "rgba(30,215,96,.9)" : "rgba(0,0,0,.7)",
+            border: "3px solid rgba(255,255,255,.35)", transform: `translateY(${(1 - p) * 80}px) scale(${.6 + .4 * p})`, opacity: g >= t0 ? 1 : 0,
+            boxShadow: "0 16px 40px rgba(0,0,0,.5)" }}>
+            <div style={{ fontFamily: "Anton", fontSize: 140, color: "#fff", lineHeight: 1 }}><Counter to={+v} t={cnt} /></div>
+            <div style={{ ...mono, fontSize: 32, color: "#fff", marginTop: 6 }}>{label}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const BigStat: React.FC<{ o: Record<string, any>; d: PsychData; s: Scene }> = ({ o, d, s }) => {
+  const f = useCurrentFrame(), g = s.from + f;
+  const at = d.marks![o.at];
+  const p = spring({ frame: g - at, fps: 30, config: { damping: 9, stiffness: 180 } });
+  const shine = interpolate(g - at, [6, 26], [-40, 140], clamp);
+  return (
+    <div style={{ position: "absolute", top: 300, width: W, display: "flex", flexDirection: "column", alignItems: "center", opacity: g >= at - 2 ? 1 : 0 }}>
+      <div style={{ fontFamily: "Anton", fontSize: 250, lineHeight: 1, transform: `scale(${.5 + .5 * p})`,
+        backgroundImage: `linear-gradient(100deg, #FFD400 ${shine - 20}%, #fff ${shine}%, #FFD400 ${shine + 20}%)`,
+        WebkitBackgroundClip: "text", color: "transparent", filter: "drop-shadow(0 10px 30px rgba(0,0,0,.7))" }}>{o.big}</div>
+      <div style={{ ...mono, fontSize: 40, color: "#000", background: YEL, padding: "8px 22px", marginTop: 6,
+        transform: `scale(${spring({ frame: g - at - 10, fps: 30, config: { damping: 12 } })})` }}>{o.sub}</div>
+      <div style={{ ...mono, fontSize: 24, color: "rgba(255,255,255,.75)", marginTop: 12 }}>KAYNAK: {o.src}</div>
     </div>
   );
 };

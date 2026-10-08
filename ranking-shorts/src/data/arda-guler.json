@@ -1,0 +1,943 @@
+{
+ "slug": "arda-guler",
+ "series": "FUTBOLUN PSİKOLOJİSİ",
+ "fps": 30,
+ "frames": 1293,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/arda-guler/shh.jpg",
+   "a": [
+    750,
+    300,
+    380
+   ],
+   "b": [
+    750,
+    320,
+    420
+   ],
+   "fx": [
+    "flash",
+    "shake"
+   ],
+   "opt": {},
+   "to": 175,
+   "frames": 175
+  },
+  {
+   "id": "date",
+   "from": 175,
+   "img": "img/arda-guler/cl.jpg",
+   "a": [
+    700,
+    360,
+    460
+   ],
+   "b": [
+    690,
+    330,
+    400
+   ],
+   "fx": [
+    "typehud"
+   ],
+   "opt": {},
+   "to": 275,
+   "frames": 100
+  },
+  {
+   "id": "lip",
+   "from": 275,
+   "img": "img/arda-guler/vini.jpg",
+   "a": [
+    640,
+    330,
+    400
+   ],
+   "b": [
+    640,
+    300,
+    340
+   ],
+   "fx": [
+    "quote"
+   ],
+   "opt": {
+    "text": "“Arda, bir kere de bana at! Hep aynı şey!”",
+    "by": "VINÍCIUS JR. · DUDAK OKUMA İDDİASI"
+   },
+   "to": 390,
+   "frames": 115
+  },
+  {
+   "id": "answer",
+   "from": 390,
+   "img": "img/arda-guler/point.jpg",
+   "a": [
+    620,
+    320,
+    420
+   ],
+   "b": [
+    620,
+    280,
+    360
+   ],
+   "fx": [
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "ASİST ✓",
+    "stampAt": "asist",
+    "color": "#1ED760"
+   },
+   "to": 511,
+   "frames": 121
+  },
+  {
+   "id": "derby",
+   "from": 511,
+   "img": "img/arda-guler/derby.jpg",
+   "a": [
+    230,
+    400,
+    400
+   ],
+   "b": [
+    240,
+    420,
+    440
+   ],
+   "fx": [
+    "passmap",
+    "desat"
+   ],
+   "opt": {},
+   "to": 580,
+   "frames": 69
+  },
+  {
+   "id": "freeze",
+   "from": 580,
+   "img": "img/arda-guler/lonely.jpg",
+   "a": [
+    780,
+    400,
+    420
+   ],
+   "b": [
+    780,
+    360,
+    380
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "20.09.2026"
+   },
+   "to": 647,
+   "frames": 67
+  },
+  {
+   "id": "psych",
+   "from": 647,
+   "img": "img/arda-guler/lonely.jpg",
+   "a": [
+    780,
+    340,
+    380
+   ],
+   "b": [
+    780,
+    320,
+    340
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "acı",
+    "alarm": "SOSYAL ACI",
+    "cortex": "PREFRONTAL · KONTROL",
+    "amyg": "ACI ALARMI"
+   },
+   "to": 760,
+   "frames": 113
+  },
+  {
+   "id": "pivot",
+   "from": 760,
+   "img": "img/arda-guler/look.jpg",
+   "a": [
+    640,
+    380,
+    440
+   ],
+   "b": [
+    640,
+    330,
+    380
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "opt": {},
+   "to": 889,
+   "frames": 129
+  },
+  {
+   "id": "proof",
+   "from": 889,
+   "img": "img/arda-guler/stad.jpg",
+   "a": [
+    640,
+    380,
+    460
+   ],
+   "b": [
+    640,
+    330,
+    400
+   ],
+   "fx": [
+    "stats"
+   ],
+   "opt": {
+    "at": "stats",
+    "rows": [
+     [
+      "7",
+      "LİG MAÇI"
+     ],
+     [
+      "1",
+      "GOL"
+     ],
+     [
+      "2",
+      "ASİST"
+     ]
+    ]
+   },
+   "to": 993,
+   "frames": 104
+  },
+  {
+   "id": "value",
+   "from": 993,
+   "img": "img/arda-guler/face.jpg",
+   "a": [
+    330,
+    380,
+    480
+   ],
+   "b": [
+    330,
+    340,
+    420
+   ],
+   "fx": [
+    "bigstat"
+   ],
+   "opt": {
+    "at": "yuz",
+    "big": "€100M",
+    "sub": "TÜRK FUTBOL TARİHİNDE İLK",
+    "src": "TRANSFERMARKT"
+   },
+   "to": 1131,
+   "frames": 138
+  },
+  {
+   "id": "cta",
+   "from": 1131,
+   "img": "img/arda-guler/point.jpg",
+   "a": [
+    620,
+    300,
+    400
+   ],
+   "b": [
+    620,
+    280,
+    360
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "ARDA, REAL MADRİD'İN YENİ LİDERİ OLUR MU?",
+    "a": "1 · OLUR, ZAMAN MESELESİ",
+    "b": "2 · DAHA ERKEN"
+   },
+   "to": 1293,
+   "frames": 162
+  }
+ ],
+ "words": [
+  {
+   "w": "TÜRK",
+   "s": 4,
+   "e": 10,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "BASINI",
+   "s": 10,
+   "e": 28,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "BUNA",
+   "s": 28,
+   "e": 40,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "BREZİLYA",
+   "s": 40,
+   "e": 58,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "ÇETESİ",
+   "s": 58,
+   "e": 77,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "DEDİ.",
+   "s": 77,
+   "e": 89,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ARDA",
+   "s": 89,
+   "e": 101,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "İSE",
+   "s": 101,
+   "e": 113,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "CEVABINI",
+   "s": 113,
+   "e": 137,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "SAHADA",
+   "s": 137,
+   "e": 155,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "VERDİ.",
+   "s": 155,
+   "e": 167,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "22",
+   "s": 179,
+   "e": 191,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "AĞUSTOS.",
+   "s": 191,
+   "e": 209,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "ESPANYOL",
+   "s": 244,
+   "e": 260,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "MAÇI.",
+   "s": 260,
+   "e": 270,
+   "hl": false,
+   "line": "date"
+  },
+  {
+   "w": "DUDAK",
+   "s": 278,
+   "e": 286,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "OKUMALARINA",
+   "s": 286,
+   "e": 310,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "GÖRE",
+   "s": 310,
+   "e": 318,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "VİNİCİUS",
+   "s": 318,
+   "e": 334,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "BAĞIRDI:",
+   "s": 334,
+   "e": 346,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "\"ARDA,",
+   "s": 346,
+   "e": 354,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "BİR",
+   "s": 354,
+   "e": 358,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "KERE",
+   "s": 358,
+   "e": 366,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "DE",
+   "s": 366,
+   "e": 370,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "BANA",
+   "s": 370,
+   "e": 378,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "AT!\"",
+   "s": 378,
+   "e": 382,
+   "hl": false,
+   "line": "lip"
+  },
+  {
+   "w": "ARDA'NIN",
+   "s": 394,
+   "e": 408,
+   "hl": false,
+   "line": "answer"
+  },
+  {
+   "w": "CEVABI?",
+   "s": 408,
+   "e": 422,
+   "hl": false,
+   "line": "answer"
+  },
+  {
+   "w": "AYNI",
+   "s": 455,
+   "e": 467,
+   "hl": false,
+   "line": "answer"
+  },
+  {
+   "w": "MAÇTA",
+   "s": 467,
+   "e": 479,
+   "hl": false,
+   "line": "answer"
+  },
+  {
+   "w": "ASİST.",
+   "s": 479,
+   "e": 491,
+   "hl": true,
+   "line": "answer"
+  },
+  {
+   "w": "DERBİDE",
+   "s": 514,
+   "e": 530,
+   "hl": false,
+   "line": "derby"
+  },
+  {
+   "w": "DE",
+   "s": 530,
+   "e": 536,
+   "hl": false,
+   "line": "derby"
+  },
+  {
+   "w": "TOP",
+   "s": 536,
+   "e": 541,
+   "hl": false,
+   "line": "derby"
+  },
+  {
+   "w": "YİNE",
+   "s": 541,
+   "e": 552,
+   "hl": false,
+   "line": "derby"
+  },
+  {
+   "w": "MBAPPÉ'YE",
+   "s": 552,
+   "e": 563,
+   "hl": true,
+   "line": "derby"
+  },
+  {
+   "w": "GİTTİ.",
+   "s": 563,
+   "e": 574,
+   "hl": false,
+   "line": "derby"
+  },
+  {
+   "w": "ŞİMDİ",
+   "s": 583,
+   "e": 595,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "ZAMANI",
+   "s": 610,
+   "e": 622,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "DURDURALIM.",
+   "s": 622,
+   "e": 640,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "BİLİM",
+   "s": 651,
+   "e": 669,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "DİYOR",
+   "s": 669,
+   "e": 687,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "Kİ:",
+   "s": 687,
+   "e": 696,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "DIŞLANMAK",
+   "s": 701,
+   "e": 710,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "BEYİNDE",
+   "s": 710,
+   "e": 720,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "FİZİKSEL",
+   "s": 720,
+   "e": 729,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "ACI",
+   "s": 729,
+   "e": 735,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "GİBİ",
+   "s": 735,
+   "e": 741,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "HİSSEDİLİR.",
+   "s": 741,
+   "e": 753,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "AMA",
+   "s": 764,
+   "e": 773,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "GÜÇLÜ",
+   "s": 773,
+   "e": 782,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "BİR",
+   "s": 782,
+   "e": 787,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "ZİHİN",
+   "s": 787,
+   "e": 796,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "BU",
+   "s": 796,
+   "e": 800,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "ACIYI",
+   "s": 800,
+   "e": 814,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "YAKITA",
+   "s": 814,
+   "e": 828,
+   "hl": true,
+   "line": "pivot"
+  },
+  {
+   "w": "ÇEVİRİR",
+   "s": 828,
+   "e": 841,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "VE",
+   "s": 841,
+   "e": 846,
+   "hl": false,
+   "line": "pivot"
+  },
+  {
+   "w": "OYUNUNA",
+   "s": 846,
+   "e": 864,
+   "hl": true,
+   "line": "pivot"
+  },
+  {
+   "w": "ODAKLANIR.",
+   "s": 864,
+   "e": 882,
+   "hl": true,
+   "line": "pivot"
+  },
+  {
+   "w": "ARDA",
+   "s": 893,
+   "e": 902,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "DA",
+   "s": 902,
+   "e": 907,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "ÖYLE",
+   "s": 907,
+   "e": 916,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "YAPTI:",
+   "s": 916,
+   "e": 925,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "7",
+   "s": 928,
+   "e": 935,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "MAÇTA",
+   "s": 935,
+   "e": 950,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "1",
+   "s": 950,
+   "e": 957,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "GOL,",
+   "s": 957,
+   "e": 964,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "2",
+   "s": 964,
+   "e": 971,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "ASİST.",
+   "s": 971,
+   "e": 985,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "VE",
+   "s": 997,
+   "e": 1002,
+   "hl": false,
+   "line": "value"
+  },
+  {
+   "w": "PİYASA",
+   "s": 1002,
+   "e": 1019,
+   "hl": false,
+   "line": "value"
+  },
+  {
+   "w": "DEĞERİ",
+   "s": 1019,
+   "e": 1036,
+   "hl": false,
+   "line": "value"
+  },
+  {
+   "w": "100",
+   "s": 1036,
+   "e": 1053,
+   "hl": true,
+   "line": "value"
+  },
+  {
+   "w": "MİLYON",
+   "s": 1053,
+   "e": 1064,
+   "hl": true,
+   "line": "value"
+  },
+  {
+   "w": "EURO.",
+   "s": 1064,
+   "e": 1081,
+   "hl": true,
+   "line": "value"
+  },
+  {
+   "w": "BUNU",
+   "s": 1081,
+   "e": 1092,
+   "hl": false,
+   "line": "value"
+  },
+  {
+   "w": "BAŞARAN",
+   "s": 1092,
+   "e": 1109,
+   "hl": false,
+   "line": "value"
+  },
+  {
+   "w": "İLK",
+   "s": 1109,
+   "e": 1115,
+   "hl": true,
+   "line": "value"
+  },
+  {
+   "w": "TÜRK.",
+   "s": 1115,
+   "e": 1120,
+   "hl": true,
+   "line": "value"
+  },
+  {
+   "w": "SENCE",
+   "s": 1135,
+   "e": 1147,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "ARDA",
+   "s": 1147,
+   "e": 1160,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "MADRİD'İN",
+   "s": 1160,
+   "e": 1179,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YENİ",
+   "s": 1179,
+   "e": 1192,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "LİDERİ",
+   "s": 1192,
+   "e": 1211,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "OLUR",
+   "s": 1211,
+   "e": 1223,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "MU?",
+   "s": 1223,
+   "e": 1230,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YORUMLARA",
+   "s": 1230,
+   "e": 1255,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "YAZ.",
+   "s": 1255,
+   "e": 1262,
+   "hl": false,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  589,
+  617,
+  642,
+  666,
+  687,
+  707,
+  725,
+  742,
+  758,
+  1142,
+  1166
+ ],
+ "impact": -1,
+ "marks": {
+  "asist": 479,
+  "acı": 701,
+  "yakit": 814,
+  "stats": 928,
+  "yuz": 1036
+ },
+ "asist": 479,
+ "acı": 701,
+ "yakit": 814,
+ "stats": 928,
+ "yuz": 1036,
+ "typeStart": 180,
+ "typeRate": 1.3499999999999999,
+ "hud": [
+  "22.08.2026",
+  "LALİGA",
+  "REAL MADRİD · ESPANYOL"
+ ],
+ "audio": "mix/arda-guler.wav"
+}
