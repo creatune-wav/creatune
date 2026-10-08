@@ -1,0 +1,955 @@
+{
+ "slug": "abdulkerim",
+ "series": "PSİKOFUTBOL",
+ "fps": 30,
+ "frames": 1229,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/abdulkerim/hands.jpg",
+   "a": [
+    960,
+    300,
+    420
+   ],
+   "b": [
+    960,
+    360,
+    500
+   ],
+   "fx": [
+    "shake",
+    "desat",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "BİR DEPAR",
+    "l2": "5 METRE FARK"
+   },
+   "to": 111,
+   "frames": 111
+  },
+  {
+   "id": "hook~KAFASINDAYDI",
+   "from": 111,
+   "img": "img/abdulkerim/face.jpg",
+   "a": [
+    600,
+    360,
+    420
+   ],
+   "b": [
+    600,
+    330,
+    340
+   ],
+   "fx": [
+    "gray"
+   ],
+   "opt": {},
+   "to": 139,
+   "frames": 28
+  },
+  {
+   "id": "trabzon",
+   "from": 139,
+   "img": "img/abdulkerim/salah.jpg",
+   "a": [
+    640,
+    330,
+    460
+   ],
+   "b": [
+    640,
+    300,
+    400
+   ],
+   "fx": [
+    "typehud"
+   ],
+   "opt": {},
+   "to": 206,
+   "frames": 67
+  },
+  {
+   "id": "trabzon~KAPTAN",
+   "from": 206,
+   "img": "img/abdulkerim/back42.jpg",
+   "a": [
+    990,
+    400,
+    440
+   ],
+   "b": [
+    990,
+    380,
+    380
+   ],
+   "fx": [
+    "desat"
+   ],
+   "opt": {},
+   "to": 265,
+   "frames": 59
+  },
+  {
+   "id": "lukaku",
+   "from": 265,
+   "img": "img/abdulkerim/lukcel.jpg",
+   "a": [
+    700,
+    380,
+    500
+   ],
+   "b": [
+    700,
+    330,
+    420
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 320,
+   "frames": 55
+  },
+  {
+   "id": "lukaku~DEPAR",
+   "from": 320,
+   "img": "img/abdulkerim/meme.jpg",
+   "a": [
+    410,
+    240,
+    320
+   ],
+   "b": [
+    520,
+    240,
+    340
+   ],
+   "fx": [
+    "shake"
+   ],
+   "opt": {},
+   "to": 356,
+   "frames": 36
+  },
+  {
+   "id": "lukaku~YETİŞEMİYOR",
+   "from": 356,
+   "img": "img/abdulkerim/hands.jpg",
+   "a": [
+    960,
+    330,
+    420
+   ],
+   "b": [
+    960,
+    300,
+    360
+   ],
+   "fx": [
+    "desat",
+    "shake"
+   ],
+   "opt": {},
+   "to": 376,
+   "frames": 20
+  },
+  {
+   "id": "social",
+   "from": 376,
+   "img": "img/abdulkerim/meme.jpg",
+   "a": [
+    700,
+    240,
+    340
+   ],
+   "b": [
+    950,
+    250,
+    340
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 449,
+   "frames": 73
+  },
+  {
+   "id": "social~VE",
+   "from": 449,
+   "img": "img/abdulkerim/lukback.jpg",
+   "a": [
+    520,
+    290,
+    440
+   ],
+   "b": [
+    520,
+    270,
+    380
+   ],
+   "fx": [
+    "quote",
+    "desat"
+   ],
+   "opt": {
+    "text": "“Beli dönmüyor… Sen stoper falan değilsin.”",
+    "by": "AHMET ÇAKAR · BELÇİKA MAÇI SONRASI"
+   },
+   "to": 508,
+   "frames": 59
+  },
+  {
+   "id": "freeze",
+   "from": 508,
+   "img": "img/abdulkerim/hands.jpg",
+   "a": [
+    960,
+    330,
+    420
+   ],
+   "b": [
+    960,
+    320,
+    400
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "02.10.2026 · 83'"
+   },
+   "to": 553,
+   "frames": 45
+  },
+  {
+   "id": "psych",
+   "from": 553,
+   "img": "img/abdulkerim/face.jpg",
+   "a": [
+    600,
+    380,
+    420
+   ],
+   "b": [
+    600,
+    350,
+    360
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "caresiz",
+    "alarm": "ÇARESİZLİK",
+    "cortex": "PREFRONTAL · ODAK",
+    "amyg": "HATA KORKUSU"
+   },
+   "to": 685,
+   "frames": 132
+  },
+  {
+   "id": "heavy",
+   "from": 685,
+   "img": "img/abdulkerim/hands.jpg",
+   "a": [
+    960,
+    360,
+    460
+   ],
+   "b": [
+    960,
+    330,
+    380
+   ],
+   "fx": [
+    "redduo",
+    "ecg",
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "ZİHİNSEL YÜK",
+    "stampAt": "kafa"
+   },
+   "to": 824,
+   "frames": 139
+  },
+  {
+   "id": "fix",
+   "from": 824,
+   "img": "img/abdulkerim/tr14.jpg",
+   "a": [
+    530,
+    330,
+    420
+   ],
+   "b": [
+    530,
+    300,
+    360
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "opt": {},
+   "to": 991,
+   "frames": 167
+  },
+  {
+   "id": "proof",
+   "from": 991,
+   "img": "img/abdulkerim/flex.jpg",
+   "a": [
+    600,
+    380,
+    500
+   ],
+   "b": [
+    600,
+    340,
+    420
+   ],
+   "fx": [
+    "flash"
+   ],
+   "opt": {},
+   "to": 1052,
+   "frames": 61
+  },
+  {
+   "id": "cta",
+   "from": 1052,
+   "img": "img/abdulkerim/back42.jpg",
+   "a": [
+    990,
+    400,
+    440
+   ],
+   "b": [
+    990,
+    380,
+    400
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "ABDÜLKERİM TOPARLAR MI?",
+    "a": "👍 TOPARLAR → BEĞEN",
+    "b": "💬 TOPARLAMAZ → YORUM",
+    "next": "SIRADAKİ BÖLÜM: TANRI'NIN ELİ"
+   },
+   "to": 1229,
+   "frames": 177
+  }
+ ],
+ "words": [
+  {
+   "w": "LUKAKU",
+   "s": 4,
+   "e": 19,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ONU",
+   "s": 19,
+   "e": 30,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "5",
+   "s": 30,
+   "e": 35,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "METRE",
+   "s": 35,
+   "e": 45,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "GERİDE",
+   "s": 45,
+   "e": 61,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "BIRAKTI.",
+   "s": 61,
+   "e": 76,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "AMA",
+   "s": 76,
+   "e": 87,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ASIL",
+   "s": 87,
+   "e": 97,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "MESAFE",
+   "s": 97,
+   "e": 113,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "KAFASINDAYDI.",
+   "s": 113,
+   "e": 139,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "ÖNCE",
+   "s": 142,
+   "e": 168,
+   "hl": false,
+   "line": "trabzon"
+  },
+  {
+   "w": "TRABZON:",
+   "s": 168,
+   "e": 193,
+   "hl": false,
+   "line": "trabzon"
+  },
+  {
+   "w": "SALAH'TAN",
+   "s": 197,
+   "e": 202,
+   "hl": false,
+   "line": "trabzon"
+  },
+  {
+   "w": "HAT-TRİCK,",
+   "s": 202,
+   "e": 205,
+   "hl": true,
+   "line": "trabzon"
+  },
+  {
+   "w": "4",
+   "s": 205,
+   "e": 206,
+   "hl": true,
+   "line": "trabzon"
+  },
+  {
+   "w": "GOL.",
+   "s": 206,
+   "e": 207,
+   "hl": true,
+   "line": "trabzon"
+  },
+  {
+   "w": "KAPTAN",
+   "s": 207,
+   "e": 210,
+   "hl": false,
+   "line": "trabzon"
+  },
+  {
+   "w": "OYDU.",
+   "s": 240,
+   "e": 265,
+   "hl": true,
+   "line": "trabzon"
+  },
+  {
+   "w": "13",
+   "s": 269,
+   "e": 278,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "GÜN",
+   "s": 278,
+   "e": 283,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "SONRA",
+   "s": 283,
+   "e": 293,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "BELÇİKA:",
+   "s": 293,
+   "e": 307,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "LUKAKU",
+   "s": 311,
+   "e": 321,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "DEPAR",
+   "s": 321,
+   "e": 329,
+   "hl": true,
+   "line": "lukaku"
+  },
+  {
+   "w": "ATIYOR",
+   "s": 329,
+   "e": 340,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "ABDÜLKERİM",
+   "s": 343,
+   "e": 358,
+   "hl": false,
+   "line": "lukaku"
+  },
+  {
+   "w": "YETİŞEMİYOR.",
+   "s": 358,
+   "e": 376,
+   "hl": true,
+   "line": "lukaku"
+  },
+  {
+   "w": "ARDINDAN",
+   "s": 380,
+   "e": 399,
+   "hl": false,
+   "line": "social"
+  },
+  {
+   "w": "MOTORLU",
+   "s": 399,
+   "e": 418,
+   "hl": false,
+   "line": "social"
+  },
+  {
+   "w": "EDİT'LER,",
+   "s": 418,
+   "e": 437,
+   "hl": true,
+   "line": "social"
+  },
+  {
+   "w": "CAPS'LER.",
+   "s": 437,
+   "e": 450,
+   "hl": true,
+   "line": "social"
+  },
+  {
+   "w": "VE",
+   "s": 450,
+   "e": 457,
+   "hl": false,
+   "line": "social"
+  },
+  {
+   "w": "YORUMLAR:",
+   "s": 457,
+   "e": 476,
+   "hl": false,
+   "line": "social"
+  },
+  {
+   "w": "\"BELİ",
+   "s": 476,
+   "e": 489,
+   "hl": false,
+   "line": "social"
+  },
+  {
+   "w": "DÖNMÜYOR!\"",
+   "s": 489,
+   "e": 508,
+   "hl": true,
+   "line": "social"
+  },
+  {
+   "w": "ŞİMDİ",
+   "s": 512,
+   "e": 521,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "ZAMANI",
+   "s": 521,
+   "e": 534,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "DURDURALIM.",
+   "s": 534,
+   "e": 552,
+   "hl": false,
+   "line": "freeze"
+  },
+  {
+   "w": "BUNA",
+   "s": 557,
+   "e": 564,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "ÖĞRENİLMİŞ",
+   "s": 564,
+   "e": 579,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "ÇARESİZLİK",
+   "s": 579,
+   "e": 594,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DENİR:",
+   "s": 594,
+   "e": 602,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BEYİN",
+   "s": 602,
+   "e": 609,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "HER",
+   "s": 609,
+   "e": 613,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "İKİLİ",
+   "s": 613,
+   "e": 624,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "MÜCADELEYE",
+   "s": 624,
+   "e": 643,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "\"YİNE",
+   "s": 643,
+   "e": 651,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "GEÇİLECEĞİM\"",
+   "s": 651,
+   "e": 670,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DİYE",
+   "s": 670,
+   "e": 677,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "GİRER.",
+   "s": 677,
+   "e": 685,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BU",
+   "s": 688,
+   "e": 693,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "KORKU",
+   "s": 693,
+   "e": 702,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "İLK",
+   "s": 702,
+   "e": 706,
+   "hl": true,
+   "line": "heavy"
+  },
+  {
+   "w": "ADIMI",
+   "s": 706,
+   "e": 720,
+   "hl": true,
+   "line": "heavy"
+  },
+  {
+   "w": "YAVAŞLATIR.",
+   "s": 720,
+   "e": 737,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "AĞIR",
+   "s": 772,
+   "e": 780,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "OLAN",
+   "s": 780,
+   "e": 788,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "BACAK",
+   "s": 788,
+   "e": 796,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "DEĞİL",
+   "s": 796,
+   "e": 804,
+   "hl": false,
+   "line": "heavy"
+  },
+  {
+   "w": "KAFADAKİ",
+   "s": 808,
+   "e": 820,
+   "hl": true,
+   "line": "heavy"
+  },
+  {
+   "w": "YÜK.",
+   "s": 820,
+   "e": 823,
+   "hl": true,
+   "line": "heavy"
+  },
+  {
+   "w": "ÇÖZÜM?",
+   "s": 828,
+   "e": 842,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "HIZ",
+   "s": 842,
+   "e": 849,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "DEĞİL",
+   "s": 849,
+   "e": 863,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "ZAMANLAMA.",
+   "s": 863,
+   "e": 891,
+   "hl": true,
+   "line": "fix"
+  },
+  {
+   "w": "PEPE",
+   "s": 891,
+   "e": 906,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "41",
+   "s": 906,
+   "e": 920,
+   "hl": true,
+   "line": "fix"
+  },
+  {
+   "w": "YAŞINA",
+   "s": 920,
+   "e": 941,
+   "hl": true,
+   "line": "fix"
+  },
+  {
+   "w": "KADAR",
+   "s": 941,
+   "e": 955,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "BÖYLE",
+   "s": 955,
+   "e": 969,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "OYNADI.",
+   "s": 969,
+   "e": 991,
+   "hl": false,
+   "line": "fix"
+  },
+  {
+   "w": "VE",
+   "s": 995,
+   "e": 998,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "EYLÜL'DE",
+   "s": 998,
+   "e": 1009,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "GALİBİYET",
+   "s": 1009,
+   "e": 1023,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "GOLÜNÜ",
+   "s": 1023,
+   "e": 1034,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "ATAN",
+   "s": 1034,
+   "e": 1041,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "DA",
+   "s": 1041,
+   "e": 1045,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "OYDU.",
+   "s": 1045,
+   "e": 1052,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "SENCE",
+   "s": 1055,
+   "e": 1103,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "TOPARLAR",
+   "s": 1103,
+   "e": 1174,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "MI?",
+   "s": 1174,
+   "e": 1197,
+   "hl": false,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  518,
+  543,
+  568,
+  593,
+  616,
+  638,
+  660,
+  680,
+  700,
+  718,
+  737,
+  754,
+  771,
+  787,
+  803,
+  818
+ ],
+ "impact": -1,
+ "marks": {
+  "kafa": 808,
+  "caresiz": 579,
+  "depar": 321,
+  "yetis": 358
+ },
+ "kafa": 808,
+ "caresiz": 579,
+ "depar": 321,
+ "yetis": 358,
+ "typeStart": 144,
+ "typeRate": 1.3499999999999999,
+ "hud": [
+  "19.09.2026",
+  "TRABZONSPOR 4-0 GALATASARAY"
+ ],
+ "audio": "mix/abdulkerim.wav"
+}

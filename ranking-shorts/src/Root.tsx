@@ -5,6 +5,7 @@ import zk from "./data/zidane-kafa.json";
 import mi from "./data/montella-italya.json";
 import ag from "./data/arda-guler.json";
 import ms from "./data/messi-2016.json";
+import ak from "./data/abdulkerim.json";
 import d0 from "./data/biggest-waves.json";
 import d1 from "./data/craziest-base-jumps.json";
 import d2 from "./data/craziest-bike-jumps.json";
@@ -20,7 +21,7 @@ export const Root = () => (
       <Composition key={d.slug} id={d.slug} component={Ranking} defaultProps={d}
         durationInFrames={totalFrames(d)} fps={30} width={1080} height={1920} />
     ))}
-    {([zk, mi, ag, ms] as unknown as PsychData[]).map((d) => (
+    {([zk, mi, ag, ms, ak] as unknown as PsychData[]).map((d) => (
       <Composition key={d.slug} id={d.slug} component={Psych} defaultProps={d}
         durationInFrames={d.frames} fps={30} width={1080} height={1920} />
     ))}

@@ -1,0 +1,406 @@
+{
+ "slug": "abdulkerim",
+ "series": "PSİKOFUTBOL",
+ "edge_rate": "+22%",
+ "edge_pitch": "-4Hz",
+ "pause": 0.16,
+ "tail": 0.07,
+ "title": "Abdülkerim'e Ne Oluyor? Lukaku'nun 5 Metresi ve Kafadaki Yük",
+ "roles": {
+  "type": {
+   "line": "trabzon",
+   "hud": [
+    "19.09.2026",
+    "TRABZONSPOR 4-0 GALATASARAY"
+   ]
+  },
+  "kicks": [
+   "trabzon",
+   "freeze"
+  ],
+  "ticks": [
+   "lukaku",
+   "freeze"
+  ],
+  "freeze": "freeze",
+  "resume": "psych",
+  "beats": {
+   "from": "freeze",
+   "to": "heavy",
+   "bpm": [
+    70,
+    124
+   ]
+  },
+  "triumph": "fix",
+  "whoosh": [
+   "trabzon",
+   "lukaku",
+   "social",
+   "psych",
+   "heavy",
+   "fix",
+   "proof",
+   "cta"
+  ]
+ },
+ "marks": {
+  "kafa": {
+   "line": "heavy",
+   "word": "KAFADAKİ",
+   "sfx": [
+    "stamp"
+   ]
+  },
+  "caresiz": {
+   "line": "psych",
+   "word": "ÇARESİZLİK",
+   "sfx": [
+    "alarm"
+   ]
+  },
+  "depar": {
+   "line": "lukaku",
+   "word": "DEPAR",
+   "sfx": [
+    "riser"
+   ]
+  },
+  "yetis": {
+   "line": "lukaku",
+   "word": "YETİŞEMİYOR",
+   "sfx": [
+    "bigglitch"
+   ]
+  }
+ },
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Lukaku onu beş metre geride bıraktı. Ama asıl mesafe... kafasındaydı.",
+   "cap": "Lukaku onu *5* *metre* geride bıraktı. Ama asıl mesafe... *kafasındaydı.*",
+   "gap": 0.05,
+   "img": "hands",
+   "a": [
+    960,
+    300,
+    420
+   ],
+   "b": [
+    960,
+    360,
+    500
+   ],
+   "fx": [
+    "shake",
+    "desat",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "BİR DEPAR",
+    "l2": "5 METRE FARK"
+   },
+   "cuts": [
+    {
+     "word": "KAFASINDAYDI",
+     "img": "face",
+     "a": [
+      600,
+      360,
+      420
+     ],
+     "b": [
+      600,
+      330,
+      340
+     ],
+     "fx": [
+      "gray"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "trabzon",
+   "say": "Önce Trabzon: Salah'tan hettrik, dört gol. Kaptan... oydu.",
+   "cap": "Önce Trabzon: Salah'tan *hat-trick,* *4* *gol.* Kaptan... *oydu.*",
+   "gap": 0.05,
+   "img": "salah",
+   "a": [
+    640,
+    330,
+    460
+   ],
+   "b": [
+    640,
+    300,
+    400
+   ],
+   "fx": [
+    "typehud"
+   ],
+   "cuts": [
+    {
+     "word": "KAPTAN",
+     "img": "back42",
+     "a": [
+      990,
+      400,
+      440
+     ],
+     "b": [
+      990,
+      380,
+      380
+     ],
+     "fx": [
+      "desat"
+     ]
+    }
+   ],
+   "typeFrom": true
+  },
+  {
+   "id": "lukaku",
+   "say": "On üç gün sonra Belçika: Lukaku depar atıyor... Abdülkerim yetişemiyor.",
+   "cap": "13 gün sonra Belçika: Lukaku *depar* atıyor... Abdülkerim *yetişemiyor.*",
+   "gap": 0.05,
+   "img": "lukcel",
+   "a": [
+    700,
+    380,
+    500
+   ],
+   "b": [
+    700,
+    330,
+    420
+   ],
+   "fx": [],
+   "cuts": [
+    {
+     "word": "DEPAR",
+     "img": "meme",
+     "a": [
+      410,
+      240,
+      320
+     ],
+     "b": [
+      520,
+      240,
+      340
+     ],
+     "fx": [
+      "shake"
+     ]
+    },
+    {
+     "word": "YETİŞEMİYOR",
+     "img": "hands",
+     "a": [
+      960,
+      330,
+      420
+     ],
+     "b": [
+      960,
+      300,
+      360
+     ],
+     "fx": [
+      "desat",
+      "shake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "social",
+   "say": "Ardından motorlu editler, kapsler. Ve yorumlar: Beli dönmüyor!",
+   "cap": "Ardından motorlu *edit'ler,* *caps'ler.* Ve yorumlar: \"Beli *dönmüyor!*\"",
+   "gap": 0.05,
+   "img": "meme",
+   "a": [
+    700,
+    240,
+    340
+   ],
+   "b": [
+    950,
+    250,
+    340
+   ],
+   "fx": [],
+   "cuts": [
+    {
+     "word": "VE",
+     "img": "lukback",
+     "a": [
+      520,
+      290,
+      440
+     ],
+     "b": [
+      520,
+      270,
+      380
+     ],
+     "fx": [
+      "quote",
+      "desat"
+     ],
+     "opt": {
+      "text": "“Beli dönmüyor… Sen stoper falan değilsin.”",
+      "by": "AHMET ÇAKAR · BELÇİKA MAÇI SONRASI"
+     }
+    }
+   ]
+  },
+  {
+   "id": "freeze",
+   "say": "Şimdi... zamanı durduralım.",
+   "cap": "Şimdi... zamanı durduralım.",
+   "gap": 0.08,
+   "img": "hands",
+   "a": [
+    960,
+    330,
+    420
+   ],
+   "b": [
+    960,
+    320,
+    400
+   ],
+   "fx": [
+    "freeze"
+   ],
+   "opt": {
+    "sub": "02.10.2026 · 83'"
+   }
+  },
+  {
+   "id": "psych",
+   "say": "Buna öğrenilmiş çaresizlik denir: Beyin her ikili mücadeleye, yine geçileceğim diye girer.",
+   "cap": "Buna *öğrenilmiş* *çaresizlik* denir: Beyin her ikili mücadeleye \"yine *geçileceğim*\" diye girer.",
+   "gap": 0.05,
+   "img": "face",
+   "a": [
+    600,
+    380,
+    420
+   ],
+   "b": [
+    600,
+    350,
+    360
+   ],
+   "fx": [
+    "gray",
+    "brain",
+    "ecg"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "caresiz",
+    "alarm": "ÇARESİZLİK",
+    "cortex": "PREFRONTAL · ODAK",
+    "amyg": "HATA KORKUSU"
+   }
+  },
+  {
+   "id": "heavy",
+   "say": "Bu korku, ilk adımı yavaşlatır. Ağır olan bacak değil... kafadaki yük.",
+   "cap": "Bu korku *ilk* *adımı* yavaşlatır. Ağır olan bacak değil... *kafadaki* *yük.*",
+   "gap": 0.05,
+   "img": "hands",
+   "a": [
+    960,
+    360,
+    460
+   ],
+   "b": [
+    960,
+    330,
+    380
+   ],
+   "fx": [
+    "redduo",
+    "ecg",
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "ZİHİNSEL YÜK",
+    "stampAt": "kafa"
+   }
+  },
+  {
+   "id": "fix",
+   "say": "Çözüm? Hız değil, zamanlama. Pepe, kırk bir yaşına kadar böyle oynadı.",
+   "cap": "Çözüm? Hız değil *zamanlama.* Pepe *41* *yaşına* kadar böyle oynadı.",
+   "gap": 0.05,
+   "img": "tr14",
+   "a": [
+    530,
+    330,
+    420
+   ],
+   "b": [
+    530,
+    300,
+    360
+   ],
+   "fx": [
+    "colorup"
+   ]
+  },
+  {
+   "id": "proof",
+   "say": "Ve Eylül'de galibiyet golünü atan da oydu.",
+   "cap": "Ve Eylül'de *galibiyet* *golünü* atan da oydu.",
+   "gap": 0.05,
+   "img": "flex",
+   "a": [
+    600,
+    380,
+    500
+   ],
+   "b": [
+    600,
+    340,
+    420
+   ],
+   "fx": [
+    "flash"
+   ]
+  },
+  {
+   "id": "cta",
+   "say": "Sence toparlar mı? Toparlar diyorsan beğen, toparlamaz diyorsan yorum yap.",
+   "cap": "Sence toparlar mı?",
+   "gap": 1.0,
+   "img": "back42",
+   "a": [
+    990,
+    400,
+    440
+   ],
+   "b": [
+    990,
+    380,
+    400
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "ABDÜLKERİM TOPARLAR MI?",
+    "a": "👍 TOPARLAR → BEĞEN",
+    "b": "💬 TOPARLAMAZ → YORUM",
+    "next": "SIRADAKİ BÖLÜM: TANRI'NIN ELİ"
+   }
+  }
+ ]
+}
