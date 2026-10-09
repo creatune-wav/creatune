@@ -1,0 +1,610 @@
+{
+ "slug": "arda-turan",
+ "series": "PSİKOFUTBOL",
+ "fps": 30,
+ "frames": 900,
+ "scenes": [
+  {
+   "id": "hook",
+   "from": 0,
+   "img": "img/arda-turan/bench.jpg",
+   "a": [
+    560,
+    420,
+    500
+   ],
+   "b": [
+    560,
+    400,
+    420
+   ],
+   "fx": [
+    "shake",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "BANKTAN",
+    "l2": "MİLLİ TAKIMA?"
+   },
+   "to": 83,
+   "frames": 83
+  },
+  {
+   "id": "hook~VE",
+   "from": 83,
+   "img": "img/arda-turan/doc.jpg",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    440
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 139,
+   "frames": 56
+  },
+  {
+   "id": "events",
+   "from": 139,
+   "img": "img/arda-turan/messi.jpg",
+   "a": [
+    400,
+    400,
+    540
+   ],
+   "b": [
+    420,
+    380,
+    460
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 211,
+   "frames": 72
+  },
+  {
+   "id": "events~MADRİD'DE",
+   "from": 211,
+   "img": "img/arda-turan/night.jpg",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    360,
+    460
+   ],
+   "fx": [],
+   "opt": {},
+   "to": 298,
+   "frames": 87
+  },
+  {
+   "id": "events~SONRA",
+   "from": 298,
+   "img": "img/arda-turan/ceza.jpg",
+   "a": [
+    640,
+    300,
+    480
+   ],
+   "b": [
+    640,
+    280,
+    400
+   ],
+   "fx": [
+    "desat",
+    "shake"
+   ],
+   "opt": {},
+   "to": 379,
+   "frames": 81
+  },
+  {
+   "id": "psych",
+   "from": 379,
+   "img": "img/arda-turan/bw.jpg",
+   "a": [
+    500,
+    360,
+    540
+   ],
+   "b": [
+    500,
+    330,
+    440
+   ],
+   "fx": [
+    "gray",
+    "brain"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "kimlik",
+    "alarm": "KİMLİK KRİZİ",
+    "cortex": "PREFRONTAL · YENİ BEN",
+    "amyg": "EGO"
+   },
+   "to": 568,
+   "frames": 189
+  },
+  {
+   "id": "proof",
+   "from": 568,
+   "img": "img/arda-turan/fans.jpg",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    440
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "opt": {},
+   "to": 641,
+   "frames": 73
+  },
+  {
+   "id": "proof~SHAKHTAR'I",
+   "from": 641,
+   "img": "img/arda-turan/shakhtar.jpg",
+   "a": [
+    1000,
+    360,
+    540
+   ],
+   "b": [
+    1000,
+    330,
+    440
+   ],
+   "fx": [
+    "stamp"
+   ],
+   "opt": {
+    "stamp": "ŞAMPİYON",
+    "stampAt": "sampiyon",
+    "color": "#FFD400"
+   },
+   "to": 702,
+   "frames": 61
+  },
+  {
+   "id": "cta",
+   "from": 702,
+   "img": "img/arda-turan/doc.jpg",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    460
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "ARDA TURAN MİLLİ TAKIMA GEÇMELİ Mİ?",
+    "a": "👍 GEÇSİN → BEĞEN",
+    "b": "💬 GEÇMESİN → YORUM"
+   },
+   "to": 900,
+   "frames": 198
+  }
+ ],
+ "words": [
+  {
+   "w": "BARCELONA'DAKİ",
+   "s": 4,
+   "e": 28,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "O",
+   "s": 28,
+   "e": 32,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "BANK",
+   "s": 32,
+   "e": 37,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "HÂLÂ",
+   "s": 37,
+   "e": 41,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ONUN",
+   "s": 41,
+   "e": 49,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ADIYLA",
+   "s": 49,
+   "e": 61,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ANILIYOR",
+   "s": 61,
+   "e": 78,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "VE",
+   "s": 85,
+   "e": 88,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "ŞİMDİ",
+   "s": 88,
+   "e": 96,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "MİLLİ",
+   "s": 96,
+   "e": 103,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "TAKIMIN",
+   "s": 103,
+   "e": 114,
+   "hl": true,
+   "line": "hook"
+  },
+  {
+   "w": "BAŞINA",
+   "s": 114,
+   "e": 125,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "GEÇEBİLİR.",
+   "s": 125,
+   "e": 139,
+   "hl": false,
+   "line": "hook"
+  },
+  {
+   "w": "MESSİ'NİN",
+   "s": 143,
+   "e": 155,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "YANINDA",
+   "s": 155,
+   "e": 167,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "OYNADI.",
+   "s": 167,
+   "e": 179,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "MADRİD'DE",
+   "s": 212,
+   "e": 224,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "MÜZİĞİ",
+   "s": 224,
+   "e": 235,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "RANGE",
+   "s": 235,
+   "e": 243,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "ROVER'INDAN",
+   "s": 243,
+   "e": 258,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "DİNLEDİ.",
+   "s": 258,
+   "e": 269,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "SONRA",
+   "s": 300,
+   "e": 311,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "CEZALAR,",
+   "s": 311,
+   "e": 328,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "OLAYLAR",
+   "s": 332,
+   "e": 346,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "KARİYERİ",
+   "s": 350,
+   "e": 365,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "BİTTİ",
+   "s": 365,
+   "e": 372,
+   "hl": true,
+   "line": "events"
+  },
+  {
+   "w": "DENDİ.",
+   "s": 372,
+   "e": 379,
+   "hl": false,
+   "line": "events"
+  },
+  {
+   "w": "PSİKOLOJİDE",
+   "s": 382,
+   "e": 403,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BUNA",
+   "s": 403,
+   "e": 411,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KİMLİK",
+   "s": 411,
+   "e": 419,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "KRİZİ",
+   "s": 419,
+   "e": 427,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "DENİR:",
+   "s": 427,
+   "e": 435,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "\"YILDIZ",
+   "s": 441,
+   "e": 452,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "DEĞİLSEM",
+   "s": 452,
+   "e": 470,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "BEN",
+   "s": 470,
+   "e": 475,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KİMİM?\"",
+   "s": 475,
+   "e": 487,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "ARDA",
+   "s": 522,
+   "e": 531,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "CEVABI",
+   "s": 531,
+   "e": 544,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "KENARDA",
+   "s": 548,
+   "e": 560,
+   "hl": true,
+   "line": "psych"
+  },
+  {
+   "w": "BULDU.",
+   "s": 560,
+   "e": 568,
+   "hl": false,
+   "line": "psych"
+  },
+  {
+   "w": "EYÜP'Ü",
+   "s": 572,
+   "e": 583,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "SÜPER",
+   "s": 583,
+   "e": 591,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "LİG'E",
+   "s": 591,
+   "e": 599,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "ÇIKARDI.",
+   "s": 599,
+   "e": 611,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "SHAKHTAR'I",
+   "s": 642,
+   "e": 656,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "İLK",
+   "s": 656,
+   "e": 661,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "SEZONUNDA",
+   "s": 661,
+   "e": 679,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "ŞAMPİYON",
+   "s": 679,
+   "e": 692,
+   "hl": true,
+   "line": "proof"
+  },
+  {
+   "w": "YAPTI.",
+   "s": 692,
+   "e": 701,
+   "hl": false,
+   "line": "proof"
+  },
+  {
+   "w": "MİLLİ",
+   "s": 705,
+   "e": 743,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "TAKIMA",
+   "s": 743,
+   "e": 799,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "GEÇMELİ",
+   "s": 799,
+   "e": 855,
+   "hl": false,
+   "line": "cta"
+  },
+  {
+   "w": "Mİ?",
+   "s": 855,
+   "e": 874,
+   "hl": false,
+   "line": "cta"
+  }
+ ],
+ "beats": [
+  388,
+  411,
+  433,
+  454,
+  473,
+  492,
+  510,
+  528,
+  544,
+  560
+ ],
+ "impact": -1,
+ "marks": {
+  "bitti": 365,
+  "kimlik": 411,
+  "sampiyon": 679
+ },
+ "bitti": 365,
+ "kimlik": 411,
+ "sampiyon": 679,
+ "typeStart": 0,
+ "typeRate": 1.3499999999999999,
+ "hud": [],
+ "audio": "mix/arda-turan.wav"
+}

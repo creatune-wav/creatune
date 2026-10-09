@@ -1,0 +1,251 @@
+{
+ "slug": "arda-turan",
+ "series": "PSİKOFUTBOL",
+ "edge_rate": "+18%",
+ "edge_pitch": "-4Hz",
+ "pause": 0.16,
+ "tail": 0.07,
+ "roles": {
+  "kicks": [
+   "hook",
+   "proof"
+  ],
+  "ticks": [
+   "events",
+   "psych"
+  ],
+  "beats": {
+   "from": "psych",
+   "to": "psych",
+   "bpm": [
+    80,
+    124
+   ]
+  },
+  "triumph": "proof",
+  "whoosh": [
+   "events",
+   "psych",
+   "proof",
+   "cta"
+  ]
+ },
+ "marks": {
+  "bitti": {
+   "line": "events",
+   "word": "BİTTİ",
+   "sfx": [
+    "bigglitch"
+   ]
+  },
+  "kimlik": {
+   "line": "psych",
+   "word": "KİMLİK",
+   "sfx": [
+    "alarm"
+   ]
+  },
+  "sampiyon": {
+   "line": "proof",
+   "word": "ŞAMPİYON",
+   "sfx": [
+    "stamp"
+   ]
+  }
+ },
+ "lines": [
+  {
+   "id": "hook",
+   "say": "Barcelona'daki o bank hâlâ onun adıyla anılıyor... ve şimdi milli takımın başına geçebilir.",
+   "cap": "Barcelona'daki o *bank* hâlâ onun adıyla anılıyor... ve şimdi *milli* *takımın* başına geçebilir.",
+   "gap": 0.05,
+   "img": "bench",
+   "a": [
+    560,
+    420,
+    500
+   ],
+   "b": [
+    560,
+    400,
+    420
+   ],
+   "fx": [
+    "shake",
+    "hooktitle"
+   ],
+   "opt": {
+    "l1": "BANKTAN",
+    "l2": "MİLLİ TAKIMA?"
+   },
+   "cuts": [
+    {
+     "word": "VE",
+     "img": "doc",
+     "a": [
+      640,
+      360,
+      540
+     ],
+     "b": [
+      640,
+      330,
+      440
+     ],
+     "fx": []
+    }
+   ]
+  },
+  {
+   "id": "events",
+   "say": "Messi'nin yanında oynadı. Madrid'de müziği Range Rover'ından dinledi. Sonra cezalar, olaylar... kariyeri bitti dendi.",
+   "cap": "Messi'nin yanında oynadı. Madrid'de müziği *Range* *Rover'ından* dinledi. Sonra cezalar, olaylar... kariyeri *bitti* dendi.",
+   "gap": 0.05,
+   "img": "messi",
+   "a": [
+    400,
+    400,
+    540
+   ],
+   "b": [
+    420,
+    380,
+    460
+   ],
+   "fx": [],
+   "cuts": [
+    {
+     "word": "MADRİD'DE",
+     "img": "night",
+     "a": [
+      640,
+      360,
+      540
+     ],
+     "b": [
+      640,
+      360,
+      460
+     ],
+     "fx": []
+    },
+    {
+     "word": "SONRA",
+     "img": "ceza",
+     "a": [
+      640,
+      300,
+      480
+     ],
+     "b": [
+      640,
+      280,
+      400
+     ],
+     "fx": [
+      "desat",
+      "shake"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "psych",
+   "say": "Psikolojide buna kimlik krizi denir: Yıldız değilsem, ben kimim? Arda cevabı... kenarda buldu.",
+   "cap": "Psikolojide buna *kimlik* *krizi* denir: \"Yıldız değilsem ben kimim?\" Arda cevabı... *kenarda* buldu.",
+   "gap": 0.05,
+   "img": "bw",
+   "a": [
+    500,
+    360,
+    540
+   ],
+   "b": [
+    500,
+    330,
+    440
+   ],
+   "fx": [
+    "gray",
+    "brain"
+   ],
+   "opt": {
+    "title": "BEYİN TARAMASI · CANLI",
+    "alarmAt": "kimlik",
+    "alarm": "KİMLİK KRİZİ",
+    "cortex": "PREFRONTAL · YENİ BEN",
+    "amyg": "EGO"
+   }
+  },
+  {
+   "id": "proof",
+   "say": "Eyüp'ü Süper Lig'e çıkardı. Shakhtar'ı ilk sezonunda şampiyon yaptı.",
+   "cap": "Eyüp'ü *Süper* *Lig'e* çıkardı. Shakhtar'ı ilk sezonunda *şampiyon* yaptı.",
+   "gap": 0.05,
+   "img": "fans",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    440
+   ],
+   "fx": [
+    "colorup"
+   ],
+   "cuts": [
+    {
+     "word": "SHAKHTAR'I",
+     "img": "shakhtar",
+     "a": [
+      1000,
+      360,
+      540
+     ],
+     "b": [
+      1000,
+      330,
+      440
+     ],
+     "fx": [
+      "stamp"
+     ],
+     "opt": {
+      "stamp": "ŞAMPİYON",
+      "stampAt": "sampiyon",
+      "color": "#FFD400"
+     }
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "say": "Sence milli takımın başına geçmeli mi? Geçsin diyorsan beğen, geçmesin diyorsan yorum yap.",
+   "cap": "Milli takıma geçmeli mi?",
+   "gap": 0.8,
+   "img": "doc",
+   "a": [
+    640,
+    360,
+    540
+   ],
+   "b": [
+    640,
+    330,
+    460
+   ],
+   "fx": [
+    "poll",
+    "nocap"
+   ],
+   "opt": {
+    "q": "ARDA TURAN MİLLİ TAKIMA GEÇMELİ Mİ?",
+    "a": "👍 GEÇSİN → BEĞEN",
+    "b": "💬 GEÇMESİN → YORUM"
+   }
+  }
+ ]
+}
