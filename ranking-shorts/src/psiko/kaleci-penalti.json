@@ -1,0 +1,435 @@
+{
+ "slug": "kaleci-penalti",
+ "scenes": [
+  {
+   "kind": "hook",
+   "vo": "Kaleciler penaltıyı kurtarmanın en iyi yolunu biliyor... ama asla yapmıyor.",
+   "frames": 124,
+   "words": [
+    {
+     "t": 0,
+     "w": "Kaleciler"
+    },
+    {
+     "t": 0.614,
+     "w": "penaltıyı"
+    },
+    {
+     "t": 1.085,
+     "w": "kurtarmanın"
+    },
+    {
+     "t": 1.787,
+     "w": "en"
+    },
+    {
+     "t": 1.952,
+     "w": "iyi"
+    },
+    {
+     "t": 2.105,
+     "w": "yolunu"
+    },
+    {
+     "t": 2.39,
+     "w": "biliyor"
+    },
+    {
+     "t": 2.917,
+     "w": "ama"
+    },
+    {
+     "t": 3.092,
+     "w": "asla"
+    },
+    {
+     "t": 3.476,
+     "w": "yapmıyor"
+    }
+   ]
+  },
+  {
+   "kind": "zones",
+   "vo": "Bilim insanları iki yüz seksen altı penaltıyı inceledi. Şutların neredeyse üçte biri, tam ortaya gitti.",
+   "frames": 201,
+   "words": [
+    {
+     "t": 0,
+     "w": "Bilim"
+    },
+    {
+     "t": 0.438,
+     "w": "insanları"
+    },
+    {
+     "t": 1.009,
+     "w": "iki"
+    },
+    {
+     "t": 1.217,
+     "w": "yüz"
+    },
+    {
+     "t": 1.316,
+     "w": "seksen"
+    },
+    {
+     "t": 1.645,
+     "w": "altı"
+    },
+    {
+     "t": 1.875,
+     "w": "penaltıyı"
+    },
+    {
+     "t": 2.357,
+     "w": "inceledi"
+    },
+    {
+     "t": 3.82,
+     "w": "Şutların"
+    },
+    {
+     "t": 4.413,
+     "w": "neredeyse"
+    },
+    {
+     "t": 4.983,
+     "w": "üçte"
+    },
+    {
+     "t": 5.279,
+     "w": "biri"
+    },
+    {
+     "t": 5.663,
+     "w": "tam"
+    },
+    {
+     "t": 5.871,
+     "w": "ortaya"
+    },
+    {
+     "t": 6.178,
+     "w": "gitti"
+    }
+   ]
+  },
+  {
+   "kind": "compare",
+   "vo": "Ortada kalan kaleci, her üç penaltıdan birini kurtardı. Atlayan kalecide bu oran, yarıdan bile az.",
+   "frames": 203,
+   "words": [
+    {
+     "t": 0,
+     "w": "Ortada"
+    },
+    {
+     "t": 0.548,
+     "w": "kalan"
+    },
+    {
+     "t": 0.866,
+     "w": "kaleci"
+    },
+    {
+     "t": 1.48,
+     "w": "her"
+    },
+    {
+     "t": 1.645,
+     "w": "üç"
+    },
+    {
+     "t": 1.787,
+     "w": "penaltıdan"
+    },
+    {
+     "t": 2.368,
+     "w": "birini"
+    },
+    {
+     "t": 2.599,
+     "w": "kurtardı"
+    },
+    {
+     "t": 4.149,
+     "w": "Atlayan"
+    },
+    {
+     "t": 4.731,
+     "w": "kalecide"
+    },
+    {
+     "t": 5.169,
+     "w": "bu"
+    },
+    {
+     "t": 5.29,
+     "w": "oran"
+    },
+    {
+     "t": 5.761,
+     "w": "yarıdan"
+    },
+    {
+     "t": 6.2,
+     "w": "bile"
+    },
+    {
+     "t": 6.397,
+     "w": "az"
+    }
+   ]
+  },
+  {
+   "kind": "grid",
+   "vo": "Peki kaleciler ne yaptı? Yüzde doksan dördünde atladılar. Sadece yüzde altısında ortada kaldılar.",
+   "frames": 225,
+   "words": [
+    {
+     "t": 0,
+     "w": "Peki"
+    },
+    {
+     "t": 0.285,
+     "w": "kaleciler"
+    },
+    {
+     "t": 0.833,
+     "w": "ne"
+    },
+    {
+     "t": 0.987,
+     "w": "yaptı"
+    },
+    {
+     "t": 2.318,
+     "w": "Yüzde"
+    },
+    {
+     "t": 2.746,
+     "w": "doksan"
+    },
+    {
+     "t": 3.13,
+     "w": "dördünde"
+    },
+    {
+     "t": 3.513,
+     "w": "atladılar"
+    },
+    {
+     "t": 5.06,
+     "w": "Sadece"
+    },
+    {
+     "t": 5.663,
+     "w": "yüzde"
+    },
+    {
+     "t": 5.959,
+     "w": "altısında"
+    },
+    {
+     "t": 6.43,
+     "w": "ortada"
+    },
+    {
+     "t": 6.781,
+     "w": "kaldılar"
+    }
+   ]
+  },
+  {
+   "kind": "blame",
+   "vo": "Neden mi? Çünkü ortada durup gol yersen, aptal görünürsün. Atlayıp gol yersen, elinden geleni yaptı derler.",
+   "frames": 248,
+   "words": [
+    {
+     "t": 0,
+     "w": "Neden"
+    },
+    {
+     "t": 0.46,
+     "w": "mi"
+    },
+    {
+     "t": 1.54,
+     "w": "Çünkü"
+    },
+    {
+     "t": 1.869,
+     "w": "ortada"
+    },
+    {
+     "t": 2.285,
+     "w": "durup"
+    },
+    {
+     "t": 2.581,
+     "w": "gol"
+    },
+    {
+     "t": 2.768,
+     "w": "yersen"
+    },
+    {
+     "t": 3.338,
+     "w": "aptal"
+    },
+    {
+     "t": 3.689,
+     "w": "görünürsün"
+    },
+    {
+     "t": 5.257,
+     "w": "Atlayıp"
+    },
+    {
+     "t": 5.805,
+     "w": "gol"
+    },
+    {
+     "t": 6.013,
+     "w": "yersen"
+    },
+    {
+     "t": 6.617,
+     "w": "elinden"
+    },
+    {
+     "t": 7.044,
+     "w": "geleni"
+    },
+    {
+     "t": 7.329,
+     "w": "yaptı"
+    },
+    {
+     "t": 7.603,
+     "w": "derler"
+    }
+   ]
+  },
+  {
+   "kind": "shield",
+   "vo": "Yani kaleci topu değil... itibarını kurtarıyor.",
+   "hold": 20,
+   "frames": 103,
+   "words": [
+    {
+     "t": 0,
+     "w": "Yani"
+    },
+    {
+     "t": 0.471,
+     "w": "kaleci"
+    },
+    {
+     "t": 0.822,
+     "w": "topu"
+    },
+    {
+     "t": 1.074,
+     "w": "değil"
+    },
+    {
+     "t": 1.491,
+     "w": "itibarını"
+    },
+    {
+     "t": 2.017,
+     "w": "kurtarıyor"
+    }
+   ]
+  },
+  {
+   "kind": "bias",
+   "vo": "Psikologlar buna eylem yanlılığı diyor. Ve sen de, her gün aynısını yapıyorsun.",
+   "frames": 162,
+   "words": [
+    {
+     "t": 0,
+     "w": "Psikologlar"
+    },
+    {
+     "t": 0.767,
+     "w": "buna"
+    },
+    {
+     "t": 0.976,
+     "w": "eylem"
+    },
+    {
+     "t": 1.305,
+     "w": "yanlılığı"
+    },
+    {
+     "t": 1.699,
+     "w": "diyor"
+    },
+    {
+     "t": 3.02,
+     "w": "Ve"
+    },
+    {
+     "t": 3.239,
+     "w": "sen"
+    },
+    {
+     "t": 3.513,
+     "w": "de"
+    },
+    {
+     "t": 3.777,
+     "w": "her"
+    },
+    {
+     "t": 3.996,
+     "w": "gün"
+    },
+    {
+     "t": 4.149,
+     "w": "aynısını"
+    },
+    {
+     "t": 4.61,
+     "w": "yapıyorsun"
+    }
+   ]
+  },
+  {
+   "kind": "cta",
+   "vo": "Futbolun görünmeyen psikolojisi için, takip et.",
+   "hold": 40,
+   "frames": 125,
+   "words": [
+    {
+     "t": 0,
+     "w": "Futbolun"
+    },
+    {
+     "t": 0.625,
+     "w": "görünmeyen"
+    },
+    {
+     "t": 1.129,
+     "w": "psikolojisi"
+    },
+    {
+     "t": 1.754,
+     "w": "için"
+    },
+    {
+     "t": 2.226,
+     "w": "takip"
+    },
+    {
+     "t": 2.599,
+     "w": "et"
+    }
+   ]
+  }
+ ]
+}

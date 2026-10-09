@@ -1,0 +1,47 @@
+{
+ "slug": "kaleci-penalti",
+ "voice": "tr-TR-AhmetNeural",
+ "rate": "+14%",
+ "scenes": [
+  {
+   "kind": "hook",
+   "vo": "Kaleciler penaltıyı kurtarmanın en iyi yolunu biliyor... ama asla yapmıyor."
+  },
+  {
+   "kind": "zones",
+   "vo": "Bilim insanları iki yüz seksen altı penaltıyı inceledi. Şutların neredeyse üçte biri, tam ortaya gitti."
+  },
+  {
+   "kind": "compare",
+   "vo": "Ortada kalan kaleci, her üç penaltıdan birini kurtardı. Atlayan kalecide bu oran, yarıdan bile az."
+  },
+  {
+   "kind": "grid",
+   "vo": "Peki kaleciler ne yaptı? Yüzde doksan dördünde atladılar. Sadece yüzde altısında ortada kaldılar."
+  },
+  {
+   "kind": "blame",
+   "vo": "Neden mi? Çünkü ortada durup gol yersen, aptal görünürsün. Atlayıp gol yersen, elinden geleni yaptı derler."
+  },
+  {
+   "kind": "shield",
+   "vo": "Yani kaleci topu değil... itibarını kurtarıyor.",
+   "hold": 20
+  },
+  {
+   "kind": "bias",
+   "vo": "Psikologlar buna eylem yanlılığı diyor. Ve sen de, her gün aynısını yapıyorsun."
+  },
+  {
+   "kind": "cta",
+   "vo": "Futbolun görünmeyen psikolojisi için, takip et.",
+   "hold": 40
+  }
+ ],
+ "publish": {
+  "title": "Kaleciler Penaltıda Neden Hep Atlar? 🧠🧤 #shorts #futbol",
+  "description": "Kaleciler penaltıyı kurtarmanın en iyi yolunu biliyor ama neredeyse hiç yapmıyor. Sebebi tamamen psikolojik: eylem yanlılığı (action bias).\n\n📚 Kaynak: Bar-Eli ve ark. (2007), \"Action bias among elite soccer goalkeepers: The case of penalty kicks\", Journal of Economic Psychology. 286 penaltı incelendi.\n\n🧠 Futbolun Psikoloji Tuzakları serisi, Bölüm 1\n\n#shorts #futbol #penaltı #kaleci #psikoloji #futbolpsikolojisi #bilgi",
+  "tags": "futbol, penaltı, kaleci, psikoloji, futbol psikolojisi, eylem yanlılığı, action bias, penaltı kurtarma, shorts",
+  "pinned": "Sen kaleci olsan ortada kalır mıydın? 🧤👇 Bir sonraki bölüm: \"Kalecisine sırtını dönen penaltıcı neden daha çok kaçırır?\""
+ }
+}
