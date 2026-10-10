@@ -1,0 +1,66 @@
+{
+  "slug": "craziest-parkour",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "PARKOUR"
+  ],
+  "hook": {
+    "start": 31.5,
+    "dur": 3.1,
+    "src": "raw/craziest-parkour_2.mp4"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 4,
+      "src": "raw/craziest-parkour_4.mp4",
+      "label": "ROOFTOP POV",
+      "credit": "Oliver Nordin",
+      "url": "https://www.youtube.com/watch?v=prm5ttgYSBs",
+      "start": 6,
+      "dur": 8,
+      "impact": 0
+    },
+    {
+      "rank": 3,
+      "src": "raw/craziest-parkour_3.mp4",
+      "label": "WALL RUN",
+      "credit": "Matt Larose",
+      "url": "https://www.youtube.com/watch?v=_I_iCF4b73E",
+      "start": 71.5,
+      "dur": 6.5,
+      "impact": 0
+    },
+    {
+      "rank": 2,
+      "src": "raw/craziest-parkour_2.mp4",
+      "label": "ROOF GAP",
+      "credit": "Ethan Swanson",
+      "url": "https://www.youtube.com/watch?v=zuEZ0zKA0xg",
+      "start": 25.5,
+      "dur": 10,
+      "impact": 0
+    },
+    {
+      "rank": 1,
+      "src": "raw/craziest-parkour_1.mp4",
+      "label": "EPIC ROOF JUMP",
+      "credit": "GoPro",
+      "url": "https://www.youtube.com/watch?v=f0xyzj545tc",
+      "start": 72,
+      "dur": 13,
+      "impact": 5,
+      "focus": 40,
+      "replay": [
+        75,
+        4,
+        0.6
+      ]
+    }
+  ]
+}
