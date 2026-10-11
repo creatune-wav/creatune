@@ -7,13 +7,20 @@ import d3 from "./data/craziest-moto-jumps.json";
 import d4 from "./data/craziest-ski-drops.json";
 import d5 from "./data/highest-jumps.json";
 import d6 from "./data/miracle-moments.json";
+import { Story, StoryData, storyFrames } from "./Story";
+import s0 from "./data/kerem-kacirildi-mi.json";
 
 const all = [d0, d1, d2, d3, d4, d5, d6] as RankingData[];
+const stories = [s0] as StoryData[];
 export const Root = () => (
   <>
     {all.map((d) => (
       <Composition key={d.slug} id={d.slug} component={Ranking} defaultProps={d}
         durationInFrames={totalFrames(d)} fps={30} width={1080} height={1920} />
+    ))}
+    {stories.map((d) => (
+      <Composition key={d.slug} id={d.slug} component={Story} defaultProps={d}
+        durationInFrames={storyFrames(d)} fps={30} width={1080} height={1920} />
     ))}
   </>
 );

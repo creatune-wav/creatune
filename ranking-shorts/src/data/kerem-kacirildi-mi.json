@@ -1,0 +1,209 @@
+{
+  "slug": "kerem-kacirildi-mi",
+  "badge": "KEREM AKTÜRKOĞLU",
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "big",
+      "theme": "fb",
+      "lines": [
+        "FENERBAHÇE'Yİ",
+        "ELEYEN ADAM",
+        "ŞİMDİ FENERBAHÇE'DE"
+      ],
+      "hl": 1,
+      "img": "img/kerem/fb_forma.jpg",
+      "focus": 6,
+      "vo": "vo/kerem-kacirildi-mi/hook.wav",
+      "frames": 157
+    },
+    {
+      "id": "title",
+      "kind": "big",
+      "theme": "alarm",
+      "lines": [
+        "KEREM",
+        "KAÇIRILDI MI?"
+      ],
+      "hl": 1,
+      "sfx": "boom",
+      "img": "img/kerem/fb_yuz.jpg",
+      "focus": 43,
+      "vo": "vo/kerem-kacirildi-mi/title.wav",
+      "frames": 116
+    },
+    {
+      "id": "gs",
+      "kind": "big",
+      "theme": "gs",
+      "lines": [
+        "GALATASARAY",
+        "ÜST ÜSTE",
+        "ŞAMPİYONLUK"
+      ],
+      "hl": 0,
+      "kicker": "ÖNCE",
+      "img": "img/kerem/gs_gol.jpg",
+      "focus": 57,
+      "vo": "vo/kerem-kacirildi-mi/gs.wav",
+      "frames": 121
+    },
+    {
+      "id": "benfica",
+      "kind": "score",
+      "theme": "benfica",
+      "home": "BENFICA",
+      "away": "FENERBAHÇE",
+      "score": "1-0",
+      "kicker": "ŞAMPİYONLAR LİGİ PLAY-OFF",
+      "scorer": "GOL: KEREM AKTÜRKOĞLU",
+      "img": "img/kerem/benfica_gol.jpg",
+      "focus": 62,
+      "vo": "vo/kerem-kacirildi-mi/benfica.wav",
+      "frames": 123
+    },
+    {
+      "id": "transfer",
+      "kind": "price",
+      "theme": "fb",
+      "kicker": "BİRKAÇ GÜN SONRA",
+      "price": "€22.5M",
+      "sub": "+ BONUSLARLA €25M'A KADAR",
+      "foot": "KENDİSİNİ ELEYEN ADAMI ALDI",
+      "img": "img/kerem/fb_forma.jpg",
+      "focus": 6,
+      "vo": "vo/kerem-kacirildi-mi/transfer.wav",
+      "frames": 166
+    },
+    {
+      "id": "kafa",
+      "kind": "big",
+      "theme": "dark",
+      "lines": [
+        "SORUN AYAKTA DEĞİL",
+        "KAFADA"
+      ],
+      "hl": 1,
+      "kicker": "PSİKOLOJİ",
+      "img": "img/kerem/fb_yuz2.jpg",
+      "focus": 94,
+      "vo": "vo/kerem-kacirildi-mi/kafa.wav",
+      "frames": 97
+    },
+    {
+      "id": "psy1",
+      "kind": "split",
+      "theme": "dark",
+      "num": "1",
+      "left": {
+        "team": "GALATASARAYLI",
+        "word": "\"HAİN\"",
+        "theme": "gs",
+        "img": "img/kerem/gs_poz.jpg",
+        "focus": 87
+      },
+      "right": {
+        "team": "FENERBAHÇELİ",
+        "word": "\"BİZİ ELEYEN ADAM\"",
+        "theme": "fb",
+        "img": "img/kerem/fb_forma.jpg",
+        "focus": 6
+      },
+      "foot": "KİMSE TAM SAHİPLENMİYOR",
+      "vo": "vo/kerem-kacirildi-mi/psy1.wav",
+      "frames": 224
+    },
+    {
+      "id": "psy2",
+      "kind": "price",
+      "theme": "dark",
+      "num": "2",
+      "kicker": "SIRTINDAKİ ETİKET",
+      "price": "€25M",
+      "sub": "KAÇAN HER POZİSYON",
+      "foot": "İKİ KAT BÜYÜK GÖRÜNÜYOR",
+      "img": "img/kerem/fb_yuz.jpg",
+      "focus": 43,
+      "vo": "vo/kerem-kacirildi-mi/psy2.wav",
+      "frames": 157
+    },
+    {
+      "id": "psy3",
+      "kind": "versus",
+      "theme": "dark",
+      "num": "3",
+      "top": {
+        "label": "ESKİ KEREM",
+        "word": "İÇGÜDÜ",
+        "img": "img/kerem/gs_gol.jpg",
+        "focus": 57
+      },
+      "bottom": {
+        "label": "YENİ KEREM",
+        "word": "TEREDDÜT",
+        "img": "img/kerem/fb_yuz.jpg",
+        "focus": 43
+      },
+      "vo": "vo/kerem-kacirildi-mi/psy3.wav",
+      "frames": 150
+    },
+    {
+      "id": "stats",
+      "kind": "stats",
+      "theme": "dark",
+      "kicker": "RAKAMLAR",
+      "cards": [
+        {
+          "label": "LİGİN İLK 5 HAFTASI",
+          "value": "0 GOL",
+          "bad": true
+        },
+        {
+          "label": "RİZE 0-3 FB · 12'",
+          "value": "1 ASİST",
+          "bad": false
+        },
+        {
+          "label": "RİZE 0-3 FB · 68'",
+          "value": "NET POZİSYON KAÇTI",
+          "bad": true
+        }
+      ],
+      "img": "img/kerem/rize.jpg",
+      "focus": 50,
+      "vo": "vo/kerem-kacirildi-mi/stats.wav",
+      "frames": 188
+    },
+    {
+      "id": "quote",
+      "kind": "quote",
+      "theme": "dark",
+      "who": "NİHAT KAHVECİ",
+      "quote": [
+        "\"FENERBAHÇE'NİN",
+        "EN KÖTÜSÜYDÜ\""
+      ],
+      "sub": "\"NASIL 3-0'A KADAR OYUNDA KALDI?\"",
+      "img": "img/kerem/kahveci.jpg",
+      "focus": 13,
+      "vo": "vo/kerem-kacirildi-mi/quote.wav",
+      "frames": 107
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "theme": "alarm",
+      "q": [
+        "KEREM",
+        "BİTTİ Mİ?"
+      ],
+      "a": "EVET",
+      "b": "HAYIR",
+      "foot": "GS'LİLER vs FB'LİLER · YORUMLARA 👇",
+      "img": "img/kerem/kerem_beyaz.jpg",
+      "focus": 50,
+      "vo": "vo/kerem-kacirildi-mi/cta.wav",
+      "frames": 169
+    }
+  ]
+}
