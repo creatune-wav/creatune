@@ -1,0 +1,55 @@
+{
+  "slug": "craziest-wingsuit",
+  "title": [
+    "RANKING THE CRAZIEST",
+    "WINGSUIT FLIGHTS"
+  ],
+  "hook": {
+    "start": 36,
+    "dur": 3.1,
+    "src": "raw/craziest-wingsuit_5.mp4"
+  },
+  "numbers": true,
+  "cta": {
+    "frames": 75,
+    "sub": "FOR MORE VIDEOS",
+    "at": "one"
+  },
+  "items": [
+    {
+      "rank": 3,
+      "src": "raw/craziest-wingsuit_5.mp4",
+      "label": "THE CRACK",
+      "credit": "Larry Hack",
+      "url": "https://www.youtube.com/watch?v=a7Vvezhk2CA",
+      "start": 33,
+      "dur": 10,
+      "impact": 0
+    },
+    {
+      "rank": 2,
+      "src": "raw/craziest-wingsuit_3.mp4",
+      "label": "STEEP LINE",
+      "credit": "Dom.e Wingsuit",
+      "url": "https://www.youtube.com/watch?v=4CSOwxhGvmY",
+      "start": 33,
+      "dur": 11,
+      "impact": 0
+    },
+    {
+      "rank": 1,
+      "src": "raw/craziest-wingsuit_2.mp4",
+      "label": "DUBAI DREAM JUMP",
+      "credit": "XDubai",
+      "url": "https://www.youtube.com/watch?v=Fhskvloj1gE",
+      "start": 75,
+      "dur": 12,
+      "impact": 4,
+      "replay": [
+        78,
+        3,
+        0.6
+      ]
+    }
+  ]
+}
