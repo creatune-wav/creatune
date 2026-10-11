@@ -263,7 +263,7 @@ export const Story: React.FC<StoryData> = ({ badge, scenes }) => {
               <SceneView s={s} />
             </AbsoluteFill>
             <AbsoluteFill style={{ background: "#fff", opacity: flash }} />
-            <Sequence from={3}><Audio src={staticFile(s.vo)} /></Sequence>
+            <Audio src={staticFile(s.vo)} />
             <Audio src={staticFile("sfx/whoosh.wav")} volume={0.5} />
             <Sequence from={5}><Audio src={staticFile("sfx/hit.wav")} volume={0.35} /></Sequence>
             {s.sfx === "boom" && <Sequence from={6}><Audio src={staticFile("sfx/boom.wav")} volume={0.8} /></Sequence>}

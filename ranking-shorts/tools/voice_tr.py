@@ -24,7 +24,7 @@ for s in story["scenes"]:
         asyncio.run(edge_tts.Communicate(s["vo"], voice, rate=rate, pitch="-4Hz").save(mp3))
         # sondaki sessizliği kırp, kalın ve sıkıştırılmış anons tonu
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-af",
-            "areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+            "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
             "bass=g=3:f=120,acompressor=threshold=-20dB:ratio=3:attack=5:release=80,loudnorm=I=-14:TP=-1:LRA=7",
             "-ar", "48000", wav], check=True)
         os.remove(mp3)

@@ -15,7 +15,7 @@
       "img": "img/kerem/fb_forma.jpg",
       "focus": 6,
       "vo": "vo/kerem-kacirildi-mi/hook.wav",
-      "frames": 157
+      "frames": 132
     },
     {
       "id": "title",
@@ -30,7 +30,7 @@
       "img": "img/kerem/fb_yuz.jpg",
       "focus": 43,
       "vo": "vo/kerem-kacirildi-mi/title.wav",
-      "frames": 116
+      "frames": 96
     },
     {
       "id": "gs",
@@ -46,7 +46,7 @@
       "img": "img/kerem/gs_gol.jpg",
       "focus": 57,
       "vo": "vo/kerem-kacirildi-mi/gs.wav",
-      "frames": 121
+      "frames": 98
     },
     {
       "id": "benfica",
@@ -60,7 +60,7 @@
       "img": "img/kerem/benfica_gol.jpg",
       "focus": 62,
       "vo": "vo/kerem-kacirildi-mi/benfica.wav",
-      "frames": 123
+      "frames": 101
     },
     {
       "id": "transfer",
@@ -73,7 +73,7 @@
       "img": "img/kerem/fb_forma.jpg",
       "focus": 6,
       "vo": "vo/kerem-kacirildi-mi/transfer.wav",
-      "frames": 166
+      "frames": 140
     },
     {
       "id": "kafa",
@@ -88,7 +88,7 @@
       "img": "img/kerem/fb_yuz2.jpg",
       "focus": 94,
       "vo": "vo/kerem-kacirildi-mi/kafa.wav",
-      "frames": 97
+      "frames": 76
     },
     {
       "id": "psy1",
@@ -111,7 +111,7 @@
       },
       "foot": "KİMSE TAM SAHİPLENMİYOR",
       "vo": "vo/kerem-kacirildi-mi/psy1.wav",
-      "frames": 224
+      "frames": 196
     },
     {
       "id": "psy2",
@@ -125,7 +125,7 @@
       "img": "img/kerem/fb_yuz.jpg",
       "focus": 43,
       "vo": "vo/kerem-kacirildi-mi/psy2.wav",
-      "frames": 157
+      "frames": 132
     },
     {
       "id": "psy3",
@@ -145,7 +145,7 @@
         "focus": 43
       },
       "vo": "vo/kerem-kacirildi-mi/psy3.wav",
-      "frames": 150
+      "frames": 125
     },
     {
       "id": "stats",
@@ -172,7 +172,7 @@
       "img": "img/kerem/rize.jpg",
       "focus": 50,
       "vo": "vo/kerem-kacirildi-mi/stats.wav",
-      "frames": 188
+      "frames": 163
     },
     {
       "id": "quote",
@@ -187,7 +187,7 @@
       "img": "img/kerem/kahveci.jpg",
       "focus": 13,
       "vo": "vo/kerem-kacirildi-mi/quote.wav",
-      "frames": 107
+      "frames": 85
     },
     {
       "id": "cta",
@@ -203,7 +203,7 @@
       "img": "img/kerem/kerem_beyaz.jpg",
       "focus": 50,
       "vo": "vo/kerem-kacirildi-mi/cta.wav",
-      "frames": 169
+      "frames": 149
     }
   ]
 }

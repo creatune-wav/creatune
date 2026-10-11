@@ -1,7 +1,7 @@
 {
   "slug": "kerem-kacirildi-mi",
   "voice": "tr-TR-AhmetNeural",
-  "rate": "+18%",
+  "rate": "+25%",
   "badge": "KEREM AKTÜRKOĞLU",
   "scenes": [
     {
@@ -196,5 +196,5 @@
       "focus": 50
     }
   ],
-  "pad": 0.25
+  "pad": 0.05
 }
