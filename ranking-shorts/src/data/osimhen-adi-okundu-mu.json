@@ -1,0 +1,143 @@
+{
+  "slug": "osimhen-adi-okundu-mu",
+  "badge": "OSIMHEN",
+  "band": "ADI OKUNDU MU?",
+  "bandAfter": 1,
+  "music": "sfx/drone.wav",
+  "muteScene": "duymadi",
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/yakin.jpg",
+      "focus": 50,
+      "lines": [
+        "15 DAKİKA",
+        "2 GOL"
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/hook.wav",
+      "frames": 202
+    },
+    {
+      "id": "kendisi",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/karanlik.jpg",
+      "focus": 45,
+      "lines": [
+        "BU HİKÂYEYİ",
+        "KENDİSİ ANLATTI"
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/kendisi.wav",
+      "frames": 50
+    },
+    {
+      "id": "secme",
+      "kind": "count",
+      "theme": "dark",
+      "total": 30,
+      "kept": 27,
+      "vo": "vo/osimhen-adi-okundu-mu/secme.wav",
+      "frames": 162
+    },
+    {
+      "id": "baba",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/isaret.jpg",
+      "focus": 45,
+      "kicker": "AYLAR SONRA",
+      "lines": [
+        "ABUJA'YA GİTMEKTEN",
+        "KORKTU",
+        "BABASI: \"GİT\""
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/baba.wav",
+      "frames": 279
+    },
+    {
+      "id": "gol",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/yakin.jpg",
+      "focus": 50,
+      "kicker": "İKİNCİ DENEME",
+      "lines": [
+        "15 DAKİKA",
+        "2 GOL"
+      ],
+      "hl": 1,
+      "sfx": "boom",
+      "vo": "vo/osimhen-adi-okundu-mu/gol.wav",
+      "frames": 59
+    },
+    {
+      "id": "duymadi",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/karanlik.jpg",
+      "focus": 45,
+      "lines": [
+        "İSİMLER OKUNDU",
+        "ADI YOKTU"
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/duymadi.wav",
+      "frames": 90
+    },
+    {
+      "id": "yesil",
+      "kind": "big",
+      "theme": "dark",
+      "tag": "CANLANDIRMA",
+      "lines": [
+        "ARABAYA BİNERKEN...",
+        "\"YEŞİL FORMALI!\""
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/yesil.wav",
+      "frames": 107
+    },
+    {
+      "id": "doktor",
+      "kind": "fingers",
+      "theme": "dark",
+      "tag": "CANLANDIRMA",
+      "kicker": "TAKIM DOKTORU",
+      "vo": "vo/osimhen-adi-okundu-mu/doktor.wav",
+      "frames": 161
+    },
+    {
+      "id": "tribun",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/tribun.jpg",
+      "focus": 50,
+      "lines": [
+        "BUGÜN ADINI",
+        "TRİBÜNLER SÖYLÜYOR"
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/tribun.wav",
+      "frames": 50
+    },
+    {
+      "id": "final",
+      "kind": "big",
+      "theme": "dark",
+      "img": "img/osi/guncel.jpg",
+      "focus": 40,
+      "lines": [
+        "O GÜN",
+        "HİKÂYESİ BİTTİ SANDI"
+      ],
+      "hl": 1,
+      "vo": "vo/osimhen-adi-okundu-mu/final.wav",
+      "frames": 82
+    }
+  ]
+}

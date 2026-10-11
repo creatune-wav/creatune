@@ -5,7 +5,7 @@ import { AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile,
 // Seslendirmeli, sahne sahne anlatım shorts'u (data/<slug>.story.json → tools/voice_tr.py → src/data/<slug>.json)
 type Pic = { img?: string; focus?: number };
 export type Scene = Pic & {
-  id: string; kind: "big" | "score" | "price" | "split" | "versus" | "stats" | "quote" | "cta";
+  id: string; kind: "big" | "score" | "price" | "split" | "versus" | "stats" | "quote" | "cta" | "count" | "fingers"; tag?: string; total?: number; kept?: number;
   theme: string; vo: string; frames: number; sfx?: string; kicker?: string; num?: string;
   lines?: string[]; hl?: number; home?: string; away?: string; score?: string; scorer?: string;
   price?: string; sub?: string; foot?: string; who?: string; quote?: string[];
@@ -14,7 +14,7 @@ export type Scene = Pic & {
   cards?: { label: string; value: string; bad: boolean }[];
   q?: string[]; a?: string; b?: string;
 };
-export type StoryData = { slug: string; badge: string; scenes: Scene[] };
+export type StoryData = { slug: string; badge: string; band?: string; bandAfter?: number; music?: string; muteScene?: string; scenes: Scene[] };
 export const storyFrames = (d: StoryData) => d.scenes.reduce((s, x) => s + x.frames, 0);
 
 const F = "AntonTR";
@@ -152,6 +152,52 @@ const SceneView: React.FC<{ s: Scene }> = ({ s }) => {
       <AbsoluteFill style={{ background: `linear-gradient(0deg, ${th.b}AA, ${th.b}00 45%)`, mixBlendMode: "multiply" }} />
       <Num n={s.num} color={th.a} />
 
+      {s.tag && (
+        <div style={{ position: "absolute", top: 1440, right: 40, background: "rgba(0,0,0,.7)", border: "3px solid #fff",
+          padding: "4px 16px", borderRadius: 6, fontFamily: F, fontSize: 34, color: "#fff" }}>{s.tag}</div>
+      )}
+
+      {s.kind === "count" && (() => {
+        const n = s.total!, k = s.kept!;
+        const red = useSlam(Math.round(dur * 0.5), 220);
+        return (<>
+          <div style={{ position: "absolute", top: 640, width: "100%", textAlign: "center" }}>
+            <span style={{ ...T(10), fontSize: 150, color: "#fff" }}>{n} </span>
+            <span style={{ ...T(10), fontSize: 150, color: "#FFD400" }}>→ {k}</span>
+          </div>
+          <div style={{ position: "absolute", top: 860, left: 90, right: 90, display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 22 }}>
+            {Array.from({ length: n }).map((_, i) => {
+              const out = i >= k; const sp = useSlam(2 + i, 260);
+              return <div key={i} style={{ height: 110, borderRadius: 999, transform: `scale(${sp})`,
+                background: out ? (red > 0.5 ? "#FF2B2B" : "#888") : "#FFD400",
+                boxShadow: out && red > 0.5 ? "0 0 30px #FF2B2B" : "none", opacity: out ? 1 : 0.9 }} />;
+            })}
+          </div>
+          <div style={{ position: "absolute", top: 1500 - 140, width: "100%", textAlign: "center", opacity: red, transform: `scale(${red})` }}>
+            <span style={{ ...T(8), fontSize: 70, color: "#FF2B2B" }}>ELENEN 3 KİŞİDEN BİRİ: O</span>
+          </div>
+        </>);
+      })()}
+
+      {s.kind === "fingers" && (() => {
+        const sp = useSlam(4, 160), tx = useSlam(Math.round(dur * 0.5));
+        return (<>
+          <svg viewBox="0 0 200 300" style={{ position: "absolute", top: 520, left: 290, width: 500, height: 750,
+            transform: `translateY(${(1 - sp) * 400}px)`, filter: "drop-shadow(0 0 40px rgba(255,212,0,.5))" }}>
+            <g fill="#FFD400">
+              <rect x="62" y="20" width="30" height="150" rx="15" transform="rotate(-8 77 170)" />
+              <rect x="104" y="20" width="30" height="150" rx="15" transform="rotate(8 119 170)" />
+              <rect x="40" y="140" width="120" height="110" rx="40" />
+              <rect x="20" y="160" width="40" height="70" rx="20" transform="rotate(-30 40 195)" />
+              <rect x="70" y="230" width="60" height="70" />
+            </g>
+          </svg>
+          <div style={{ position: "absolute", top: 1270, width: "100%", textAlign: "center", opacity: tx, transform: `scale(${tx})` }}>
+            <span style={{ ...T(9), fontSize: 84, color: "#fff" }}>2 GOLÜ ATAN <span style={{ color: "#FFD400" }}>BUYDU</span></span>
+          </div>
+        </>);
+      })()}
+
       {s.kind === "big" && (<>
         <Kicker text={s.kicker} color={th.a} y={930} />
         <Lines lines={s.lines!} hl={s.hl} accent={th.a} y={s.kicker ? 1020 : 980} />
@@ -245,11 +291,11 @@ const SceneView: React.FC<{ s: Scene }> = ({ s }) => {
   );
 };
 
-export const Story: React.FC<StoryData> = ({ badge, scenes }) => {
+export const Story: React.FC<StoryData> = ({ badge, band, bandAfter = 2, music, muteScene, scenes }) => {
   const f = useCurrentFrame();
   const starts: number[] = [];
   scenes.reduce((acc, s) => { starts.push(acc); return acc + s.frames; }, 0);
-  const titleEnd = starts[2] ?? 0; // "kaçırıldı mı" sahnesinden sonra üstte sabit başlık
+  const titleEnd = starts[bandAfter] ?? 0; // "kaçırıldı mı" sahnesinden sonra üstte sabit başlık
   const total = storyFrames({ scenes } as StoryData);
   const prog = f / total;
   return (
@@ -272,12 +318,17 @@ export const Story: React.FC<StoryData> = ({ badge, scenes }) => {
         );
       })}
 
+      {music && (() => {
+        const mi = scenes.findIndex((x) => x.id === muteScene);
+        const m0 = mi >= 0 ? starts[mi] : -1, m1 = mi >= 0 ? starts[mi] + scenes[mi].frames : -1;
+        return <Audio src={staticFile(music)} volume={(fr) => (fr >= m0 && fr < m1 ? 0 : 0.18)} />;
+      })()}
       {/* üst başlık bandı */}
       {f >= titleEnd && (
         <div style={{ position: "absolute", top: 120, width: "100%", display: "flex", justifyContent: "center" }}>
           <div style={{ background: "#FF2B2B", padding: "8px 28px", borderRadius: 10, border: "5px solid #000",
             transform: `scale(${spring({ frame: f - titleEnd, fps: 30, config: { damping: 12 } })})` }}>
-            <span style={{ fontFamily: F, fontSize: 58, color: "#fff" }}>🚨 {badge} KAÇIRILDI MI?</span>
+            <span style={{ fontFamily: F, fontSize: 58, color: "#fff" }}>{band ?? `🚨 ${badge} KAÇIRILDI MI?`}</span>
           </div>
         </div>
       )}

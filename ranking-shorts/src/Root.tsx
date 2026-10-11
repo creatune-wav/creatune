@@ -9,9 +9,10 @@ import d5 from "./data/highest-jumps.json";
 import d6 from "./data/miracle-moments.json";
 import { Story, StoryData, storyFrames } from "./Story";
 import s0 from "./data/kerem-kacirildi-mi.json";
+import s1 from "./data/osimhen-adi-okundu-mu.json";
 
 const all = [d0, d1, d2, d3, d4, d5, d6] as RankingData[];
-const stories = [s0] as StoryData[];
+const stories = [s0, s1] as StoryData[];
 export const Root = () => (
   <>
     {all.map((d) => (
